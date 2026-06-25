@@ -6,6 +6,7 @@ import { TrustBar } from "@/components/TrustBar";
 import { ServiceCard } from "@/components/ServiceCard";
 import { TestimonialCard, type Testimonial } from "@/components/TestimonialCard";
 import { CTASection } from "@/components/CTASection";
+import { RoofWatermark } from "@/components/RoofWatermark";
 
 const services = [
   {
@@ -38,12 +39,6 @@ const services = [
     href: "/services/gutters",
     icon: <GutterIcon />,
   },
-  {
-    title: "Insurance Claims",
-    description: "Expert claim documentation, adjuster coordination, and Xactimate estimates. We handle the complexity — you get your roof.",
-    href: "/insurance-claims",
-    icon: <ShieldIcon />,
-  },
 ];
 
 // [todo] — replace with real testimonials
@@ -52,7 +47,7 @@ const testimonials: Testimonial[] = [
     name: "Sarah M.",
     town: "Manchester",
     rating: 5,
-    text: "Archer Roofing made our insurance claim process completely painless. They documented every detail and handled everything with our adjuster. New roof looks incredible.",
+    text: "Prescott Roofing made our insurance claim process completely painless. They documented every detail and handled everything with our adjuster. New roof looks incredible.",
   },
   {
     name: "Mike & Lisa P.",
@@ -64,7 +59,7 @@ const testimonials: Testimonial[] = [
     name: "Tom R.",
     town: "Nashua",
     rating: 5,
-    text: "We got three quotes and Archer was the only one who took the time to explain our options clearly. The crew was on time, clean, and the roof is flawless. Family-owned and it shows.",
+    text: "We got three quotes and Prescott was the only one who took the time to explain our options clearly. The crew was on time, clean, and the roof is flawless. Family-owned and it shows.",
   },
 ];
 
@@ -81,14 +76,16 @@ export default function HomePage() {
           />
         </div>
 
+        <RoofWatermark />
+
         <div className="relative mx-auto max-w-7xl px-4 py-20 md:py-28 lg:py-32">
           <div className="max-w-3xl">
             <p className="text-brand-copper font-semibold text-sm uppercase tracking-widest mb-4">
               Southern New Hampshire&apos;s Trusted Roofing Experts
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-              <span className="text-brand-offwhite">Precision Roofing.</span>{" "}
-              <span className="text-brand-copper">From Every Angle.</span>
+              <span className="text-brand-offwhite">Your Roof.</span>{" "}
+              <span className="text-brand-copper">Done Right.</span>
             </h1>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8 max-w-2xl">
               Expert roof replacement, repair, and storm damage restoration across Hillsborough, Rockingham, and Merrimack counties. We combine insurance-claim expertise with the precision craftsmanship your home deserves.
@@ -173,10 +170,10 @@ export default function HomePage() {
                 ))}
               </ul>
               <Link
-                href="/insurance-claims"
+                href="/free-inspection"
                 className="inline-flex items-center px-6 py-3 bg-brand-copper text-white font-bold rounded-md hover:bg-brand-copper/90 transition-colors"
               >
-                Learn About Our Claims Process &rarr;
+                Get My Free Inspection &rarr;
               </Link>
             </div>
             <div className="relative">
@@ -196,14 +193,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Archer */}
+      {/* Why Prescott */}
       <section className="py-16 md:py-20 bg-brand-offwhite">
         <div className="mx-auto max-w-7xl px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold text-brand-navy mb-4">
-            Why &ldquo;Archer&rdquo;?
+            Why Prescott Roofing?
           </h2>
           <p className="text-lg text-brand-charcoal/70 max-w-3xl mx-auto mb-12">
-            Named after the owner&apos;s son, Archer represents what we stand for: precision, accuracy, and hitting the mark — every time. An archer draws straight lines, measures exactly, and aims with purpose. That&apos;s how we approach every roof. We&apos;re a family-owned company that puts your family first.
+            We&apos;re a family-owned roofing company that believes in doing the job right — no shortcuts, no excuses. We put our name behind every roof we touch, and that means quality materials, honest assessments, and craftsmanship you can count on.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
@@ -256,10 +253,10 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-extrabold text-brand-navy mb-4">
-              Proudly Serving Southern New Hampshire
+              Proudly Serving Southern NH &amp; Northern MA
             </h2>
             <p className="text-lg text-brand-charcoal/70">
-              Hillsborough, Rockingham, and Merrimack counties — from Manchester to Nashua and everywhere in between.
+              From Manchester to Nashua, Lowell to Haverhill — we serve homeowners across Southern New Hampshire and Northern Massachusetts.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-3">
@@ -323,11 +320,3 @@ function GutterIcon() {
   );
 }
 
-function ShieldIcon() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      <polyline points="9 12 11 14 15 10" />
-    </svg>
-  );
-}

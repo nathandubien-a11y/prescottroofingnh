@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { RoofWatermark } from "@/components/RoofWatermark";
 import { CTASection } from "@/components/CTASection";
 import { FAQAccordion, FAQSchema, type FAQItem } from "@/components/FAQAccordion";
 import { TrustBar } from "@/components/TrustBar";
@@ -19,24 +20,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!town) return {};
 
   return {
-    title: `Roofing Contractor in ${town.name}, NH`,
-    description: `Archer Roofing provides expert roof replacement, repair, storm damage restoration, and insurance claim help in ${town.name}, ${town.county} County, NH. Call ${siteConfig.phone} for a free inspection.`,
+    title: `Roofing Contractor in ${town.name}, ${town.state}`,
+    description: `Prescott Roofing provides expert roof replacement, repair, storm damage restoration, and insurance claim help in ${town.name}, ${town.county} County, NH. Call ${siteConfig.phone} for a free inspection.`,
     alternates: { canonical: `/roofing/${slug}` },
   };
 }
 
-function getFAQs(townName: string): FAQItem[] {
+function getFAQs(townName: string, state: string): FAQItem[] {
   return [
     {
-      question: `What roofing services does Archer Roofing offer in ${townName}?`,
+      question: `What roofing services does Prescott Roofing offer in ${townName}?`,
       answer: `We offer full roof replacement, roof repair, storm and wind damage restoration, ice dam removal, gutter installation, and expert insurance claim assistance for homeowners in ${townName} and surrounding areas.`,
     },
     {
-      question: `How much does a roof replacement cost in ${townName}, NH?`,
+      question: `How much does a roof replacement cost in ${townName}, ${state}?`,
       answer: `Roof replacement costs vary based on your home's size, roof pitch, material choice, and whether there's storm damage involved. We provide free inspections and detailed estimates. If insurance covers the work, you'll typically only pay your deductible.`,
     },
     {
-      question: `Does Archer Roofing help with insurance claims in ${townName}?`,
+      question: `Does Prescott Roofing help with insurance claims in ${townName}?`,
       answer: `Absolutely. Insurance claim assistance is our core specialty. We provide Xactimate-certified damage documentation, meet with your adjuster, and coordinate the entire process. Our restoration background means we know exactly what insurers need to approve claims.`,
     },
     {
@@ -51,19 +52,20 @@ export default async function ServiceAreaPage({ params }: Props) {
   const town = serviceAreaTowns.find((t) => t.slug === slug);
   if (!town) notFound();
 
-  const faqs = getFAQs(town.name);
+  const faqs = getFAQs(town.name, town.state);
   const nearbyTowns = serviceAreaTowns.filter((t) => t.county === town.county && t.slug !== town.slug).slice(0, 5);
 
   return (
     <>
-      <section className="bg-brand-navy py-16 md:py-20">
-        <div className="mx-auto max-w-7xl px-4">
-          <Breadcrumbs items={[{ label: "Service Areas", href: "/roofing" }, { label: `${town.name}, NH` }]} />
+      <section className="relative bg-brand-navy py-16 md:py-20">
+        <RoofWatermark />
+        <div className="relative mx-auto max-w-7xl px-4">
+          <Breadcrumbs items={[{ label: "Service Areas", href: "/roofing" }, { label: `${town.name}, ${town.state}` }]} />
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
-            Roofing Contractor in {town.name}, NH
+            Roofing Contractor in {town.name}, {town.state}
           </h1>
           <p className="text-lg text-white/80 max-w-2xl">
-            Archer Roofing serves homeowners in {town.name}, {town.county} County with expert roof replacement, repair, storm damage restoration, and insurance claim assistance. Precision from every angle.
+            Prescott Roofing serves homeowners in {town.name}, {town.county} County with expert roof replacement, repair, storm damage restoration, and insurance claim assistance. Precision from every angle.
           </p>
         </div>
       </section>
@@ -80,7 +82,7 @@ export default async function ServiceAreaPage({ params }: Props) {
               {town.weather}
             </p>
             <p className="text-brand-charcoal/80 leading-relaxed mb-4">
-              Whether you&apos;re near {town.landmarks}, Archer Roofing provides the full range of residential roofing services throughout {town.name} and {town.county} County. From complete roof replacements with manufacturer-backed warranties to emergency storm damage repairs, we deliver the precision and reliability your home needs.
+              Whether you&apos;re near {town.landmarks}, Prescott Roofing provides the full range of residential roofing services throughout {town.name} and {town.county} County. From complete roof replacements with manufacturer-backed warranties to emergency storm damage repairs, we deliver the precision and reliability your home needs.
             </p>
             <p className="text-brand-charcoal/80 leading-relaxed mb-8">
               What truly sets us apart in {town.name} is our insurance claim expertise. Our team brings real Xactimate estimating experience and adjuster relationships to every storm-damage project. That means faster claim approvals and a better outcome for you. We also offer competitive pricing and flexible financing for retail customers.
@@ -94,7 +96,6 @@ export default async function ServiceAreaPage({ params }: Props) {
                 { label: "Storm & Wind Damage", href: "/services/storm-damage" },
                 { label: "Ice Dam Removal", href: "/services/ice-dam-removal" },
                 { label: "Gutters", href: "/services/gutters" },
-                { label: "Insurance Claims", href: "/insurance-claims" },
               ].map((svc) => (
                 <Link
                   key={svc.href}
@@ -131,7 +132,7 @@ export default async function ServiceAreaPage({ params }: Props) {
       <section className="py-16 md:py-20 bg-white">
         <div className="mx-auto max-w-3xl px-4">
           <h2 className="text-3xl font-extrabold text-brand-navy mb-8">
-            Roofing FAQs for {town.name}, NH
+            Roofing FAQs for {town.name}, {town.state}
           </h2>
           <FAQAccordion items={faqs} />
           <FAQSchema items={faqs} />
@@ -150,7 +151,7 @@ export default async function ServiceAreaPage({ params }: Props) {
                   href={`/roofing/${t.slug}`}
                   className="px-4 py-2 bg-white border border-brand-coppertint/30 rounded-full text-sm font-medium text-brand-navy hover:border-brand-copper hover:text-brand-copper transition-colors"
                 >
-                  {t.name}, NH
+                  {t.name}, {t.state}
                 </Link>
               ))}
               <Link
@@ -166,7 +167,7 @@ export default async function ServiceAreaPage({ params }: Props) {
 
       <CTASection
         heading={`Need a Roofer in ${town.name}?`}
-        subheading={`Get a free roof inspection from Southern NH's most trusted roofing contractor. We'll be at your ${town.name} home within 24 hours.`}
+        subheading={`Get a free roof inspection from the region's most trusted roofing contractor. We'll be at your ${town.name} home within 24 hours.`}
       />
 
       <script
@@ -180,10 +181,10 @@ export default async function ServiceAreaPage({ params }: Props) {
             telephone: siteConfig.phone,
             areaServed: {
               "@type": "City",
-              name: `${town.name}, NH`,
-              containedInPlace: { "@type": "AdministrativeArea", name: `${town.county} County, NH` },
+              name: `${town.name}, ${town.state}`,
+              containedInPlace: { "@type": "AdministrativeArea", name: `${town.county} County, ${town.state}` },
             },
-            description: `Expert roofing contractor serving ${town.name}, ${town.county} County, NH. Roof replacement, repair, storm damage restoration, and insurance claim assistance.`,
+            description: `Expert roofing contractor serving ${town.name}, ${town.county} County, ${town.state}. Roof replacement, repair, storm damage restoration, and insurance claim assistance.`,
           }),
         }}
       />

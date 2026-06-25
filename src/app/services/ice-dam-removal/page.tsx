@@ -5,7 +5,7 @@ import { ServicePageLayout } from "@/components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "Ice Dam Removal & Winter Roof Issues NH",
   description:
-    "Safe ice dam removal and prevention in Southern New Hampshire. Protect your roof from freeze-thaw damage with Archer Roofing's winter roofing expertise.",
+    "Safe ice dam removal and prevention in Southern New Hampshire. Protect your roof from freeze-thaw damage with Prescott Roofing's winter roofing expertise.",
   alternates: { canonical: "/services/ice-dam-removal" },
 };
 
@@ -44,7 +44,7 @@ export default function IceDamRemovalPage() {
           If you&apos;ve lived in Southern NH for a winter, you know ice dams. Those thick ridges of ice along your eaves aren&apos;t just ugly — they&apos;re actively forcing water under your shingles and into your home. Left unchecked, ice dams cause stained ceilings, rotting sheathing, mold growth, and damaged insulation.
         </p>
         <p className="text-brand-charcoal/80 leading-relaxed mb-8">
-          Archer Roofing provides both emergency ice dam removal and long-term prevention solutions. We understand the specific challenges of New Hampshire winters, and we&apos;ll help you protect your home from the inside out.
+          Prescott Roofing provides both emergency ice dam removal and long-term prevention solutions. We understand the specific challenges of New Hampshire winters, and we&apos;ll help you protect your home from the inside out.
         </p>
 
         <h3 className="text-xl font-bold text-brand-navy mb-4">Our Ice Dam Services</h3>

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Logo } from "@/components/icons/Logo";
 import { PhoneIcon } from "@/components/icons/PhoneIcon";
 import { siteConfig, serviceAreaTowns } from "@/lib/siteConfig";
 
@@ -9,11 +8,10 @@ const serviceLinks = [
   { href: "/services/storm-damage", label: "Storm & Wind Damage" },
   { href: "/services/ice-dam-removal", label: "Ice Dam Removal" },
   { href: "/services/gutters", label: "Gutters" },
-  { href: "/insurance-claims", label: "Insurance Claims" },
 ];
 
 const companyLinks = [
-  { href: "/about", label: "About Archer" },
+  { href: "/about", label: "About Prescott" },
   { href: "/reviews", label: "Reviews" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
@@ -27,7 +25,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand column */}
           <div>
-            <Logo height={32} variant="white" className="mb-4" />
+            <div className="mb-4">
+              <span className="text-xl font-extrabold tracking-tight text-white">PRESCOTT </span>
+              <span className="text-xl font-extrabold tracking-tight text-brand-copper">ROOFING</span>
+            </div>
             <p className="text-sm leading-relaxed mb-4">
               {siteConfig.tagline}. Serving {siteConfig.serviceArea.description} with precision roofing, storm damage repair, and insurance claim expertise.
             </p>

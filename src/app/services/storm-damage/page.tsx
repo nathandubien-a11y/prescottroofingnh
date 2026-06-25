@@ -5,7 +5,7 @@ import { ServicePageLayout } from "@/components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "Storm & Wind Damage Roof Repair NH",
   description:
-    "Emergency storm damage roof repair across Southern New Hampshire. Expert insurance claim documentation, adjuster coordination, and full restoration from Archer Roofing.",
+    "Emergency storm damage roof repair across Southern New Hampshire. Expert insurance claim documentation, adjuster coordination, and full restoration from Prescott Roofing.",
   alternates: { canonical: "/services/storm-damage" },
 };
 
@@ -44,7 +44,7 @@ export default function StormDamagePage() {
           Southern New Hampshire gets hit hard — nor&apos;easters, summer thunderstorms, hail, and high winds can all damage your roof. When a storm strikes, you need a roofer who responds fast, documents thoroughly, and knows how to work with insurance companies.
         </p>
         <p className="text-brand-charcoal/80 leading-relaxed mb-8">
-          That&apos;s where Archer Roofing is different. Our team brings real insurance-restoration experience to every storm call. We don&apos;t just fix roofs — we know how to get claims approved. <Link href="/insurance-claims" className="text-brand-copper font-semibold hover:underline">Learn more about our insurance claims expertise</Link>.
+          That&apos;s where Prescott Roofing is different. Our team brings real insurance-restoration experience to every storm call. We don&apos;t just fix roofs — we know how to get claims approved.
         </p>
 
         <h3 className="text-xl font-bold text-brand-navy mb-4">Our Storm Damage Process</h3>

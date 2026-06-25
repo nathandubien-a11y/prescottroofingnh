@@ -11,17 +11,17 @@ export function Logo({
 }) {
   const src =
     variant === "color"
-      ? "/logo-color.png"
+      ? "/logo-color.jpg"
       : variant === "black"
         ? "/logo-black.png"
         : "/logo-white.png";
 
-  const width = Math.round(height * (928 / 317));
+  const width = Math.round(height * (3689 / 1274));
 
   return (
     <Image
       src={src}
-      alt="Archer Roofing logo"
+      alt="Prescott Roofing logo"
       width={width}
       height={height}
       className={className}

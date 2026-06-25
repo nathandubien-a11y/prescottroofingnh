@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { RoofWatermark } from "@/components/RoofWatermark";
 import { CTASection } from "@/components/CTASection";
 import { FAQAccordion, FAQSchema, type FAQItem } from "@/components/FAQAccordion";
 import { siteConfig } from "@/lib/siteConfig";
@@ -24,15 +25,16 @@ export function ServicePageLayout({ serviceName, heroDescription, children, faqs
     },
     areaServed: siteConfig.serviceArea.counties.map((c) => ({
       "@type": "AdministrativeArea",
-      name: `${c} County, NH`,
+      name: `${c.name} County, ${c.state}`,
     })),
     description: heroDescription,
   };
 
   return (
     <>
-      <section className="bg-brand-navy py-16 md:py-20">
-        <div className="mx-auto max-w-7xl px-4">
+      <section className="relative bg-brand-navy py-16 md:py-20">
+        <RoofWatermark />
+        <div className="relative mx-auto max-w-7xl px-4">
           <Breadcrumbs items={[{ label: "Services", href: "/services" }, { label: serviceName }]} />
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">{serviceName}</h1>
           <p className="text-lg text-white/80 max-w-2xl">{heroDescription}</p>

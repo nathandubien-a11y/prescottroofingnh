@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { ServiceCard } from "@/components/ServiceCard";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { RoofWatermark } from "@/components/RoofWatermark";
 import { CTASection } from "@/components/CTASection";
 
 export const metadata: Metadata = {
   title: "Roofing Services in Southern NH",
   description:
-    "Archer Roofing offers roof replacement, repair, storm damage restoration, ice dam removal, gutters, and insurance claim assistance across Southern New Hampshire.",
+    "Prescott Roofing offers roof replacement, repair, storm damage restoration, ice dam removal, and gutters across Southern New Hampshire and Northern Massachusetts.",
   alternates: { canonical: "/services" },
 };
 
@@ -41,25 +42,20 @@ const services = [
     href: "/services/gutters",
     icon: <GutterIcon />,
   },
-  {
-    title: "Insurance & Storm Damage Claims",
-    description: "Our core differentiator. We bring real insurance-restoration experience — Xactimate estimating, adjuster coordination, and claim documentation — to every storm damage project.",
-    href: "/insurance-claims",
-    icon: <ShieldIcon />,
-  },
 ];
 
 export default function ServicesPage() {
   return (
     <>
-      <section className="bg-brand-navy py-16 md:py-20">
-        <div className="mx-auto max-w-7xl px-4">
+      <section className="relative bg-brand-navy py-16 md:py-20">
+        <RoofWatermark />
+        <div className="relative mx-auto max-w-7xl px-4">
           <Breadcrumbs items={[{ label: "Services" }]} />
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
             Our Roofing Services
           </h1>
           <p className="text-lg text-white/80 max-w-2xl">
-            From full roof replacements to emergency storm repairs, Archer Roofing delivers precision craftsmanship backed by real insurance-claim expertise across Southern New Hampshire.
+            From full roof replacements to emergency storm repairs, Prescott Roofing delivers precision craftsmanship backed by real insurance-claim expertise across Southern New Hampshire.
           </p>
         </div>
       </section>
@@ -93,7 +89,4 @@ function SnowflakeIcon() {
 }
 function GutterIcon() {
   return <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v6m0 4v10" /><path d="M4 8h16" /><path d="M6 8v4c0 2 2 4 6 4s6-2 6-4V8" /></svg>;
-}
-function ShieldIcon() {
-  return <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><polyline points="9 12 11 14 15 10" /></svg>;
 }

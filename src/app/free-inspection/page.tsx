@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { RoofWatermark } from "@/components/RoofWatermark";
 import { LeadForm } from "@/components/LeadForm";
 import { TrustBar } from "@/components/TrustBar";
 import { siteConfig } from "@/lib/siteConfig";
@@ -8,15 +9,16 @@ import { PhoneIcon } from "@/components/icons/PhoneIcon";
 export const metadata: Metadata = {
   title: "Free Roof Inspection | Get a Quote",
   description:
-    "Schedule your free, no-obligation roof inspection with Archer Roofing. Serving Southern NH with expert assessments, honest recommendations, and insurance claim help.",
+    "Schedule your free, no-obligation roof inspection with Prescott Roofing. Serving Southern NH with expert assessments, honest recommendations, and insurance claim help.",
   alternates: { canonical: "/free-inspection" },
 };
 
 export default function FreeInspectionPage() {
   return (
     <>
-      <section className="bg-brand-navy py-16 md:py-20">
-        <div className="mx-auto max-w-7xl px-4">
+      <section className="relative bg-brand-navy py-16 md:py-20">
+        <RoofWatermark />
+        <div className="relative mx-auto max-w-7xl px-4">
           <Breadcrumbs items={[{ label: "Free Inspection" }]} />
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
             Get Your Free Roof Inspection

@@ -1,21 +1,23 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { RoofWatermark } from "@/components/RoofWatermark";
 import { LeadForm } from "@/components/LeadForm";
 import { siteConfig } from "@/lib/siteConfig";
 import { PhoneIcon } from "@/components/icons/PhoneIcon";
 
 export const metadata: Metadata = {
-  title: "Contact Archer Roofing",
+  title: "Contact Prescott Roofing",
   description:
-    "Contact Archer Roofing for roofing services across Southern New Hampshire. Call 603-931-4655 or fill out our contact form for a free inspection.",
+    "Contact Prescott Roofing for roofing services across Southern New Hampshire. Call 603-451-2224 or fill out our contact form for a free inspection.",
   alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-brand-navy py-16 md:py-20">
-        <div className="mx-auto max-w-7xl px-4">
+      <section className="relative bg-brand-navy py-16 md:py-20">
+        <RoofWatermark />
+        <div className="relative mx-auto max-w-7xl px-4">
           <Breadcrumbs items={[{ label: "Contact" }]} />
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
             Contact Us
@@ -76,7 +78,7 @@ export default function ContactPage() {
                       {siteConfig.serviceArea.description}
                     </p>
                     <p className="text-sm text-brand-charcoal/60 mt-1">
-                      {siteConfig.serviceArea.counties.join(", ")} Counties
+                      {siteConfig.serviceArea.counties.map(c => `${c.name} (${c.state})`).join(", ")}
                     </p>
                   </div>
                 </div>

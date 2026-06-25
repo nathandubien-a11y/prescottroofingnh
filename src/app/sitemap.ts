@@ -13,7 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/services/storm-damage`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/services/ice-dam-removal`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/services/gutters`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/insurance-claims`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/roofing`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/reviews`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },

@@ -5,7 +5,7 @@ import { ServicePageLayout } from "@/components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "Gutter Installation & Repair in Southern NH",
   description:
-    "Seamless gutter installation, repair, and gutter guard systems across Southern New Hampshire. Protect your home from water damage with Archer Roofing.",
+    "Seamless gutter installation, repair, and gutter guard systems across Southern New Hampshire. Protect your home from water damage with Prescott Roofing.",
   alternates: { canonical: "/services/gutters" },
 };
 
@@ -44,7 +44,7 @@ export default function GuttersPage() {
           Gutters are the unsung hero of your roof system. They channel thousands of gallons of water away from your home every year — protecting your foundation, siding, landscaping, and basement from water damage. When gutters fail, everything downstream pays the price.
         </p>
         <p className="text-brand-charcoal/80 leading-relaxed mb-8">
-          Archer Roofing installs, repairs, and maintains gutter systems across Southern NH. We treat gutters as a critical part of your roofing system — because they are.
+          Prescott Roofing installs, repairs, and maintains gutter systems across Southern NH. We treat gutters as a critical part of your roofing system — because they are.
         </p>
 
         <h3 className="text-xl font-bold text-brand-navy mb-4">Our Gutter Services</h3>

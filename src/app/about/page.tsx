@@ -1,27 +1,29 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { RoofWatermark } from "@/components/RoofWatermark";
 import { CTASection } from "@/components/CTASection";
 import { TrustBar } from "@/components/TrustBar";
 import { siteConfig } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "About Archer Roofing",
+  title: "About Prescott Roofing",
   description:
-    "Learn about Archer Roofing — a family-owned roofing company serving Southern NH. Precision craftsmanship and real insurance-claim expertise.",
+    "Learn about Prescott Roofing — a family-owned roofing company serving Southern NH. Quality craftsmanship and real insurance-claim expertise.",
   alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-brand-navy py-16 md:py-20">
-        <div className="mx-auto max-w-7xl px-4">
+      <section className="relative bg-brand-navy py-16 md:py-20">
+        <RoofWatermark />
+        <div className="relative mx-auto max-w-7xl px-4">
           <Breadcrumbs items={[{ label: "About" }]} />
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
-            About Archer Roofing
+            About Prescott Roofing
           </h1>
           <p className="text-lg text-white/80 max-w-2xl">
-            Family-owned. Precision-driven. Insurance-claim experts. Here&apos;s the story behind the name and why it matters for your roof.
+            Family-owned. Quality-driven. Insurance-claim experts. Here&apos;s who we are and why it matters for your roof.
           </p>
         </div>
       </section>
@@ -31,26 +33,26 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
               <h2 className="text-3xl font-extrabold text-brand-navy mb-6">
-                Why &ldquo;Archer&rdquo;?
+                Who We Are
               </h2>
               <p className="text-brand-charcoal/80 leading-relaxed mb-4">
-                Archer Roofing is named after the owner&apos;s son, Archer. It&apos;s personal — but it&apos;s also purposeful. An archer is defined by precision: straight lines, exact measurements, hitting the mark every time. That&apos;s exactly how we approach every roofing project.
+                Prescott Roofing is a family-owned company built on a simple idea: do the job right, every single time. We put our name behind every roof we touch, and that means no cutting corners, no cheap materials, and no disappearing after the job is done.
               </p>
               <p className="text-brand-charcoal/80 leading-relaxed mb-4">
                 We&apos;re a family-owned company, and we put our family&apos;s name behind every roof we touch. That means no cutting corners, no cheap materials, and no disappearing after the job is done. When your name is on it, you do it right.
               </p>
               <p className="text-brand-charcoal/80 leading-relaxed mb-8">
-                This isn&apos;t a faceless franchise or a crew with a truck and a ladder. Archer Roofing is built on the belief that Southern NH homeowners deserve a roofer who combines genuine craftsmanship with the expertise to handle everything — including the insurance and storm-damage claims that most roofers fumble.
+                This isn&apos;t a faceless franchise or a crew with a truck and a ladder. Prescott Roofing is built on the belief that Southern NH homeowners deserve a roofer who combines genuine craftsmanship with the expertise to handle everything — including the insurance and storm-damage claims that most roofers fumble.
               </p>
 
               <h2 className="text-3xl font-extrabold text-brand-navy mb-6">
-                Insurance-Restoration Expertise
+                Retail Roofing Specialists
               </h2>
               <p className="text-brand-charcoal/80 leading-relaxed mb-4">
-                Our team comes from the insurance-restoration world. We have direct, hands-on experience with Xactimate estimating (the software insurance companies use), adjuster relationships, claims documentation, and the entire approval process. This is the expertise that most roofing contractors don&apos;t have — and it&apos;s what sets Archer apart.
+                At Prescott Roofing, we specialize in retail roofing — straightforward roof replacements, repairs, and installations for homeowners who want quality work at a fair price. Competitive pricing, flexible financing, and manufacturer-backed warranties are the foundation of every project we take on.
               </p>
               <p className="text-brand-charcoal/80 leading-relaxed">
-                When a storm hits your neighborhood and you need both a roof repair and a successful insurance claim, we&apos;re the team that can deliver on both — because we&apos;ve been doing it for years. And for retail customers, we offer competitive pricing and flexible financing to make a new roof affordable.
+                That said, our team also brings real insurance-restoration experience to the table. If you&apos;re dealing with storm damage and need to file a claim, we can handle that too — from Xactimate estimates and damage documentation to adjuster coordination and the full approval process. Whether you&apos;re paying out of pocket or going through insurance, you get the same precision craftsmanship on every project.
               </p>
             </div>
 
@@ -95,7 +97,7 @@ export default function AboutPage() {
 
       <CTASection
         heading="Ready to Work With a Roofer You Can Trust?"
-        subheading="Schedule a free inspection and see the Archer difference — precision, honesty, and real expertise."
+        subheading="Schedule a free inspection and see the Prescott difference — quality, honesty, and real expertise."
       />
     </>
   );

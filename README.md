@@ -1,6 +1,6 @@
-# Archer Roofing — Marketing Website
+# Prescott Roofing — Marketing Website
 
-A fast, SEO-optimized, lead-generation marketing website for Archer Roofing, serving Southern New Hampshire.
+A fast, SEO-optimized, lead-generation marketing website for Prescott Roofing, serving Southern New Hampshire.
 
 **Tech stack:** Next.js 16 (App Router) + TypeScript + Tailwind CSS v4
 
@@ -55,7 +55,7 @@ Check each item and supply the real value. Search the codebase for `[NATHAN: SUP
 
 ### Required
 
-- [ ] **Domain** — set `NEXT_PUBLIC_SITE_URL` in `.env` (currently defaults to `archerroofingnh.com`)
+- [ ] **Domain** — set `NEXT_PUBLIC_SITE_URL` in `.env` (currently defaults to `prescottroofingnh.com`)
 - [ ] **Form handler** — set `FORM_HANDLER_URL` in `.env` to your Formspree/Resend/webhook endpoint
 - [ ] **Business address** — update `siteConfig.address` (or confirm service-area-only, no storefront)
 - [ ] **License & insurance details** — update `siteConfig.license` and `siteConfig.insurance` with exact numbers

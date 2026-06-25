@@ -14,7 +14,7 @@ export const blogPosts: BlogPost[] = [
     title: "How to Spot Storm Damage on Your NH Roof",
     description: "Learn the warning signs of storm damage on your roof that you can check from the ground — and when to call a professional for a closer look.",
     date: "2026-05-15",
-    author: "Archer Roofing Team",
+    author: "Prescott Roofing Team",
     readTime: "5 min read",
     content: `After a storm rolls through Southern New Hampshire, the first thing most homeowners wonder is: did my roof take damage? The good news is that there are several signs you can check from the ground before calling a professional.
 
@@ -38,7 +38,7 @@ export const blogPosts: BlogPost[] = [
 
 If you notice any of these signs, don't climb on the roof yourself — it's dangerous and you might cause additional damage. Instead, call a professional roofing contractor for a thorough inspection.
 
-At Archer Roofing, our storm damage inspections are always free. We'll document everything with photos, and if the damage warrants an insurance claim, we'll help you through the entire process with our Xactimate-certified documentation and adjuster coordination.
+At Prescott Roofing, our storm damage inspections are always free. We'll document everything with photos, and if the damage warrants an insurance claim, we'll help you through the entire process with our Xactimate-certified documentation and adjuster coordination.
 
 **Bottom line:** When in doubt after a storm, get an inspection. Catching damage early prevents the small problems from becoming expensive ones.`,
   },
@@ -47,7 +47,7 @@ At Archer Roofing, our storm damage inspections are always free. We'll document 
     title: "Ice Dams in New Hampshire: Prevention & Removal",
     description: "Everything NH homeowners need to know about ice dams — what causes them, how to prevent them, and what to do when they form on your roof.",
     date: "2026-04-20",
-    author: "Archer Roofing Team",
+    author: "Prescott Roofing Team",
     readTime: "7 min read",
     content: `If you've lived through a New Hampshire winter, you've probably seen ice dams — those thick ridges of ice that form along the eaves of roofs. They might look like a normal part of winter, but they're actually a serious threat to your home.
 
@@ -83,7 +83,7 @@ If you already have ice dams, here's what to do — and what NOT to do:
 
 **DON'T** use rock salt or calcium chloride directly on shingles. It can stain your roof and accelerate shingle deterioration.
 
-**DO** call a professional who uses steam removal. Steam melts the ice quickly and safely without damaging your roof. This is the method we use at Archer Roofing.
+**DO** call a professional who uses steam removal. Steam melts the ice quickly and safely without damaging your roof. This is the method we use at Prescott Roofing.
 
 **DO** address the interior water damage promptly. Mold can begin growing within 48 hours of water intrusion.
 
@@ -96,7 +96,7 @@ Ice dams are a symptom of a bigger issue — heat loss through your roof. While 
     title: "Does My Insurance Cover a New Roof?",
     description: "A straightforward guide to understanding when homeowner's insurance covers roof replacement — and how to maximize your claim with proper documentation.",
     date: "2026-03-10",
-    author: "Archer Roofing Team",
+    author: "Prescott Roofing Team",
     readTime: "6 min read",
     content: `One of the most common questions we hear from homeowners is: "Will my insurance pay for a new roof?" The answer is: it depends on what caused the damage. Here's a straightforward breakdown.
 
@@ -127,7 +127,7 @@ This is where having the right roofing contractor makes a huge difference:
 
 **1. Document before you file** — Have a professional inspect and document the damage before you call your insurance company. This ensures nothing is missed in the initial filing.
 
-**2. Use Xactimate documentation** — Insurance companies use Xactimate software to price claims. When your roofer provides estimates in the same format, it speeds up approvals and reduces the chance of underpayment. (This is one of Archer Roofing's core advantages — we write all our estimates in Xactimate.)
+**2. Use Xactimate documentation** — Insurance companies use Xactimate software to price claims. When your roofer provides estimates in the same format, it speeds up approvals and reduces the chance of underpayment. (This is one of Prescott Roofing's core advantages — we write all our estimates in Xactimate.)
 
 **3. Be present for the adjuster visit** — And make sure your roofing contractor is there too. An experienced contractor can point out damage items that adjusters sometimes miss, especially on steep or complex roofs.
 
@@ -135,7 +135,7 @@ This is where having the right roofing contractor makes a huge difference:
 
 **5. Know your policy** — Understand your deductible, your coverage limits, and whether you have an RCV (Replacement Cost Value) or ACV (Actual Cash Value) policy. RCV policies pay to replace your roof at current prices; ACV policies depreciate the value based on age.
 
-## The Archer Roofing Difference
+## The Prescott Roofing Difference
 
 We come from the insurance-restoration industry. Our team has hands-on experience with Xactimate estimating, adjuster meetings, and the documentation process. We've helped hundreds of homeowners navigate claims successfully.
 

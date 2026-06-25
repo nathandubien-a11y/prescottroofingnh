@@ -24,11 +24,11 @@ const bodyFont = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Archer Roofing | Roofing Contractor in Southern NH",
-    template: "%s | Archer Roofing",
+    default: "Prescott Roofing | Roofing Contractor in Southern NH",
+    template: "%s | Prescott Roofing",
   },
   description:
-    "Archer Roofing provides expert roof replacement, repair, storm damage restoration, and insurance claim assistance across Southern New Hampshire. Precision from every angle. Call 603-931-4655.",
+    "Prescott Roofing provides expert roof replacement, repair, storm damage restoration, and insurance claim assistance across Southern New Hampshire and Northern Massachusetts. Precision from every angle. Call 603-451-2224.",
   keywords: [
     "roofing contractor NH",
     "roof replacement Southern NH",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: siteConfig.name,
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Archer Roofing — Precision From Every Angle" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Prescott Roofing — Precision From Every Angle" }],
   },
   twitter: {
     card: "summary_large_image",

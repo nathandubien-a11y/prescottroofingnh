@@ -5,7 +5,7 @@ export function LocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "RoofingContractor",
     name: siteConfig.name,
-    description: `${siteConfig.name} provides expert roof replacement, repair, storm damage restoration, and insurance claim assistance across Southern New Hampshire. ${siteConfig.tagline}.`,
+    description: `${siteConfig.name} provides expert roof replacement, repair, storm damage restoration, and insurance claim assistance across Southern New Hampshire and Northern Massachusetts. ${siteConfig.tagline}.`,
     url: siteConfig.url,
     telephone: siteConfig.phone,
     email: siteConfig.email,
@@ -32,11 +32,11 @@ export function LocalBusinessSchema() {
     areaServed: [
       ...siteConfig.serviceArea.counties.map((county) => ({
         "@type": "AdministrativeArea",
-        name: `${county} County, NH`,
+        name: `${county.name} County, ${county.state}`,
       })),
       ...serviceAreaTowns.map((town) => ({
         "@type": "City",
-        name: `${town.name}, NH`,
+        name: `${town.name}, ${town.state}`,
       })),
     ],
     openingHoursSpecification: {

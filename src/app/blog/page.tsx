@@ -1,27 +1,29 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { RoofWatermark } from "@/components/RoofWatermark";
 import { CTASection } from "@/components/CTASection";
 import { blogPosts } from "@/lib/blogPosts";
 
 export const metadata: Metadata = {
   title: "Roofing Tips & Guides | Blog",
   description:
-    "Roofing tips, storm damage guides, and insurance claim advice for New Hampshire homeowners from the experts at Archer Roofing.",
+    "Roofing tips, storm damage guides, and insurance claim advice for New Hampshire homeowners from the experts at Prescott Roofing.",
   alternates: { canonical: "/blog" },
 };
 
 export default function BlogPage() {
   return (
     <>
-      <section className="bg-brand-navy py-16 md:py-20">
-        <div className="mx-auto max-w-7xl px-4">
+      <section className="relative bg-brand-navy py-16 md:py-20">
+        <RoofWatermark />
+        <div className="relative mx-auto max-w-7xl px-4">
           <Breadcrumbs items={[{ label: "Blog" }]} />
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
             Roofing Tips & Guides
           </h1>
           <p className="text-lg text-white/80 max-w-2xl">
-            Expert advice on roof maintenance, storm damage, insurance claims, and ice dam prevention from the Archer Roofing team.
+            Expert advice on roof maintenance, storm damage, insurance claims, and ice dam prevention from the Prescott Roofing team.
           </p>
         </div>
       </section>

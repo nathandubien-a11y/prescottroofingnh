@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { RoofWatermark } from "@/components/RoofWatermark";
 import { CTASection } from "@/components/CTASection";
 import { blogPosts } from "@/lib/blogPosts";
 import { siteConfig } from "@/lib/siteConfig";
@@ -39,8 +40,9 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
-      <section className="bg-brand-navy py-16 md:py-20">
-        <div className="mx-auto max-w-3xl px-4">
+      <section className="relative bg-brand-navy py-16 md:py-20">
+        <RoofWatermark />
+        <div className="relative mx-auto max-w-3xl px-4">
           <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: post.title }]} />
           <div className="flex items-center gap-3 text-sm text-white/60 mb-4">
             <time dateTime={post.date}>

@@ -8,7 +8,6 @@ import { siteConfig } from "@/lib/siteConfig";
 
 const navLinks = [
   { href: "/services", label: "Services" },
-  { href: "/insurance-claims", label: "Insurance Claims" },
   { href: "/roofing", label: "Service Areas" },
   { href: "/about", label: "About" },
   { href: "/reviews", label: "Reviews" },
@@ -24,7 +23,7 @@ export function Header() {
       {/* Top bar — phone + hours (hidden on mobile, shown in sticky CTA instead) */}
       <div className="hidden md:block bg-brand-navy border-b border-white/10">
         <div className="mx-auto max-w-7xl px-4 py-1.5 flex items-center justify-between text-sm text-white/80">
-          <span>Serving Southern New Hampshire — {siteConfig.serviceArea.counties.join(", ")} Counties</span>
+          <span>Serving Southern NH &amp; Northern MA — {siteConfig.serviceArea.counties.map(c => c.name).join(", ")} Counties</span>
           <div className="flex items-center gap-4">
             <span>{siteConfig.hours}</span>
             <a
@@ -41,7 +40,7 @@ export function Header() {
       {/* Main nav */}
       <nav className="bg-white mx-auto px-4 flex items-center justify-between h-16 md:h-18" aria-label="Main navigation">
         <div className="mx-auto max-w-7xl w-full flex items-center justify-between">
-          <Link href="/" className="shrink-0" aria-label="Archer Roofing home">
+          <Link href="/" className="shrink-0" aria-label="Prescott Roofing home">
             <Logo height={36} />
           </Link>
 

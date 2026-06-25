@@ -5,7 +5,7 @@ import { ServicePageLayout } from "@/components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "Roof Replacement in Southern NH",
   description:
-    "Expert asphalt shingle roof replacement across Southern New Hampshire. Manufacturer-backed warranties, insurance claim assistance, and precision installation from Archer Roofing.",
+    "Expert asphalt shingle roof replacement across Southern New Hampshire. Manufacturer-backed warranties, insurance claim assistance, and precision installation from Prescott Roofing.",
   alternates: { canonical: "/services/roof-replacement" },
 };
 
@@ -48,7 +48,7 @@ export default function RoofReplacementPage() {
           Between heavy snow loads, ice dams, nor&apos;easters, and summer storms, your roof takes more punishment in Southern NH than in most parts of the country. When it&apos;s time for a replacement, you need a contractor who understands these conditions and installs with the precision to withstand them.
         </p>
         <p className="text-brand-charcoal/80 leading-relaxed mb-8">
-          Archer Roofing specializes in complete asphalt shingle roof replacements for homes across Hillsborough, Rockingham, and Merrimack counties. We use top-tier materials from manufacturers like GAF, Owens Corning, and CertainTeed, and every installation is backed by both manufacturer and workmanship warranties.
+          Prescott Roofing specializes in complete asphalt shingle roof replacements for homes across Hillsborough, Rockingham, and Merrimack counties. We use top-tier materials from manufacturers like GAF, Owens Corning, and CertainTeed, and every installation is backed by both manufacturer and workmanship warranties.
         </p>
 
         <h3 className="text-xl font-bold text-brand-navy mb-4">What&apos;s Included in Every Roof Replacement</h3>
@@ -76,7 +76,7 @@ export default function RoofReplacementPage() {
 
         <h3 className="text-xl font-bold text-brand-navy mb-4">Insurance Claim? We&apos;ve Got You Covered</h3>
         <p className="text-brand-charcoal/80 leading-relaxed mb-6">
-          If your roof replacement is the result of storm damage, we bring real insurance-restoration expertise to the table. We&apos;ll document damage using Xactimate (the same software your insurer uses), coordinate with your adjuster, and make sure nothing falls through the cracks. <Link href="/insurance-claims" className="text-brand-copper font-semibold hover:underline">Learn more about our insurance claim process</Link>.
+          If your roof replacement is the result of storm damage, we bring real insurance-restoration expertise to the table. We&apos;ll document damage using Xactimate (the same software your insurer uses), coordinate with your adjuster, and make sure nothing falls through the cracks.
         </p>
 
         <div className="bg-brand-navy/5 border border-brand-coppertint/30 rounded-lg p-6 mb-8">

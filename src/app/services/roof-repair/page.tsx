@@ -5,7 +5,7 @@ import { ServicePageLayout } from "@/components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "Roof Repair in Southern NH",
   description:
-    "Expert roof leak repair, flashing repair, chimney sealing, and shingle replacement across Southern New Hampshire. Fast response, honest assessments from Archer Roofing.",
+    "Expert roof leak repair, flashing repair, chimney sealing, and shingle replacement across Southern New Hampshire. Fast response, honest assessments from Prescott Roofing.",
   alternates: { canonical: "/services/roof-repair" },
 };
 
@@ -44,7 +44,7 @@ export default function RoofRepairPage() {
           A small roof problem today can become a major headache tomorrow. Water damage spreads fast — from sheathing rot to mold in your attic to stained ceilings and compromised insulation. The smart move is to catch it early and fix it right.
         </p>
         <p className="text-brand-charcoal/80 leading-relaxed mb-8">
-          Archer Roofing provides thorough roof repairs across Southern NH. We don&apos;t just patch over the symptom — we diagnose the root cause and deliver a lasting fix. If a repair won&apos;t cut it, we&apos;ll tell you honestly and walk you through your options.
+          Prescott Roofing provides thorough roof repairs across Southern NH. We don&apos;t just patch over the symptom — we diagnose the root cause and deliver a lasting fix. If a repair won&apos;t cut it, we&apos;ll tell you honestly and walk you through your options.
         </p>
 
         <h3 className="text-xl font-bold text-brand-navy mb-4">Common Roof Repairs We Handle</h3>
@@ -72,7 +72,7 @@ export default function RoofRepairPage() {
         <div className="bg-brand-navy/5 border border-brand-coppertint/30 rounded-lg p-6 mb-8">
           <h4 className="text-lg font-bold text-brand-navy mb-2">Storm Damage?</h4>
           <p className="text-brand-charcoal/70 mb-4">
-            If your repair is related to storm or wind damage, we can help with the insurance claim too. <Link href="/insurance-claims" className="text-brand-copper font-semibold hover:underline">Learn about our claims process</Link>.
+            If your repair is related to storm or wind damage, we can help with the insurance claim too — just ask about our claims assistance when you schedule your inspection.
           </p>
           <Link href="/free-inspection" className="inline-flex items-center px-6 py-3 bg-brand-copper text-white font-bold rounded-md hover:bg-brand-copper/90 transition-colors">
             Schedule Free Inspection
