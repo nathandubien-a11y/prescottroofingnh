@@ -33,7 +33,7 @@ export const siteConfig = {
     { name: "Owens Corning", verified: false },
     { name: "CertainTeed", verified: false },
   ],
-  license: "Fully Licensed & Insured in NH", // [NATHAN: SUPPLY] exact license #
+  license: "Fully Licensed & Insured in NH & MA", // [NATHAN: SUPPLY] exact license #
   insurance: "General Liability + Workers' Comp", // [NATHAN: SUPPLY] exact policy details
   stats: {
     yearsInBusiness: "10+", // [NATHAN: SUPPLY]
