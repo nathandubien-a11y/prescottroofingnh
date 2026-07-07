@@ -25,11 +25,20 @@ export function LeadForm({ className = "" }: { className?: string }) {
     const data = Object.fromEntries(new FormData(form));
 
     try {
-      const res = await fetch(siteConfig.formEndpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+      const res = await fetch(
+        `https://formsubmit.co/ajax/${siteConfig.email}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            ...data,
+            _subject: `New Lead from ${data.name} — ${data.service || "General Inquiry"}`,
+          }),
+        }
+      );
       if (!res.ok) throw new Error("Submission failed");
       setStatus("success");
       form.reset();
