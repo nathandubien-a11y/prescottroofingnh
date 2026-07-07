@@ -15,6 +15,7 @@ const companyLinks = [
   { href: "/reviews", label: "Reviews" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
+  { href: "/financing", label: "Financing" },
   { href: "/free-inspection", label: "Free Inspection" },
 ];
 

@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/roofing", label: "Service Areas" },
   { href: "/about", label: "About" },
   { href: "/reviews", label: "Reviews" },
+  { href: "/financing", label: "Financing" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
