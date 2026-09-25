@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RoofWatermark } from "@/components/RoofWatermark";
 import { LeadForm } from "@/components/LeadForm";
@@ -6,7 +7,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import { PhoneIcon } from "@/components/icons/PhoneIcon";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Free Roofing Estimate in Southern NH",
+  title: "Contact Us — Free Roof Estimate",
   description:
     "Contact Prescott Roofing for roofing services across Southern New Hampshire. Call 603-451-2224 or fill out our contact form for a free inspection.",
   alternates: { canonical: "/contact" },
@@ -101,8 +102,15 @@ export default function ContactPage() {
             <p className="text-brand-charcoal/80 leading-relaxed mb-4">
               During your free inspection, we&apos;ll assess your entire roof system — shingles, flashing, vents, gutters, and attic ventilation. You&apos;ll receive an honest recommendation with photos documenting our findings. If insurance applies, we&apos;ll walk you through the claims process and handle the paperwork.
             </p>
-            <p className="text-brand-charcoal/80 leading-relaxed">
+            <p className="text-brand-charcoal/80 leading-relaxed mb-6">
               No pressure, no upselling, no surprises. Just straightforward expertise from a family-owned roofing company that&apos;s invested in doing right by Southern NH homeowners.
+            </p>
+            <p className="text-brand-charcoal/80 leading-relaxed">
+              Browse our full list of{" "}
+              <Link href="/services" className="text-brand-copper font-semibold hover:underline">roofing services</Link>
+              {" "}or see{" "}
+              <Link href="/roofing" className="text-brand-copper font-semibold hover:underline">all the towns we serve</Link>
+              {" "}across Southern NH and Northern MA.
             </p>
           </div>
         </div>

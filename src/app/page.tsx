@@ -10,7 +10,7 @@ import { CTASection } from "@/components/CTASection";
 import { RoofWatermark } from "@/components/RoofWatermark";
 
 export const metadata: Metadata = {
-  title: "Roofing Contractor Southern NH | Roof Replacement & Storm Damage Repair",
+  title: "Roofing Contractor in Southern NH | Prescott Roofing",
   description:
     "Prescott Roofing — Southern NH's trusted roofing contractor for roof replacement, repair, storm damage restoration & insurance claims. Serving Manchester, Nashua, Bedford & beyond. Call 603-451-2224.",
   alternates: { canonical: "/" },
@@ -168,9 +168,10 @@ export default function HomePage() {
             <div className="relative">
               <Image
                 src="/roof-inspection.jpg"
-                alt="Roofing contractor inspecting a residential roof"
+                alt="Roofing contractor inspecting a residential roof in Southern New Hampshire"
                 width={800}
-                height={1200}
+                height={600}
+                priority
                 className="aspect-[4/3] object-cover rounded-lg"
               />
               <div className="absolute -bottom-6 -left-4 bg-white rounded-lg shadow-xl p-4 border border-brand-coppertint/20">

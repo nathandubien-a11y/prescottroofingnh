@@ -32,34 +32,7 @@ export default function ReviewsPage() {
         </div>
       </section>
 
-      <section className="py-4 bg-white border-b border-brand-coppertint/30">
-        <div className="mx-auto max-w-7xl px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-0.5">
-              {Array.from({ length: 5 }, (_, i) => (
-                <svg key={i} width="24" height="24" viewBox="0 0 24 24" fill="#C45A28">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                </svg>
-              ))}
-            </div>
-            <span className="text-lg font-bold text-brand-navy">
-              {siteConfig.stats.googleRating} out of 5
-            </span>
-            <span className="text-brand-charcoal/60">
-              ({siteConfig.stats.googleReviewCount} reviews)
-            </span>
-          </div>
-          {/* [todo] — link to actual Google Business Profile */}
-          <a
-            href={siteConfig.googleBusinessUrl || "#"}
-            className="text-sm font-semibold text-brand-copper hover:underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Leave us a review on Google &rarr;
-          </a>
-        </div>
-      </section>
+      {/* [NATHAN: SUPPLY] — Rating bar will be restored once real Google review data is connected */}
 
       <section className="py-16 md:py-20 bg-brand-offwhite">
         <div className="mx-auto max-w-7xl px-4">

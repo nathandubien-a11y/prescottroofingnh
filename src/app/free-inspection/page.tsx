@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RoofWatermark } from "@/components/RoofWatermark";
 import { LeadForm } from "@/components/LeadForm";
@@ -93,8 +94,14 @@ export default function FreeInspectionPage() {
             <p className="text-brand-charcoal/80 leading-relaxed mb-4">
               During our inspection, we examine your entire roof system: shingles, underlayment, flashing around chimneys and vents, ridge caps, drip edges, gutters, and attic ventilation. We photograph every finding and provide a written summary with clear recommendations — no jargon, no pressure.
             </p>
-            <p className="text-brand-charcoal/80 leading-relaxed">
+            <p className="text-brand-charcoal/80 leading-relaxed mb-4">
               If we find damage that may be covered by your homeowner&apos;s insurance, we&apos;ll explain your options and, if you choose to file, walk you through the entire claims process. Our team has hands-on Xactimate estimating experience and knows exactly what documentation insurers need to approve a claim.
+            </p>
+            <p className="text-brand-charcoal/80 leading-relaxed">
+              Explore our{" "}
+              <Link href="/services" className="text-brand-copper font-semibold hover:underline">full range of roofing services</Link>
+              {" "}or check if we serve{" "}
+              <Link href="/roofing" className="text-brand-copper font-semibold hover:underline">your town</Link>.
             </p>
           </div>
         </div>

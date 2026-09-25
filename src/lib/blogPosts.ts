@@ -36,7 +36,7 @@ export const blogPosts: BlogPost[] = [
 
 ## When to Call a Professional
 
-If you notice any of these signs, don't climb on the roof yourself — it's dangerous and you might cause additional damage. Instead, call a professional roofing contractor for a thorough inspection.
+If you notice any of these signs, don't climb on the roof yourself — it's dangerous and you might cause additional damage. Instead, call a professional roofing contractor for a thorough inspection. Homeowners in [Manchester](/roofing/manchester-nh), [Nashua](/roofing/nashua-nh), and [Bedford](/roofing/bedford-nh) can reach our crew the same day.
 
 At Prescott Roofing, our [storm damage inspections are always free](/free-inspection). We'll document everything with photos, and if the damage warrants an insurance claim, we'll help you through the entire process with our Xactimate-certified documentation and adjuster coordination. Learn more about [our storm damage repair services](/services/storm-damage).
 
@@ -73,7 +73,7 @@ The best approach to ice dams is preventing them from forming in the first place
 
 **Seal air leaks** — Gaps around light fixtures, plumbing stacks, attic hatches, and recessed lights allow warm air into the attic. Sealing these is often the most cost-effective prevention measure.
 
-**Ice and water shield** — During a roof replacement, we install ice and water shield membrane along the eaves and in valleys. This waterproof barrier is your last line of defense if ice dams do form.
+**Ice and water shield** — During a [roof replacement](/services/roof-replacement), we install ice and water shield membrane along the eaves and in valleys. This waterproof barrier is your last line of defense if ice dams do form. Ice dams are especially common in [Manchester](/roofing/manchester-nh), [Nashua](/roofing/nashua-nh), and [Bedford](/roofing/bedford-nh), where older homes with complex rooflines are prone to uneven heat loss.
 
 ## Removal: When Prevention Isn't Enough
 
@@ -137,7 +137,7 @@ This is where having the right roofing contractor makes a huge difference:
 
 ## The Prescott Roofing Difference
 
-We come from the insurance-restoration industry. Our team has hands-on experience with Xactimate estimating, adjuster meetings, and the documentation process. We've helped hundreds of homeowners navigate claims successfully.
+We come from the insurance-restoration industry. Our team has hands-on experience with Xactimate estimating, adjuster meetings, and the documentation process. We've helped hundreds of homeowners across [Manchester](/roofing/manchester-nh), [Nashua](/roofing/nashua-nh), [Bedford](/roofing/bedford-nh), and the rest of Southern NH navigate claims successfully. Whether you need a full [roof replacement](/services/roof-replacement) or a targeted [roof repair](/services/roof-repair), we handle every project with the same precision.
 
 If you think your roof has storm damage, call us before you call your insurance company. We'll do a [free inspection](/free-inspection), document everything, and help you determine if filing a claim makes sense. If it does, we'll guide you through every step. You can also learn [how to spot storm damage](/blog/how-to-spot-storm-damage-on-your-nh-roof) before calling.`,
   },

@@ -6,7 +6,7 @@ import { TrustBar } from "@/components/TrustBar";
 import { siteConfig } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "About Us — Family-Owned Roofing Company in Southern NH",
+  title: "About Us — Family-Owned Southern NH Roofer",
   description:
     "Learn about Prescott Roofing — a family-owned roofing company serving Southern NH. Quality craftsmanship and real insurance-claim expertise.",
   alternates: { canonical: "/about" },

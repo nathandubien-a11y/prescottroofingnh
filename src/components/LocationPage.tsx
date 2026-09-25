@@ -326,31 +326,36 @@ export function LocationPage({ data }: { data: LocationData }) {
         subheading={data.closingCta.subheading}
       />
 
-      {/* Page-level areaServed annotation referencing the site-wide org */}
+      {/* Page-level WebPage schema referencing the site-wide org */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "RoofingContractor",
-            "@id": `${siteConfig.url}/#organization`,
+            "@type": "WebPage",
+            name: data.meta.title,
             url: `${siteConfig.url}/roofing/${data.slug}`,
-            areaServed: [
-              {
-                "@type": "City",
-                name: `${city}, ${state}`,
-                containedInPlace: {
-                  "@type": "AdministrativeArea",
-                  name: `${county} County, ${state}`,
-                },
-              },
-              ...data.neighborhoods.nearbyTowns
-                .filter((t) => t.href !== "#")
-                .map((t) => ({
+            provider: { "@id": `${siteConfig.url}/#organization` },
+            about: {
+              "@type": "Service",
+              name: `Roofing Services in ${city}, ${state}`,
+              areaServed: [
+                {
                   "@type": "City",
-                  name: t.name,
-                })),
-            ],
+                  name: `${city}, ${state}`,
+                  containedInPlace: {
+                    "@type": "AdministrativeArea",
+                    name: `${county} County, ${state}`,
+                  },
+                },
+                ...data.neighborhoods.nearbyTowns
+                  .filter((t) => t.href !== "#")
+                  .map((t) => ({
+                    "@type": "City",
+                    name: t.name,
+                  })),
+              ],
+            },
           }),
         }}
       />

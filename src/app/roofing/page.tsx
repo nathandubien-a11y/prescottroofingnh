@@ -6,7 +6,7 @@ import { CTASection } from "@/components/CTASection";
 import { serviceAreaTowns } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Roofing Contractor Serving Southern NH & Northern MA",
+  title: "Roofing Service Areas in NH & MA",
   description:
     "Prescott Roofing serves Southern New Hampshire and Northern Massachusetts. Find expert roofing services in your town.",
   alternates: { canonical: "/roofing" },

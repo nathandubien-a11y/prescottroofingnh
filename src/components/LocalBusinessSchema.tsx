@@ -48,7 +48,16 @@ export function LocalBusinessSchema() {
     },
     priceRange: "$$",
     image: `${siteConfig.url}/og-image.jpg`,
-    sameAs: Object.values(siteConfig.social).filter(Boolean),
+    // [NATHAN: SUPPLY] Set these env vars to populate sameAs:
+    // NEXT_PUBLIC_GBP_URL — Google Business Profile URL
+    // NEXT_PUBLIC_FACEBOOK_URL — Facebook page URL
+    // NEXT_PUBLIC_INSTAGRAM_URL — Instagram profile URL
+    sameAs: [
+      process.env.NEXT_PUBLIC_GBP_URL,
+      process.env.NEXT_PUBLIC_FACEBOOK_URL,
+      process.env.NEXT_PUBLIC_INSTAGRAM_URL,
+      ...Object.values(siteConfig.social),
+    ].filter(Boolean),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Roofing Services",
