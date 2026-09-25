@@ -24,6 +24,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: `${base}/privacy-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${base}/terms-of-service`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${base}/roofing-manchester-nh`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/roofing-nashua-nh`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/roofing-bedford-nh`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
   ];
 
   const serviceAreaPages: MetadataRoute.Sitemap = serviceAreaTowns.map((town) => ({

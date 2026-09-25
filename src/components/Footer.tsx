@@ -10,6 +10,12 @@ const serviceLinks = [
   { href: "/services/gutters", label: "Gutters" },
 ];
 
+const seoLocationSlugs: Record<string, string> = {
+  "manchester-nh": "/roofing-manchester-nh",
+  "nashua-nh": "/roofing-nashua-nh",
+  "bedford-nh": "/roofing-bedford-nh",
+};
+
 const companyLinks = [
   { href: "/about", label: "About Prescott" },
   { href: "/reviews", label: "Reviews" },
@@ -80,7 +86,7 @@ export function Footer() {
             <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5">
               {serviceAreaTowns.slice(0, 10).map((town) => (
                 <li key={town.slug}>
-                  <Link href={`/roofing/${town.slug}`} className="text-sm hover:text-brand-copper transition-colors">
+                  <Link href={seoLocationSlugs[town.slug] ?? `/roofing/${town.slug}`} className="text-sm hover:text-brand-copper transition-colors">
                     {town.name}
                   </Link>
                 </li>
