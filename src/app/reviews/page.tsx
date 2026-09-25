@@ -12,63 +12,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/reviews" },
 };
 
-// [todo] — replace with real Google reviews
-const testimonials: Testimonial[] = [
-  {
-    name: "Sarah M.",
-    town: "Manchester",
-    rating: 5,
-    text: "Prescott Roofing made our insurance claim process completely painless. They documented every detail and handled everything with our adjuster. New roof looks incredible and we only paid our deductible.",
-  },
-  {
-    name: "Mike & Lisa P.",
-    town: "Bedford",
-    rating: 5,
-    text: "After the big storm last winter, these guys were at our house the next morning. Professional, precise, and honest about what needed repair vs. replacement. Highly recommend.",
-  },
-  {
-    name: "Tom R.",
-    town: "Nashua",
-    rating: 5,
-    text: "We got three quotes and Prescott was the only one who took the time to explain our options clearly. The crew was on time, clean, and the roof is flawless. Family-owned and it shows.",
-  },
-  {
-    name: "Jennifer K.",
-    town: "Derry",
-    rating: 5,
-    text: "Our roof had serious ice dam damage and we didn't know where to start with the insurance claim. Prescott handled everything — the documentation, the adjuster meeting, the whole process. Couldn't be happier.",
-  },
-  {
-    name: "David & Carol S.",
-    town: "Hooksett",
-    rating: 5,
-    text: "Honest, fair, and skilled. They told us we only needed a repair when another company was pushing a full replacement. Saved us thousands and the repair has held up perfectly.",
-  },
-  {
-    name: "Robert L.",
-    town: "Merrimack",
-    rating: 5,
-    text: "The precision in their work is obvious. Straight lines, clean cuts, and they cleaned up the job site better than they found it. Plus they got our insurance claim approved in two weeks flat.",
-  },
-  {
-    name: "Amanda T.",
-    town: "Goffstown",
-    rating: 5,
-    text: "We chose Prescott specifically for their insurance claim expertise and they delivered. Their Xactimate estimate matched exactly what the adjuster needed. No back-and-forth, just an approved claim and a beautiful new roof.",
-  },
-  {
-    name: "Chris B.",
-    town: "Londonderry",
-    rating: 5,
-    text: "Great communication throughout the whole process. They showed up when they said they would, did what they said they'd do, and the price was what they quoted. Refreshing experience for a contractor.",
-  },
-  {
-    name: "Patricia W.",
-    town: "Salem",
-    rating: 5,
-    text: "I was worried about the ice dam situation on our older home. Prescott came out, removed the ice dam safely, fixed the water damage, and recommended insulation improvements to prevent it from happening again. Thorough and knowledgeable.",
-  },
-];
+// [NATHAN: SUPPLY] — Replace with verified Google reviews once GBP link is live.
+// Until then this page shows the review widget pointing to Google only.
+const testimonials: Testimonial[] = [];
 
 export default function ReviewsPage() {
   return (
@@ -117,11 +63,30 @@ export default function ReviewsPage() {
 
       <section className="py-16 md:py-20 bg-brand-offwhite">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <TestimonialCard key={i} testimonial={t} />
-            ))}
-          </div>
+          {testimonials.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {testimonials.map((t, i) => (
+                <TestimonialCard key={i} testimonial={t} />
+              ))}
+            </div>
+          ) : (
+            <div className="max-w-2xl mx-auto text-center py-12">
+              <h2 className="text-2xl font-extrabold text-brand-navy mb-4">
+                Reviews Coming Soon
+              </h2>
+              <p className="text-brand-charcoal/70 leading-relaxed mb-6">
+                We&apos;re collecting verified reviews from homeowners we&apos;ve served across Southern New Hampshire. In the meantime, check out our Google Business Profile for the latest customer feedback.
+              </p>
+              <a
+                href={siteConfig.googleBusinessUrl || "#"}
+                className="inline-flex items-center px-6 py-3 bg-brand-copper text-white font-bold rounded-md hover:bg-brand-copper/90 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Read Our Google Reviews &rarr;
+              </a>
+            </div>
+          )}
         </div>
       </section>
 

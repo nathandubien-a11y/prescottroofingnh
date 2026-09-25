@@ -4,6 +4,7 @@ export function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "RoofingContractor",
+    "@id": `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     description: `${siteConfig.name} provides expert roof replacement, repair, storm damage restoration, and insurance claim assistance across Southern New Hampshire and Northern Massachusetts. ${siteConfig.tagline}.`,
     url: siteConfig.url,
@@ -46,7 +47,7 @@ export function LocalBusinessSchema() {
       closes: "23:59",
     },
     priceRange: "$$",
-    image: `${siteConfig.url}/og-image.png`,
+    image: `${siteConfig.url}/og-image.jpg`,
     sameAs: Object.values(siteConfig.social).filter(Boolean),
     hasOfferCatalog: {
       "@type": "OfferCatalog",

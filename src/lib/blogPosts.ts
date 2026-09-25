@@ -38,9 +38,9 @@ export const blogPosts: BlogPost[] = [
 
 If you notice any of these signs, don't climb on the roof yourself — it's dangerous and you might cause additional damage. Instead, call a professional roofing contractor for a thorough inspection.
 
-At Prescott Roofing, our storm damage inspections are always free. We'll document everything with photos, and if the damage warrants an insurance claim, we'll help you through the entire process with our Xactimate-certified documentation and adjuster coordination.
+At Prescott Roofing, our [storm damage inspections are always free](/free-inspection). We'll document everything with photos, and if the damage warrants an insurance claim, we'll help you through the entire process with our Xactimate-certified documentation and adjuster coordination. Learn more about [our storm damage repair services](/services/storm-damage).
 
-**Bottom line:** When in doubt after a storm, get an inspection. Catching damage early prevents the small problems from becoming expensive ones.`,
+**Bottom line:** When in doubt after a storm, get an inspection. Catching damage early prevents the small problems from becoming expensive ones. If you're unsure whether to file a claim, read our guide on [whether insurance covers a new roof](/blog/does-my-insurance-cover-a-new-roof).`,
   },
   {
     slug: "ice-dams-in-new-hampshire-prevention-and-removal",
@@ -89,7 +89,7 @@ If you already have ice dams, here's what to do — and what NOT to do:
 
 ## The Bottom Line
 
-Ice dams are a symptom of a bigger issue — heat loss through your roof. While emergency removal is sometimes necessary, the real solution is addressing insulation, ventilation, and air sealing. During your free inspection, we'll assess your roof's vulnerability to ice dams and recommend the most cost-effective improvements for your specific situation.`,
+Ice dams are a symptom of a bigger issue — heat loss through your roof. While emergency removal is sometimes necessary, the real solution is addressing insulation, ventilation, and air sealing. [Schedule a free inspection](/free-inspection) and we'll assess your roof's vulnerability to ice dams and recommend the most cost-effective improvements for your specific situation. Learn more about our [ice dam removal services](/services/ice-dam-removal).`,
   },
   {
     slug: "does-my-insurance-cover-a-new-roof",
@@ -139,6 +139,6 @@ This is where having the right roofing contractor makes a huge difference:
 
 We come from the insurance-restoration industry. Our team has hands-on experience with Xactimate estimating, adjuster meetings, and the documentation process. We've helped hundreds of homeowners navigate claims successfully.
 
-If you think your roof has storm damage, call us before you call your insurance company. We'll do a free inspection, document everything, and help you determine if filing a claim makes sense. If it does, we'll guide you through every step.`,
+If you think your roof has storm damage, call us before you call your insurance company. We'll do a [free inspection](/free-inspection), document everything, and help you determine if filing a claim makes sense. If it does, we'll guide you through every step. You can also learn [how to spot storm damage](/blog/how-to-spot-storm-damage-on-your-nh-roof) before calling.`,
   },
 ];

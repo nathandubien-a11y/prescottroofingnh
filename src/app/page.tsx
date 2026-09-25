@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig, serviceAreaTowns } from "@/lib/siteConfig";
@@ -7,6 +8,13 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { TestimonialCard, type Testimonial } from "@/components/TestimonialCard";
 import { CTASection } from "@/components/CTASection";
 import { RoofWatermark } from "@/components/RoofWatermark";
+
+export const metadata: Metadata = {
+  title: "Roofing Contractor Southern NH | Roof Replacement & Storm Damage Repair",
+  description:
+    "Prescott Roofing — Southern NH's trusted roofing contractor for roof replacement, repair, storm damage restoration & insurance claims. Serving Manchester, Nashua, Bedford & beyond. Call 603-451-2224.",
+  alternates: { canonical: "/" },
+};
 
 const services = [
   {
@@ -41,27 +49,8 @@ const services = [
   },
 ];
 
-// [todo] — replace with real testimonials
-const testimonials: Testimonial[] = [
-  {
-    name: "Sarah M.",
-    town: "Manchester",
-    rating: 5,
-    text: "Prescott Roofing made our insurance claim process completely painless. They documented every detail and handled everything with our adjuster. New roof looks incredible.",
-  },
-  {
-    name: "Mike & Lisa P.",
-    town: "Bedford",
-    rating: 5,
-    text: "After the big storm last winter, these guys were at our house the next morning. Professional, precise, and honest about what needed repair vs. replacement. Highly recommend.",
-  },
-  {
-    name: "Tom R.",
-    town: "Nashua",
-    rating: 5,
-    text: "We got three quotes and Prescott was the only one who took the time to explain our options clearly. The crew was on time, clean, and the roof is flawless. Family-owned and it shows.",
-  },
-];
+// [NATHAN: SUPPLY] — Replace with verified Google reviews once GBP link is live.
+const testimonials: Testimonial[] = [];
 
 export default function HomePage() {
   return (
@@ -84,8 +73,8 @@ export default function HomePage() {
               Southern New Hampshire&apos;s Trusted Roofing Experts
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-              <span className="text-brand-offwhite">Your Roof.</span>{" "}
-              <span className="text-brand-copper">Done Right.</span>
+              <span className="text-brand-offwhite">Roofing Contractor in</span>{" "}
+              <span className="text-brand-copper">Southern New Hampshire</span>
             </h1>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8 max-w-2xl">
               Expert roof replacement, repair, and storm damage restoration across Hillsborough, Rockingham, and Merrimack counties. We combine insurance-claim expertise with the precision craftsmanship your home deserves.
@@ -225,28 +214,30 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-brand-navy mb-4">
-              What Our Customers Say
-            </h2>
-            <p className="text-lg text-brand-charcoal/70">
-              Real reviews from homeowners across Southern New Hampshire.
-            </p>
+      {testimonials.length > 0 && (
+        <section className="py-16 md:py-20 bg-white">
+          <div className="mx-auto max-w-7xl px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-brand-navy mb-4">
+                What Our Customers Say
+              </h2>
+              <p className="text-lg text-brand-charcoal/70">
+                Real reviews from homeowners across Southern New Hampshire.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {testimonials.map((t) => (
+                <TestimonialCard key={t.name} testimonial={t} />
+              ))}
+            </div>
+            <div className="text-center mt-8">
+              <Link href="/reviews" className="text-brand-copper font-semibold hover:underline">
+                Read all reviews &rarr;
+              </Link>
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <TestimonialCard key={t.name} testimonial={t} />
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link href="/reviews" className="text-brand-copper font-semibold hover:underline">
-              Read all reviews &rarr;
-            </Link>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Service Area */}
       <section className="py-16 md:py-20 bg-brand-offwhite">

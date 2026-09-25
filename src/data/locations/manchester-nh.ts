@@ -2,7 +2,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import type { LocationData } from "./types";
 
 export const manchesterNH: LocationData = {
-  slug: "roofing-manchester-nh",
+  slug: "manchester-nh",
   city: "Manchester",
   state: "NH",
   county: "Hillsborough",
@@ -96,7 +96,7 @@ export const manchesterNH: LocationData = {
       "Pinardville",
     ],
     nearbyTowns: [
-      { name: "Bedford", href: "/roofing-bedford-nh" },
+      { name: "Bedford", href: "/roofing/bedford-nh" },
       { name: "Goffstown", href: "/roofing/goffstown-nh" },
       { name: "Hooksett", href: "/roofing/hooksett-nh" },
       { name: "Auburn", href: "/roofing/auburn-nh" },

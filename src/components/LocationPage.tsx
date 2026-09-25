@@ -326,29 +326,15 @@ export function LocationPage({ data }: { data: LocationData }) {
         subheading={data.closingCta.subheading}
       />
 
-      {/* JSON-LD: RoofingContractor */}
+      {/* Page-level areaServed annotation referencing the site-wide org */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "RoofingContractor",
-            name: siteConfig.name,
-            url: `${siteConfig.url}/${data.slug}`,
-            telephone: siteConfig.phone,
-            email: siteConfig.email,
-            ...(siteConfig.address
-              ? {
-                  address: {
-                    "@type": "PostalAddress",
-                    streetAddress: siteConfig.address,
-                    addressLocality: siteConfig.city,
-                    addressRegion: siteConfig.state,
-                    postalCode: siteConfig.zip,
-                    addressCountry: "US",
-                  },
-                }
-              : {}),
+            "@id": `${siteConfig.url}/#organization`,
+            url: `${siteConfig.url}/roofing/${data.slug}`,
             areaServed: [
               {
                 "@type": "City",
@@ -358,14 +344,13 @@ export function LocationPage({ data }: { data: LocationData }) {
                   name: `${county} County, ${state}`,
                 },
               },
-              ...data.neighborhoods.nearbyTowns.map((t) => ({
-                "@type": "City",
-                name: t.name,
-              })),
+              ...data.neighborhoods.nearbyTowns
+                .filter((t) => t.href !== "#")
+                .map((t) => ({
+                  "@type": "City",
+                  name: t.name,
+                })),
             ],
-            description: `Expert roofing contractor serving ${city}, ${county} County, ${state}. Roof replacement, repair, storm damage restoration, and insurance claim assistance.`,
-            priceRange: "$$",
-            image: `${siteConfig.url}/logo-color.jpg`,
           }),
         }}
       />

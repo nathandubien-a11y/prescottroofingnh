@@ -18,10 +18,7 @@ export function ServicePageLayout({ serviceName, heroDescription, children, faqs
     "@type": "Service",
     name: schemaService || serviceName,
     provider: {
-      "@type": "RoofingContractor",
-      name: siteConfig.name,
-      url: siteConfig.url,
-      telephone: siteConfig.phone,
+      "@id": `${siteConfig.url}/#organization`,
     },
     areaServed: siteConfig.serviceArea.counties.map((c) => ({
       "@type": "AdministrativeArea",

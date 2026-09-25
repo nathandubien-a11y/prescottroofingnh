@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# 301 redirects: old flat location slugs -> nested /roofing/ paths
+RewriteRule ^roofing-manchester-nh/?$ /roofing/manchester-nh [R=301,L]
+RewriteRule ^roofing-nashua-nh/?$ /roofing/nashua-nh [R=301,L]
+RewriteRule ^roofing-bedford-nh/?$ /roofing/bedford-nh [R=301,L]

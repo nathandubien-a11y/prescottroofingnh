@@ -56,6 +56,14 @@ export default function ServiceAreasPage() {
 
       <section className="py-16 md:py-20 bg-brand-offwhite">
         <div className="mx-auto max-w-7xl px-4">
+          <div className="max-w-3xl mb-12">
+            <p className="text-brand-charcoal/80 leading-relaxed mb-4">
+              We provide roof replacement, repair, storm damage restoration, ice dam removal, and gutter services to homeowners across three New Hampshire counties and two Massachusetts counties. Every town we serve gets the same standard of work — manufacturer-spec installations, thorough documentation, and a crew that cleans up after themselves.
+            </p>
+            <p className="text-brand-charcoal/80 leading-relaxed">
+              Our busiest markets are Manchester, Nashua, and Bedford, where we handle everything from insurance-covered storm restorations to retail roof replacements with financing. Click any town below to learn more about our services in your area and schedule a free inspection.
+            </p>
+          </div>
           <h2 className="text-2xl font-extrabold text-brand-navy mb-6">Southern New Hampshire</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {nhCounties.map((county) => (

@@ -2,7 +2,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import type { LocationData } from "./types";
 
 export const nashuaNH: LocationData = {
-  slug: "roofing-nashua-nh",
+  slug: "nashua-nh",
   city: "Nashua",
   state: "NH",
   county: "Hillsborough",
@@ -93,8 +93,8 @@ export const nashuaNH: LocationData = {
       "Southwest Nashua near Route 3",
     ],
     nearbyTowns: [
-      { name: "Manchester", href: "/roofing-manchester-nh" },
-      { name: "Bedford", href: "/roofing-bedford-nh" },
+      { name: "Manchester", href: "/roofing/manchester-nh" },
+      { name: "Bedford", href: "/roofing/bedford-nh" },
       { name: "Hudson", href: "/roofing/hudson-nh" },
       { name: "Merrimack", href: "/roofing/merrimack-nh" },
       { name: "Amherst", href: "/roofing/amherst-nh" },

@@ -83,7 +83,8 @@ export default async function BlogPostPage({ params }: Props) {
               }
               const rendered = p
                 .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                .replace(/\*(.*?)\*/g, '<em>$1</em>');
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-brand-copper font-semibold hover:underline">$1</a>');
               return <p key={i} className="text-brand-charcoal/80 leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: rendered }} />;
             })}
           </div>

@@ -2,7 +2,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import type { LocationData } from "./types";
 
 export const bedfordNH: LocationData = {
-  slug: "roofing-bedford-nh",
+  slug: "bedford-nh",
   city: "Bedford",
   state: "NH",
   county: "Hillsborough",
@@ -92,8 +92,8 @@ export const bedfordNH: LocationData = {
       "the neighborhoods around Bedford High School and Benedictine Park",
     ],
     nearbyTowns: [
-      { name: "Manchester", href: "/roofing-manchester-nh" },
-      { name: "Nashua", href: "/roofing-nashua-nh" },
+      { name: "Manchester", href: "/roofing/manchester-nh" },
+      { name: "Nashua", href: "/roofing/nashua-nh" },
       { name: "Merrimack", href: "/roofing/merrimack-nh" },
       { name: "Goffstown", href: "/roofing/goffstown-nh" },
       { name: "Amherst", href: "/roofing/amherst-nh" },

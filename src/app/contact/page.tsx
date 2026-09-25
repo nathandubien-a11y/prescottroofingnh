@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import { PhoneIcon } from "@/components/icons/PhoneIcon";
 
 export const metadata: Metadata = {
-  title: "Contact Prescott Roofing",
+  title: "Contact Us — Free Roofing Estimate in Southern NH",
   description:
     "Contact Prescott Roofing for roofing services across Southern New Hampshire. Call 603-451-2224 or fill out our contact form for a free inspection.",
   alternates: { canonical: "/contact" },
@@ -89,6 +89,21 @@ export default function ContactPage() {
             <div>
               <LeadForm />
             </div>
+          </div>
+
+          <div className="mt-16 max-w-3xl">
+            <h2 className="text-2xl font-extrabold text-brand-navy mb-4">
+              What Happens After You Reach Out
+            </h2>
+            <p className="text-brand-charcoal/80 leading-relaxed mb-4">
+              We respond to every inquiry within one business day — usually the same day. If you&apos;re calling about storm damage or an active leak, we prioritize your request and can typically schedule an inspection within 24 hours.
+            </p>
+            <p className="text-brand-charcoal/80 leading-relaxed mb-4">
+              During your free inspection, we&apos;ll assess your entire roof system — shingles, flashing, vents, gutters, and attic ventilation. You&apos;ll receive an honest recommendation with photos documenting our findings. If insurance applies, we&apos;ll walk you through the claims process and handle the paperwork.
+            </p>
+            <p className="text-brand-charcoal/80 leading-relaxed">
+              No pressure, no upselling, no surprises. Just straightforward expertise from a family-owned roofing company that&apos;s invested in doing right by Southern NH homeowners.
+            </p>
           </div>
         </div>
       </section>

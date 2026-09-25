@@ -6,7 +6,18 @@ import { RoofWatermark } from "@/components/RoofWatermark";
 import { CTASection } from "@/components/CTASection";
 import { FAQAccordion, FAQSchema, type FAQItem } from "@/components/FAQAccordion";
 import { TrustBar } from "@/components/TrustBar";
+import { LocationPage } from "@/components/LocationPage";
 import { siteConfig, serviceAreaTowns } from "@/lib/siteConfig";
+import { manchesterNH } from "@/data/locations/manchester-nh";
+import { nashuaNH } from "@/data/locations/nashua-nh";
+import { bedfordNH } from "@/data/locations/bedford-nh";
+import type { LocationData } from "@/data/locations/types";
+
+const seoLocations: Record<string, LocationData> = {
+  "manchester-nh": manchesterNH,
+  "nashua-nh": nashuaNH,
+  "bedford-nh": bedfordNH,
+};
 
 export function generateStaticParams() {
   return serviceAreaTowns.map((town) => ({ slug: town.slug }));
@@ -16,6 +27,18 @@ type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+
+  const seoData = seoLocations[slug];
+  if (seoData) {
+    return {
+      title: `Roofing Contractor ${seoData.city} ${seoData.state}`,
+      description: seoData.meta.description,
+      alternates: { canonical: `/roofing/${slug}` },
+      openGraph: { title: seoData.meta.title },
+      twitter: { title: seoData.meta.title },
+    };
+  }
+
   const town = serviceAreaTowns.find((t) => t.slug === slug);
   if (!town) return {};
 
@@ -49,6 +72,12 @@ function getFAQs(townName: string, state: string): FAQItem[] {
 
 export default async function ServiceAreaPage({ params }: Props) {
   const { slug } = await params;
+
+  const seoData = seoLocations[slug];
+  if (seoData) {
+    return <LocationPage data={seoData} />;
+  }
+
   const town = serviceAreaTowns.find((t) => t.slug === slug);
   if (!town) notFound();
 
@@ -168,25 +197,6 @@ export default async function ServiceAreaPage({ params }: Props) {
       <CTASection
         heading={`Need a Roofer in ${town.name}?`}
         subheading={`Get a free roof inspection from the region's most trusted roofing contractor. We'll be at your ${town.name} home within 24 hours.`}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "RoofingContractor",
-            name: siteConfig.name,
-            url: `${siteConfig.url}/roofing/${town.slug}`,
-            telephone: siteConfig.phone,
-            areaServed: {
-              "@type": "City",
-              name: `${town.name}, ${town.state}`,
-              containedInPlace: { "@type": "AdministrativeArea", name: `${town.county} County, ${town.state}` },
-            },
-            description: `Expert roofing contractor serving ${town.name}, ${town.county} County, ${town.state}. Roof replacement, repair, storm damage restoration, and insurance claim assistance.`,
-          }),
-        }}
       />
     </>
   );

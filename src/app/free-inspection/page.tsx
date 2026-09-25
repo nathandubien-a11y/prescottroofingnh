@@ -81,6 +81,25 @@ export default function FreeInspectionPage() {
         </div>
       </section>
 
+      <section className="py-16 md:py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="max-w-3xl">
+            <h2 className="text-2xl font-extrabold text-brand-navy mb-6">
+              Why a Professional Roof Inspection Matters
+            </h2>
+            <p className="text-brand-charcoal/80 leading-relaxed mb-4">
+              Most roof problems start small — a cracked shingle, a loose piece of flashing, granule wear you can&apos;t see from the ground. Left unchecked, these issues lead to leaks, interior damage, and repairs that cost far more than catching them early. A professional inspection catches what a glance from the driveway can&apos;t.
+            </p>
+            <p className="text-brand-charcoal/80 leading-relaxed mb-4">
+              During our inspection, we examine your entire roof system: shingles, underlayment, flashing around chimneys and vents, ridge caps, drip edges, gutters, and attic ventilation. We photograph every finding and provide a written summary with clear recommendations — no jargon, no pressure.
+            </p>
+            <p className="text-brand-charcoal/80 leading-relaxed">
+              If we find damage that may be covered by your homeowner&apos;s insurance, we&apos;ll explain your options and, if you choose to file, walk you through the entire claims process. Our team has hands-on Xactimate estimating experience and knows exactly what documentation insurers need to approve a claim.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <TrustBar />
     </>
   );

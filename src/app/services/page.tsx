@@ -62,6 +62,14 @@ export default function ServicesPage() {
 
       <section className="py-16 md:py-20 bg-brand-offwhite">
         <div className="mx-auto max-w-7xl px-4">
+          <div className="max-w-3xl mb-12">
+            <p className="text-brand-charcoal/80 leading-relaxed mb-4">
+              Prescott Roofing delivers a full range of residential roofing services across Southern New Hampshire and Northern Massachusetts. Whether your roof needs a complete replacement after years of wear, emergency repair after a storm, or preventive maintenance to extend its life, our experienced crew handles every project with the same precision and care.
+            </p>
+            <p className="text-brand-charcoal/80 leading-relaxed">
+              Every service includes a free initial inspection, honest assessment, and detailed written estimate. If your project involves storm damage, we bring real insurance-restoration experience — Xactimate estimates, adjuster coordination, and documentation that gets claims approved. For retail customers, we offer competitive pricing and flexible financing.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((svc) => (
               <ServiceCard key={svc.href} {...svc} />

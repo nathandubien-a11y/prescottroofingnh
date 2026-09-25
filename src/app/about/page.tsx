@@ -6,7 +6,7 @@ import { TrustBar } from "@/components/TrustBar";
 import { siteConfig } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "About Prescott Roofing",
+  title: "About Us — Family-Owned Roofing Company in Southern NH",
   description:
     "Learn about Prescott Roofing — a family-owned roofing company serving Southern NH. Quality craftsmanship and real insurance-claim expertise.",
   alternates: { canonical: "/about" },
@@ -36,10 +36,7 @@ export default function AboutPage() {
                 Who We Are
               </h2>
               <p className="text-brand-charcoal/80 leading-relaxed mb-4">
-                Prescott Roofing is a family-owned company built on a simple idea: do the job right, every single time. We put our name behind every roof we touch, and that means no cutting corners, no cheap materials, and no disappearing after the job is done.
-              </p>
-              <p className="text-brand-charcoal/80 leading-relaxed mb-4">
-                We&apos;re a family-owned company, and we put our family&apos;s name behind every roof we touch. That means no cutting corners, no cheap materials, and no disappearing after the job is done. When your name is on it, you do it right.
+                Prescott Roofing is a family-owned company built on a simple idea: do the job right, every single time. We put our name behind every roof we touch, and that means no cutting corners, no cheap materials, and no disappearing after the job is done. When your name is on it, you do it right.
               </p>
               <p className="text-brand-charcoal/80 leading-relaxed mb-8">
                 This isn&apos;t a faceless franchise or a crew with a truck and a ladder. Prescott Roofing is built on the belief that Southern NH homeowners deserve a roofer who combines genuine craftsmanship with the expertise to handle everything — including the insurance and storm-damage claims that most roofers fumble.
