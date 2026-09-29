@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `Roofing Contractor in ${town.name}, ${town.state}`,
-    description: `Prescott Roofing provides expert roof replacement, repair, storm damage restoration, and insurance claim help in ${town.name}, ${town.county} County, NH. Call ${siteConfig.phone} for a free inspection.`,
+    description: `Prescott Roofing provides expert roof replacement, repair, storm damage restoration, and insurance claim help in ${town.name}, ${town.county} County, ${town.state}. Call ${siteConfig.phone} for a free inspection.`,
     alternates: { canonical: `/roofing/${slug}` },
   };
 }

@@ -2,6 +2,10 @@ Options -MultiViews -Indexes
 DirectorySlash Off
 RewriteEngine On
 
+# www -> non-www permanent redirect
+RewriteCond %{HTTP_HOST} ^www\.prescottroofingnh\.com$ [NC]
+RewriteRule ^(.*)$ https://prescottroofingnh.com/$1 [R=301,L]
+
 # Old flat location slugs -> canonical paths (301, no trailing slash)
 RewriteRule ^roofing-manchester-nh/?$ /roofing/manchester-nh [R=301,L]
 RewriteRule ^roofing-nashua-nh/?$ /roofing/nashua-nh [R=301,L]
