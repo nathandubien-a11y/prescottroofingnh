@@ -6,12 +6,12 @@ export function TrustBar() {
       <div className="mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center text-center">
           <div>
-            <p className="text-2xl font-extrabold text-brand-navy">{siteConfig.stats.yearsInBusiness}</p>
-            <p className="text-sm text-brand-charcoal/70 mt-1">Years Experience</p>
+            <p className="text-2xl font-extrabold text-brand-navy">{siteConfig.stats.yearsValue}</p>
+            <p className="text-sm text-brand-charcoal/70 mt-1">{siteConfig.stats.yearsLabel}</p>
           </div>
           <div>
-            <p className="text-2xl font-extrabold text-brand-navy">{siteConfig.stats.roofsCompleted}</p>
-            <p className="text-sm text-brand-charcoal/70 mt-1">Roofs Completed</p>
+            <p className="text-2xl font-extrabold text-brand-navy">{siteConfig.stats.roofsValue}</p>
+            <p className="text-sm text-brand-charcoal/70 mt-1">{siteConfig.stats.roofsLabel}</p>
           </div>
           <div>
             <p className="text-2xl font-extrabold text-brand-copper">{siteConfig.stats.googleRating} &#9733;</p>

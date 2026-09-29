@@ -108,8 +108,16 @@ export default async function BlogPostPage({ params }: Props) {
             headline: post.title,
             description: post.description,
             datePublished: post.date,
-            author: { "@type": "Organization", name: siteConfig.name },
-            publisher: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
+            dateModified: post.date,
+            author: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
+            publisher: {
+              "@type": "Organization",
+              name: siteConfig.name,
+              url: siteConfig.url,
+              logo: { "@type": "ImageObject", url: `${siteConfig.url}${siteConfig.logo}` },
+            },
+            image: `${siteConfig.url}/og-image.jpg`,
+            mainEntityOfPage: { "@type": "WebPage", "@id": `${siteConfig.url}/blog/${slug}` },
           }),
         }}
       />

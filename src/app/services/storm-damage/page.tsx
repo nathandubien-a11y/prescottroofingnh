@@ -32,6 +32,7 @@ export default function StormDamagePage() {
   return (
     <ServicePageLayout
       serviceName="Storm & Wind Damage Repair"
+      canonicalPath="/services/storm-damage"
       heroDescription="Rapid-response storm damage assessment, emergency repair, and full restoration. We document everything for your insurance claim and handle the process from start to finish."
       faqs={faqs}
       schemaService="Storm Damage Roof Repair"

@@ -39,6 +39,7 @@ export default function RoofReplacementPage() {
       heroDescription="Full asphalt shingle roof replacement with manufacturer-backed warranties and precision installation. The #1 roofing service for Southern NH homeowners."
       faqs={faqs}
       schemaService="Residential Roof Replacement"
+      canonicalPath="/services/roof-replacement"
     >
       <div className="prose prose-lg max-w-none">
         <h2 className="text-2xl font-extrabold text-brand-navy mb-4">

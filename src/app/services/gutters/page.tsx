@@ -32,6 +32,7 @@ export default function GuttersPage() {
   return (
     <ServicePageLayout
       serviceName="Gutters"
+      canonicalPath="/services/gutters"
       heroDescription="Seamless gutter installation, repair, and gutter guard systems to protect your home's roof, siding, and foundation from water damage."
       faqs={faqs}
       schemaService="Gutter Installation and Repair"

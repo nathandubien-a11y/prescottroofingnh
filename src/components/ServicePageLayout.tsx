@@ -10,13 +10,17 @@ type ServicePageLayoutProps = {
   children: React.ReactNode;
   faqs: FAQItem[];
   schemaService?: string;
+  canonicalPath: string;
 };
 
-export function ServicePageLayout({ serviceName, heroDescription, children, faqs, schemaService }: ServicePageLayoutProps) {
+export function ServicePageLayout({ serviceName, heroDescription, children, faqs, schemaService, canonicalPath }: ServicePageLayoutProps) {
+  const pageUrl = `${siteConfig.url}${canonicalPath}`;
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: schemaService || serviceName,
+    serviceType: serviceName,
     provider: {
       "@id": `${siteConfig.url}/#organization`,
     },
@@ -25,6 +29,16 @@ export function ServicePageLayout({ serviceName, heroDescription, children, faqs
       name: `${c.name} County, ${c.state}`,
     })),
     description: heroDescription,
+  };
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": pageUrl,
+    name: serviceName,
+    url: pageUrl,
+    isPartOf: { "@id": `${siteConfig.url}/#website` },
+    about: { "@id": `${siteConfig.url}/#organization` },
   };
 
   return (
@@ -61,6 +75,10 @@ export function ServicePageLayout({ serviceName, heroDescription, children, faqs
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
     </>
   );

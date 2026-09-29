@@ -4,14 +4,24 @@ export const siteConfig = {
   phone: "603-451-2224",
   phoneHref: "tel:+16034512224",
   email: "info@prescottroofingnh.com",
-  address: null as string | null,
+  streetAddress: "", // [NATHAN: SUPPLY] e.g. "123 Main St"
   city: "Manchester",
   state: "NH",
   zip: "03101",
   hours: "24/7",
+  officeHours: "Mon–Fri 8am–5pm",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://prescottroofingnh.com",
+  logo: "/logo-color.jpg", // [NATHAN: SUPPLY] update if different filename
+  foundingDate: "", // [NATHAN: SUPPLY] e.g. "2024"
+  founder: "", // [NATHAN: SUPPLY] e.g. "Nathan Prescott"
   googleMapsEmbed: "", // [todo] Google Maps embed URL for contact page
   googleBusinessUrl: "", // [todo] Google Business Profile link
+  sameAs: [
+    "", // [NATHAN: SUPPLY] GBP_URL — Google Business Profile URL
+    "", // [NATHAN: SUPPLY] FACEBOOK_URL
+    "", // [NATHAN: SUPPLY] INSTAGRAM_URL
+    "https://www.thumbtack.com/nh/manchester/roofing/prescott-roofing/service/583207038455791633", // THUMBTACK_URL
+  ],
   social: {
     facebook: "", // [NATHAN: SUPPLY]
     instagram: "", // [NATHAN: SUPPLY]
@@ -36,10 +46,12 @@ export const siteConfig = {
   license: "Fully Licensed & Insured in NH & MA", // [NATHAN: SUPPLY] exact license #
   insurance: "General Liability + Workers' Comp", // [NATHAN: SUPPLY] exact policy details
   stats: {
-    yearsInBusiness: "10+", // [NATHAN: SUPPLY]
-    roofsCompleted: "500+", // [NATHAN: SUPPLY]
-    googleRating: "5.0", // [todo] real Google rating
-    googleReviewCount: "50+", // [todo] real review count
+    yearsLabel: "10+ Years in Insurance Restoration", // [NATHAN: SUPPLY] adjust wording
+    yearsValue: "10+",
+    roofsLabel: "Roofs Completed", // [NATHAN: SUPPLY] adjust number/wording
+    roofsValue: "500+",
+    googleRating: 5.0,
+    googleReviewCount: 0, // [NATHAN: SUPPLY] real review count (aggregateRating emitted only when > 0)
   },
   formEndpoint: process.env.FORM_ENDPOINT || "/api/lead",
 } as const;

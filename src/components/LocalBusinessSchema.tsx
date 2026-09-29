@@ -1,7 +1,7 @@
 import { siteConfig, serviceAreaTowns } from "@/lib/siteConfig";
 
 export function LocalBusinessSchema() {
-  const schema = {
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "RoofingContractor",
     "@id": `${siteConfig.url}/#organization`,
@@ -10,26 +10,16 @@ export function LocalBusinessSchema() {
     url: siteConfig.url,
     telephone: siteConfig.phone,
     email: siteConfig.email,
-    ...(siteConfig.address
-      ? {
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: siteConfig.address,
-            addressLocality: siteConfig.city,
-            addressRegion: siteConfig.state,
-            postalCode: siteConfig.zip,
-            addressCountry: "US",
-          },
-        }
-      : {
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: siteConfig.city,
-            addressRegion: siteConfig.state,
-            postalCode: siteConfig.zip,
-            addressCountry: "US",
-          },
-        }),
+    logo: `${siteConfig.url}${siteConfig.logo}`,
+    image: `${siteConfig.url}/og-image.jpg`,
+    address: {
+      "@type": "PostalAddress",
+      ...(siteConfig.streetAddress ? { streetAddress: siteConfig.streetAddress } : {}),
+      addressLocality: siteConfig.city,
+      addressRegion: siteConfig.state,
+      postalCode: siteConfig.zip,
+      addressCountry: "US",
+    },
     areaServed: [
       ...siteConfig.serviceArea.counties.map((county) => ({
         "@type": "AdministrativeArea",
@@ -45,19 +35,10 @@ export function LocalBusinessSchema() {
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       opens: "00:00",
       closes: "23:59",
+      description: `24/7 emergency storm response; office hours ${siteConfig.officeHours}`,
     },
     priceRange: "$$",
-    image: `${siteConfig.url}/og-image.jpg`,
-    // [NATHAN: SUPPLY] Set these env vars to populate sameAs:
-    // NEXT_PUBLIC_GBP_URL — Google Business Profile URL
-    // NEXT_PUBLIC_FACEBOOK_URL — Facebook page URL
-    // NEXT_PUBLIC_INSTAGRAM_URL — Instagram profile URL
-    sameAs: [
-      process.env.NEXT_PUBLIC_GBP_URL,
-      process.env.NEXT_PUBLIC_FACEBOOK_URL,
-      process.env.NEXT_PUBLIC_INSTAGRAM_URL,
-      ...Object.values(siteConfig.social),
-    ].filter(Boolean),
+    sameAs: [...siteConfig.sameAs, ...Object.values(siteConfig.social)].filter(Boolean),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Roofing Services",
@@ -71,6 +52,21 @@ export function LocalBusinessSchema() {
       ],
     },
   };
+
+  if (siteConfig.foundingDate) {
+    schema.foundingDate = siteConfig.foundingDate;
+  }
+  if (siteConfig.founder) {
+    schema.founder = { "@type": "Person", name: siteConfig.founder };
+  }
+  if (siteConfig.stats.googleReviewCount > 0) {
+    schema.aggregateRating = {
+      "@type": "AggregateRating",
+      ratingValue: siteConfig.stats.googleRating,
+      reviewCount: siteConfig.stats.googleReviewCount,
+      bestRating: 5,
+    };
+  }
 
   return (
     <script

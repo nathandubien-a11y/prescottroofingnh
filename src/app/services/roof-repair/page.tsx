@@ -32,6 +32,7 @@ export default function RoofRepairPage() {
   return (
     <ServicePageLayout
       serviceName="Roof Repair"
+      canonicalPath="/services/roof-repair"
       heroDescription="Expert leak detection, flashing repair, chimney sealing, and shingle replacement across Southern New Hampshire. We fix it right the first time."
       faqs={faqs}
       schemaService="Residential Roof Repair"

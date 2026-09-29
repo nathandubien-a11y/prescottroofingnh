@@ -32,6 +32,7 @@ export default function IceDamRemovalPage() {
   return (
     <ServicePageLayout
       serviceName="Ice Dam Removal & Winter Roof Issues"
+      canonicalPath="/services/ice-dam-removal"
       heroDescription="Safe, effective ice dam removal and prevention for New Hampshire homeowners. Protect your roof and home from the freeze-thaw cycles that cause costly water damage."
       faqs={faqs}
       schemaService="Ice Dam Removal"
