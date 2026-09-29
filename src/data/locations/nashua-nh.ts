@@ -70,8 +70,8 @@ export const nashuaNH: LocationData = {
         text: "— clean sites, protected landscaping, nail sweeps, final walkthrough.",
       },
       {
-        bold: "Licensed & insured.",
-        text: siteConfig.license + ".",
+        bold: siteConfig.license + ".",
+        text: "General liability and workers' compensation on every project.",
       },
       {
         bold: "Repair-first honesty.",

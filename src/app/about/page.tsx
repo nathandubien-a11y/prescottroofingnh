@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RoofWatermark } from "@/components/RoofWatermark";
 import { CTASection } from "@/components/CTASection";
@@ -6,7 +7,7 @@ import { TrustBar } from "@/components/TrustBar";
 import { siteConfig } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "About Us — Family-Owned Southern NH Roofer",
+  title: "About Us — Southern NH Roofer",
   description:
     "Learn about Prescott Roofing — a family-owned roofing company serving Southern NH. Quality craftsmanship and real insurance-claim expertise.",
   alternates: { canonical: "/about" },
@@ -38,9 +39,26 @@ export default function AboutPage() {
               <p className="text-brand-charcoal/80 leading-relaxed mb-4">
                 Prescott Roofing is a family-owned company built on a simple idea: do the job right, every single time. We put our name behind every roof we touch, and that means no cutting corners, no cheap materials, and no disappearing after the job is done. When your name is on it, you do it right.
               </p>
-              <p className="text-brand-charcoal/80 leading-relaxed mb-8">
+              <p className="text-brand-charcoal/80 leading-relaxed mb-6">
                 This isn&apos;t a faceless franchise or a crew with a truck and a ladder. Prescott Roofing is built on the belief that Southern NH homeowners deserve a roofer who combines genuine craftsmanship with the expertise to handle everything — including the insurance and storm-damage claims that most roofers fumble.
               </p>
+
+              <div className="grid grid-cols-2 gap-3 mb-8">
+                <Image
+                  src="/roof-replacement-tear-off-crew.jpg"
+                  alt="Prescott Roofing crew performing a roof tear-off on a residential home in Southern NH"
+                  width={600}
+                  height={400}
+                  className="rounded-lg object-cover aspect-[3/2] w-full"
+                />
+                <Image
+                  src="/ranch-roof-replacement-completed.jpg"
+                  alt="Completed roof replacement on a ranch-style home by Prescott Roofing"
+                  width={600}
+                  height={400}
+                  className="rounded-lg object-cover aspect-[3/2] w-full"
+                />
+              </div>
 
               <h2 className="text-3xl font-extrabold text-brand-navy mb-6">
                 Retail Roofing Specialists

@@ -5,8 +5,7 @@
       "name": "prescott-roofing",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
-      "port": 3000,
-      "cwd": "prescott-roofing"
+      "port": 3000
     }
   ]
 }

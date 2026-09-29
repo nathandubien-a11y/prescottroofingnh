@@ -23,7 +23,7 @@ export function TrustBar() {
               <path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
               <path d="m9 12 2 2 4-4" stroke="#C45A28" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <p className="text-sm font-semibold text-brand-navy">Fully Licensed & Insured</p>
+            <p className="text-sm font-semibold text-brand-navy">{siteConfig.license}</p>
           </div>
         </div>
       </div>

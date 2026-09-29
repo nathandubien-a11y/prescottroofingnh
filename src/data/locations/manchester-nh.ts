@@ -72,8 +72,8 @@ export const manchesterNH: LocationData = {
         text: "Clean job sites, magnetic nail sweeps, tarped landscaping, and a final walkthrough with you.",
       },
       {
-        bold: `Licensed and fully insured.`,
-        text: siteConfig.license + ".",
+        bold: siteConfig.license + ".",
+        text: "General liability and workers' compensation on every project.",
       },
       {
         bold: "Honest estimates.",

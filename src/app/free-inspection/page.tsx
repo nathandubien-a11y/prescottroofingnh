@@ -10,7 +10,7 @@ import { PhoneIcon } from "@/components/icons/PhoneIcon";
 export const metadata: Metadata = {
   title: "Free Roof Inspection | Get a Quote",
   description:
-    "Schedule your free, no-obligation roof inspection with Prescott Roofing. Serving Southern NH with expert assessments, honest recommendations, and insurance claim help.",
+    "Schedule a free roof inspection with Prescott Roofing. Honest assessments, insurance claim help, and no-obligation estimates across Southern NH.",
   alternates: { canonical: "/free-inspection" },
 };
 

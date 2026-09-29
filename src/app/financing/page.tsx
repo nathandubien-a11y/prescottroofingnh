@@ -10,9 +10,9 @@ const ACORN_URL =
   "https://www.acornfinance.com/pre-qualify/?d=B4E3E&utm_medium=user_pre_qual_link";
 
 export const metadata: Metadata = {
-  title: "Financing | Affordable Roofing Payment Options",
+  title: "Financing | Roofing Payment Options",
   description:
-    "Affordable roofing financing options from Prescott Roofing. Personal loans up to $100,000 with fixed rates, flexible terms, and no prepayment penalties. Check your rate with no impact to your credit score.",
+    "Roofing financing from Prescott Roofing. Personal loans up to $100K with fixed rates, flexible terms, and no prepayment penalties.",
   alternates: { canonical: "/financing" },
 };
 

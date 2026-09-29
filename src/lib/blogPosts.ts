@@ -44,7 +44,7 @@ At Prescott Roofing, our [storm damage inspections are always free](/free-inspec
   },
   {
     slug: "ice-dams-in-new-hampshire-prevention-and-removal",
-    title: "Ice Dams in New Hampshire: Prevention & Removal",
+    title: "Ice Dams in NH: Prevention & Removal",
     description: "Everything NH homeowners need to know about ice dams — what causes them, how to prevent them, and what to do when they form on your roof.",
     date: "2026-04-20",
     author: "Prescott Roofing Team",

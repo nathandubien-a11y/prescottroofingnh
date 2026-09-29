@@ -11,12 +11,22 @@ import { siteConfig, serviceAreaTowns } from "@/lib/siteConfig";
 import { manchesterNH } from "@/data/locations/manchester-nh";
 import { nashuaNH } from "@/data/locations/nashua-nh";
 import { bedfordNH } from "@/data/locations/bedford-nh";
+import { derryNH } from "@/data/locations/derry-nh";
+import { londonderryNH } from "@/data/locations/londonderry-nh";
+import { salemNH } from "@/data/locations/salem-nh";
+import { merrimackNH } from "@/data/locations/merrimack-nh";
+import { hudsonNH } from "@/data/locations/hudson-nh";
 import type { LocationData } from "@/data/locations/types";
 
 const seoLocations: Record<string, LocationData> = {
   "manchester-nh": manchesterNH,
   "nashua-nh": nashuaNH,
   "bedford-nh": bedfordNH,
+  "derry-nh": derryNH,
+  "londonderry-nh": londonderryNH,
+  "salem-nh": salemNH,
+  "merrimack-nh": merrimackNH,
+  "hudson-nh": hudsonNH,
 };
 
 export function generateStaticParams() {
@@ -46,6 +56,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Roofing Contractor in ${town.name}, ${town.state}`,
     description: `Prescott Roofing provides expert roof replacement, repair, storm damage restoration, and insurance claim help in ${town.name}, ${town.county} County, ${town.state}. Call ${siteConfig.phone} for a free inspection.`,
     alternates: { canonical: `/roofing/${slug}` },
+    ...(town.tier === "stub" ? { robots: { index: false, follow: true } } : {}),
   };
 }
 

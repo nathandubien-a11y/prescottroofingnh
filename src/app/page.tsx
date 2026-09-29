@@ -8,11 +8,12 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { TestimonialCard, type Testimonial } from "@/components/TestimonialCard";
 import { CTASection } from "@/components/CTASection";
 import { RoofWatermark } from "@/components/RoofWatermark";
+import { ProjectsGallery } from "@/components/ProjectsGallery";
 
 export const metadata: Metadata = {
   title: "Roofing Contractor in Southern NH | Prescott Roofing",
   description:
-    "Prescott Roofing — Southern NH's trusted roofing contractor for roof replacement, repair, storm damage restoration & insurance claims. Serving Manchester, Nashua, Bedford & beyond. Call 603-451-2224.",
+    "Southern NH's trusted roofer for roof replacement, repair, storm damage, and insurance claims. Serving Manchester, Nashua, Bedford and beyond.",
   alternates: { canonical: "/" },
 };
 
@@ -57,15 +58,15 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative bg-brand-navy overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-brand-copper/30 to-transparent" />
-          <div
-            className="absolute bottom-0 left-0 w-full h-64"
-            style={{ background: "linear-gradient(170deg, transparent 40%, rgba(196,90,40,0.15) 100%)" }}
-          />
-        </div>
-
-        <RoofWatermark />
+        <Image
+          src="/completed-shingle-roof-southern-nh.jpg"
+          alt="Completed architectural shingle roof in Southern New Hampshire"
+          fill
+          priority
+          className="object-cover opacity-20"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/80 to-brand-navy/60" />
 
         <div className="relative mx-auto max-w-7xl px-4 py-20 md:py-28 lg:py-32">
           <div className="max-w-3xl">
@@ -239,6 +240,8 @@ export default function HomePage() {
           </div>
         </section>
       )}
+
+      <ProjectsGallery />
 
       {/* Service Area */}
       <section className="py-16 md:py-20 bg-brand-offwhite">

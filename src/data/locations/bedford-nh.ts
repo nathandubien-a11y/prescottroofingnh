@@ -74,8 +74,8 @@ export const bedfordNH: LocationData = {
         text: "you’ll still find here in ten years.",
       },
       {
-        bold: "Licensed & insured.",
-        text: siteConfig.license + ".",
+        bold: siteConfig.license + ".",
+        text: "General liability and workers' compensation on every project.",
       },
     ],
   },

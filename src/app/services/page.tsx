@@ -7,7 +7,7 @@ import { CTASection } from "@/components/CTASection";
 export const metadata: Metadata = {
   title: "Roofing Services in Southern NH",
   description:
-    "Prescott Roofing offers roof replacement, repair, storm damage restoration, ice dam removal, and gutters across Southern New Hampshire and Northern Massachusetts.",
+    "Roof replacement, repair, storm damage restoration, ice dam removal, and gutters across Southern NH and Northern MA from Prescott Roofing.",
   alternates: { canonical: "/services" },
 };
 
