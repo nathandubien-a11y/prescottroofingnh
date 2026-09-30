@@ -279,6 +279,23 @@ export function LocationPage({ data }: { data: LocationData }) {
       </section>
 
       {/* FAQs */}
+      {data.relatedPosts && data.relatedPosts.length > 0 && (
+        <section className="py-12 bg-white">
+          <div className="mx-auto max-w-3xl px-4">
+            <h3 className="text-lg font-bold text-brand-navy mb-4">Related reading</h3>
+            <ul className="space-y-2">
+              {data.relatedPosts.map((post) => (
+                <li key={post.href}>
+                  <Link href={post.href} className="text-brand-copper font-semibold hover:underline">
+                    {post.title} &rarr;
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
       <section className="py-16 md:py-20 bg-brand-offwhite">
         <div className="mx-auto max-w-3xl px-4">
           <h2 className="text-3xl font-extrabold text-brand-navy mb-8">

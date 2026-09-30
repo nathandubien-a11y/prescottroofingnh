@@ -6,9 +6,20 @@ export type BlogPost = {
   author: string;
   readTime: string;
   content: string;
+  customPage?: boolean;
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "how-much-does-roofing-cost",
+    title: "What Actually Drives Your Roofing Bill: 11 Cost Factors Contractors Won’t Tell You Upfront",
+    description: "Most Southern NH homeowners pay $11,000–$21,000 for a new asphalt roof in 2026. Here are the 11 factors that move that number, including the hidden ones that add $2,000–$12,000.",
+    date: "2026-09-30",
+    author: "Prescott Roofing",
+    readTime: "18 min read",
+    content: "",
+    customPage: true,
+  },
   {
     slug: "how-to-spot-storm-damage-on-your-nh-roof",
     title: "How to Spot Storm Damage on Your NH Roof",

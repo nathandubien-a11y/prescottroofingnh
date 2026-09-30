@@ -8,7 +8,9 @@ import { blogPosts } from "@/lib/blogPosts";
 import { siteConfig } from "@/lib/siteConfig";
 
 export function generateStaticParams() {
-  return blogPosts.map((post) => ({ slug: post.slug }));
+  return blogPosts
+    .filter((post) => !post.customPage)
+    .map((post) => ({ slug: post.slug }));
 }
 
 type Props = { params: Promise<{ slug: string }> };

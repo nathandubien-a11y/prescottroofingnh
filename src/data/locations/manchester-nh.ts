@@ -105,6 +105,9 @@ export const manchesterNH: LocationData = {
       { name: "Litchfield", href: "/roofing/litchfield-nh" },
     ],
   },
+  relatedPosts: [
+    { title: "How Much Does a New Roof Cost in NH? 11 Hidden Cost Factors", href: "/blog/how-much-does-roofing-cost" },
+  ],
   faqs: [
     {
       question: "How much does a roof replacement cost in Manchester, NH?",

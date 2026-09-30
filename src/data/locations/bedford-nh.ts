@@ -101,6 +101,9 @@ export const bedfordNH: LocationData = {
       { name: "Londonderry", href: "/roofing/londonderry-nh" },
     ],
   },
+  relatedPosts: [
+    { title: "How Much Does a New Roof Cost in NH? 11 Hidden Cost Factors", href: "/blog/how-much-does-roofing-cost" },
+  ],
   faqs: [
     {
       question:

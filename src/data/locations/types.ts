@@ -28,6 +28,7 @@ export interface LocationData {
     areas: string[];
     nearbyTowns: { name: string; href: string }[];
   };
+  relatedPosts?: { title: string; href: string }[];
   faqs: { question: string; answer: string }[];
   closingCta: {
     heading: string;

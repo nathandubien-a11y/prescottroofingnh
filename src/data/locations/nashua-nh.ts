@@ -105,6 +105,9 @@ export const nashuaNH: LocationData = {
       { name: "Chelmsford", href: "/roofing/chelmsford-ma" },
     ],
   },
+  relatedPosts: [
+    { title: "How Much Does a New Roof Cost in NH? 11 Hidden Cost Factors", href: "/blog/how-much-does-roofing-cost" },
+  ],
   faqs: [
     {
       question: "What does a new roof cost in Nashua, NH?",
