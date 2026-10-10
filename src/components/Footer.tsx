@@ -96,11 +96,13 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/60">
-          <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {siteConfig.name}, operated by Dubien Enterprises LLC. All rights reserved.</p>
           <div className="flex items-center gap-3">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <span>&bull;</span>
             <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
+            <span>&bull;</span>
+            <Link href="/sms-terms" className="hover:text-white transition-colors">SMS Terms</Link>
           </div>
           <p>
             {siteConfig.license} &bull; {siteConfig.insurance}

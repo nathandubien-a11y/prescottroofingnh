@@ -30,7 +30,7 @@ export default function PrivacyPolicyPage() {
         <div className="mx-auto max-w-3xl px-4">
           <div className="prose prose-lg max-w-none space-y-8">
             <p className="text-brand-charcoal/80 leading-relaxed">
-              Prescott Roofing (&ldquo;Prescott Roofing,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) operates the website located at{" "}
+              Prescott Roofing (&ldquo;Prescott Roofing,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) is operated by Dubien Enterprises LLC. We operate the website located at{" "}
               <a href="https://prescottroofingnh.com" className="text-brand-copper hover:underline">prescottroofingnh.com</a>{" "}
               and its associated landing pages (collectively, the &ldquo;Site&rdquo;). This Privacy Policy explains how we collect, use, disclose, and protect information about you when you visit our Site, contact us by phone, or request our services.
             </p>
@@ -69,12 +69,20 @@ export default function PrivacyPolicyPage() {
               We use cookies, pixel tags, and similar tracking technologies to operate and improve our Site, analyze traffic, and serve relevant advertising. You can control cookies through your browser settings; however, disabling cookies may affect the functionality of certain parts of our Site.
             </p>
 
-            <h2 className="text-2xl font-extrabold text-brand-navy mt-10 mb-4">2. How We Use Your Information</h2>
+            <h2 className="text-2xl font-extrabold text-brand-navy mt-10 mb-4">2. Text Messaging (SMS)</h2>
+            <p className="text-brand-charcoal/80 leading-relaxed">
+              If you opt in to receive text messages from Prescott Roofing, we collect your mobile phone number and your consent record for the purpose of sending the messages you requested. No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Text messaging originator opt-in data and consent will not be shared with any third parties, excluding aggregators and providers of the text message services. You can opt out at any time by replying STOP. For help, reply HELP or contact us at{" "}
+              <a href="tel:+16034512224" className="text-brand-copper hover:underline">603-451-2224</a>. See our{" "}
+              <a href="/sms-terms" className="text-brand-copper hover:underline">SMS Terms</a> for details.
+            </p>
+
+            <h2 className="text-2xl font-extrabold text-brand-navy mt-10 mb-4">3. How We Use Your Information</h2>
             <p className="text-brand-charcoal/80 leading-relaxed">We use the information we collect to:</p>
             <ul className="list-disc pl-6 space-y-1 text-brand-charcoal/80">
               <li>Respond to your inquiries and provide the roofing services you request</li>
               <li>Schedule on-site assessments and coordinate service delivery</li>
               <li>Communicate with you about your project, including status updates and follow-ups</li>
+              <li>Send text messages you have consented to receive, such as appointment scheduling, reminders, and project updates</li>
               <li>Process and document insurance claims on your behalf</li>
               <li>Measure and improve the performance of our advertising campaigns (including Google Ads)</li>
               <li>Analyze Site traffic and user behavior to improve our website and user experience</li>
@@ -85,7 +93,7 @@ export default function PrivacyPolicyPage() {
               We do not sell, rent, or trade your personal information to third parties for their own marketing purposes.
             </p>
 
-            <h2 className="text-2xl font-extrabold text-brand-navy mt-10 mb-4">3. How We Share Your Information</h2>
+            <h2 className="text-2xl font-extrabold text-brand-navy mt-10 mb-4">4. How We Share Your Information</h2>
             <p className="text-brand-charcoal/80 leading-relaxed">We may share your information with:</p>
             <ul className="list-disc pl-6 space-y-2 text-brand-charcoal/80">
               <li><strong className="text-brand-navy">Service Providers:</strong> Third-party vendors who assist us in operating our Site and delivering our services, including call tracking (WhatConverts), website analytics (Google Analytics / Umami), and advertising platforms (Google Ads). These providers are contractually obligated to use your information only as directed by us and in accordance with this policy.</li>
@@ -93,8 +101,11 @@ export default function PrivacyPolicyPage() {
               <li><strong className="text-brand-navy">Legal Requirements:</strong> We may disclose your information if required to do so by law, court order, or governmental authority, or if we believe in good faith that such disclosure is necessary to protect our rights, your safety, or the safety of others.</li>
               <li><strong className="text-brand-navy">Business Transfers:</strong> In the event of a merger, acquisition, or sale of all or a portion of our assets, your information may be transferred as part of that transaction.</li>
             </ul>
+            <p className="text-brand-charcoal/80 leading-relaxed">
+              Notwithstanding anything above, mobile phone numbers and SMS consent information are never shared, sold, or transferred to third parties for marketing purposes, including in connection with any business transfer.
+            </p>
 
-            <h2 className="text-2xl font-extrabold text-brand-navy mt-10 mb-4">4. Third-Party Services and Advertising</h2>
+            <h2 className="text-2xl font-extrabold text-brand-navy mt-10 mb-4">5. Third-Party Services and Advertising</h2>
             <p className="text-brand-charcoal/80 leading-relaxed">Our Site uses the following third-party services that may collect information about your visit:</p>
 
             <h3 className="text-lg font-bold text-brand-navy mb-2">Google Ads &amp; Google Analytics</h3>
@@ -111,17 +122,17 @@ export default function PrivacyPolicyPage() {
               <a href="https://www.whatconverts.com/privacy-policy/" className="text-brand-copper hover:underline" target="_blank" rel="noopener noreferrer">WhatConverts&apos; Privacy Policy</a>.
             </p>
 
-            <h2 className="text-2xl font-extrabold text-brand-navy mt-10 mb-4">5. Data Retention</h2>
+            <h2 className="text-2xl font-extrabold text-brand-navy mt-10 mb-4">6. Data Retention</h2>
             <p className="text-brand-charcoal/80 leading-relaxed">
               We retain personal information for as long as necessary to fulfill the purposes described in this policy, including providing services, maintaining business records, complying with legal obligations, resolving disputes, and enforcing our agreements. Customer project records, including documentation provided to insurance carriers, are typically retained for a minimum of seven (7) years in accordance with standard business and legal requirements.
             </p>
 
-            <h2 className="text-2xl font-extrabold text-brand-navy mt-10 mb-4">6. Data Security</h2>
+            <h2 className="text-2xl font-extrabold text-brand-navy mt-10 mb-4">7. Data Security</h2>
             <p className="text-brand-charcoal/80 leading-relaxed">
               We implement reasonable administrative, technical, and physical safeguards to protect your personal information from unauthorized access, disclosure, alteration, or destruction. However, no method of transmission over the internet or electronic storage is completely secure. We cannot guarantee absolute security of your information and encourage you to exercise caution when sharing sensitive information online.
             </p>
 
-            <h2 className="text-2xl font-extrabold text-brand-navy mt-10 mb-4">7. Your Rights and Choices</h2>
+            <h2 className="text-2xl font-extrabold text-brand-navy mt-10 mb-4">8. Your Rights and Choices</h2>
             <p className="text-brand-charcoal/80 leading-relaxed">Depending on your location, you may have certain rights regarding your personal information, including:</p>
             <ul className="list-disc pl-6 space-y-1 text-brand-charcoal/80">
               <li><strong className="text-brand-navy">Access:</strong> The right to request a copy of the personal information we hold about you</li>
@@ -133,22 +144,22 @@ export default function PrivacyPolicyPage() {
               To exercise any of these rights, please contact us using the information in the &ldquo;Contact Us&rdquo; section below. We will respond to your request within a reasonable timeframe and in accordance with applicable law.
             </p>
 
-            <h2 className="text-2xl font-extrabold text-brand-navy mt-10 mb-4">8. Children&apos;s Privacy</h2>
+            <h2 className="text-2xl font-extrabold text-brand-navy mt-10 mb-4">9. Children&apos;s Privacy</h2>
             <p className="text-brand-charcoal/80 leading-relaxed">
               Our Site is not directed to children under the age of 13, and we do not knowingly collect personal information from children under 13. If we become aware that we have inadvertently collected personal information from a child under 13, we will take steps to delete that information promptly. If you believe we have collected information from a child under 13, please contact us immediately.
             </p>
 
-            <h2 className="text-2xl font-extrabold text-brand-navy mt-10 mb-4">9. Links to Third-Party Websites</h2>
+            <h2 className="text-2xl font-extrabold text-brand-navy mt-10 mb-4">10. Links to Third-Party Websites</h2>
             <p className="text-brand-charcoal/80 leading-relaxed">
               Our Site may contain links to third-party websites, including our social media profiles and insurance carrier portals. These third-party sites have their own privacy policies, and we are not responsible for their content or privacy practices. We encourage you to review the privacy policy of any third-party site you visit.
             </p>
 
-            <h2 className="text-2xl font-extrabold text-brand-navy mt-10 mb-4">10. Changes to This Privacy Policy</h2>
+            <h2 className="text-2xl font-extrabold text-brand-navy mt-10 mb-4">11. Changes to This Privacy Policy</h2>
             <p className="text-brand-charcoal/80 leading-relaxed">
               We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we make material changes, we will update the &ldquo;Effective Date&rdquo; at the top of this page. Your continued use of our Site after any changes constitutes your acceptance of the updated policy. We encourage you to review this policy periodically.
             </p>
 
-            <h2 className="text-2xl font-extrabold text-brand-navy mt-10 mb-4">11. Contact Us</h2>
+            <h2 className="text-2xl font-extrabold text-brand-navy mt-10 mb-4">12. Contact Us</h2>
             <p className="text-brand-charcoal/80 leading-relaxed">
               If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:
             </p>

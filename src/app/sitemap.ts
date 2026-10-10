@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog`, lastModified: BUILD_DATE, changeFrequency: "weekly", priority: 0.6 },
     { url: `${base}/privacy-policy`, lastModified: BUILD_DATE, changeFrequency: "yearly", priority: 0.3 },
     { url: `${base}/terms-of-service`, lastModified: BUILD_DATE, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${base}/sms-terms`, lastModified: BUILD_DATE, changeFrequency: "yearly", priority: 0.3 },
   ];
 
   const serviceAreaPages: MetadataRoute.Sitemap = serviceAreaTowns

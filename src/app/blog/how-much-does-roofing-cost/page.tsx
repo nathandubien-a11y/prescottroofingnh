@@ -360,8 +360,11 @@ export default function HowMuchDoesRoofingCostPage() {
               <p className="text-brand-charcoal/80 leading-relaxed mb-4">
                 At Prescott Roofing, we inspect your roof in person before we price it, and we spell out decking, layers, flashing, ventilation and permits in writing. That&rsquo;s what &ldquo;Precision From Every Angle&rdquo; means to us.
               </p>
-              <p className="text-brand-charcoal/80 leading-relaxed mb-6">
+              <p className="text-brand-charcoal/80 leading-relaxed mb-4">
                 If you&rsquo;re a homeowner in <Link href="/roofing/manchester-nh" className="text-brand-copper font-semibold hover:underline">Manchester</Link>, <Link href="/roofing/nashua-nh" className="text-brand-copper font-semibold hover:underline">Nashua</Link>, <Link href="/roofing/bedford-nh" className="text-brand-copper font-semibold hover:underline">Bedford</Link> or anywhere in Southern New Hampshire and Northern Massachusetts, <Link href="/free-inspection" className="text-brand-copper font-semibold hover:underline">schedule your free roof inspection</Link> and get a detailed, line-by-line estimate.
+              </p>
+              <p className="text-brand-charcoal/80 leading-relaxed mb-6">
+                Wondering how to pay for it? See our guide to <Link href="/blog/roof-financing-southern-nh" className="text-brand-copper font-semibold hover:underline">roof financing in Southern NH</Link>.
               </p>
               <Link
                 href="/free-inspection"

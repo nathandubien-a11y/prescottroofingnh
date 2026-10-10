@@ -78,10 +78,11 @@ export default function StormDamagePage() {
         </div>
 
         <Image
-          src="/roof-replacement-in-progress-decking.jpg"
+          src="/img/roof-replacement-in-progress-decking.webp"
           alt="Storm damage roof restoration in progress showing exposed decking and shingle bundles ready for installation"
           width={1200}
           height={800}
+          sizes="(max-width: 768px) 100vw, 768px"
           className="rounded-lg object-cover w-full aspect-[3/2] mb-8"
         />
 

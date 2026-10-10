@@ -45,17 +45,19 @@ export default function AboutPage() {
 
               <div className="grid grid-cols-2 gap-3 mb-8">
                 <Image
-                  src="/roof-replacement-tear-off-crew.jpg"
+                  src="/img/roof-replacement-tear-off-crew.webp"
                   alt="Prescott Roofing crew performing a roof tear-off on a residential home in Southern NH"
                   width={600}
                   height={400}
+                  sizes="(max-width: 640px) 50vw, 25vw"
                   className="rounded-lg object-cover aspect-[3/2] w-full"
                 />
                 <Image
-                  src="/ranch-roof-replacement-completed.jpg"
+                  src="/img/ranch-roof-replacement-completed.webp"
                   alt="Completed roof replacement on a ranch-style home by Prescott Roofing"
                   width={600}
                   height={400}
+                  sizes="(max-width: 640px) 50vw, 25vw"
                   className="rounded-lg object-cover aspect-[3/2] w-full"
                 />
               </div>

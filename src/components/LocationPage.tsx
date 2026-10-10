@@ -7,6 +7,7 @@ import { FAQAccordion, FAQSchema } from "@/components/FAQAccordion";
 import { TrustBar } from "@/components/TrustBar";
 import { LeadForm } from "@/components/LeadForm";
 import { PhoneIcon } from "@/components/icons/PhoneIcon";
+import { ProjectsGallery } from "@/components/ProjectsGallery";
 import type { LocationData } from "@/data/locations/types";
 
 const serviceLinks = [
@@ -233,6 +234,9 @@ export function LocationPage({ data }: { data: LocationData }) {
           </div>
         </div>
       </section>
+
+      {/* Project Gallery */}
+      <ProjectsGallery town={data.slug} />
 
       {/* Neighborhoods & Nearby Towns */}
       <section className="py-16 md:py-20 bg-white">

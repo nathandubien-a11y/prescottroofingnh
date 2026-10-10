@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Link from "next/link";
 import { siteConfig } from "@/lib/siteConfig";
 
 const serviceOptions = [
@@ -22,7 +23,10 @@ export function LeadForm({ className = "" }: { className?: string }) {
     setStatus("submitting");
 
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+
+    const smsConsent = formData.get("sms_consent") === "yes";
 
     try {
       const res = await fetch(
@@ -35,6 +39,9 @@ export function LeadForm({ className = "" }: { className?: string }) {
           },
           body: JSON.stringify({
             ...data,
+            sms_consent: smsConsent,
+            sms_consent_at: smsConsent ? new Date().toISOString() : "",
+            sms_consent_page: smsConsent ? window.location.href : "",
             _subject: `New Lead from ${data.name} — ${data.service || "General Inquiry"}`,
           }),
         }
@@ -166,6 +173,24 @@ export function LeadForm({ className = "" }: { className?: string }) {
         <p className="mt-4 text-sm text-red-600">Something went wrong. Please try again or call us directly.</p>
       )}
 
+      <div className="mt-4 sm:col-span-2">
+        <label htmlFor="sms_consent" className="flex items-start gap-3 cursor-pointer">
+          <input
+            type="checkbox"
+            id="sms_consent"
+            name="sms_consent"
+            value="yes"
+            className="mt-0.5 w-5 h-5 shrink-0 rounded border-gray-300 text-brand-copper focus:ring-brand-copper/50"
+          />
+          <span className="text-[13px] leading-relaxed text-brand-charcoal/80">
+            By checking this box, I agree to receive text messages from Prescott Roofing at the phone number provided about my inquiry, inspection scheduling, appointment reminders, and project updates. Message frequency varies. Message and data rates may apply. Reply STOP to opt out at any time. Reply HELP for help. Consent is not a condition of purchase. See our{" "}
+            <Link href="/privacy-policy" className="text-brand-copper font-semibold hover:underline">Privacy Policy</Link>
+            {" "}and{" "}
+            <Link href="/sms-terms" className="text-brand-copper font-semibold hover:underline">SMS Terms</Link>.
+          </span>
+        </label>
+      </div>
+
       <button
         type="submit"
         disabled={status === "submitting"}
@@ -175,7 +200,7 @@ export function LeadForm({ className = "" }: { className?: string }) {
       </button>
 
       <p className="mt-3 text-xs text-brand-charcoal/50 text-center">
-        No spam, ever. We&apos;ll only use your info to schedule your inspection.
+        No spam, ever. We never sell or share your information.
       </p>
     </form>
   );

@@ -59,7 +59,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative bg-brand-navy overflow-hidden">
         <Image
-          src="/completed-shingle-roof-southern-nh.jpg"
+          src="/img/completed-shingle-roof-southern-nh.webp"
           alt="Completed architectural shingle roof in Southern New Hampshire"
           fill
           priority
@@ -168,10 +168,11 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <Image
-                src="/roof-inspection.jpg"
+                src="/img/roof-inspection.webp"
                 alt="Roofing contractor inspecting a residential roof in Southern New Hampshire"
                 width={800}
                 height={600}
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
                 className="aspect-[4/3] object-cover rounded-lg"
               />

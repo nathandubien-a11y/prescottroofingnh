@@ -81,10 +81,11 @@ export default function RoofRepairPage() {
         </ul>
 
         <Image
-          src="/chimney-flashing-shingle-roof.jpg"
+          src="/img/chimney-flashing-shingle-roof.webp"
           alt="Close-up of chimney step flashing and shingle work on a residential roof in Southern NH"
           width={800}
           height={600}
+          sizes="(max-width: 768px) 100vw, 768px"
           className="rounded-lg object-cover w-full aspect-[4/3] mb-8"
         />
 

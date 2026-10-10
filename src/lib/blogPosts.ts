@@ -11,6 +11,16 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "roof-financing-southern-nh",
+    title: "Roof Financing in Southern NH: How to Find a Roofing Company Near You With Financing",
+    description: "A $15,000 roof typically runs $150–$270 a month financed. Compare roof loan options, avoid deferred-interest and dealer-fee traps, and find out if insurance or a 1% program could pay instead.",
+    date: "2026-10-02",
+    author: "Prescott Roofing",
+    readTime: "14 min read",
+    content: "",
+    customPage: true,
+  },
+  {
     slug: "how-much-does-roofing-cost",
     title: "What Actually Drives Your Roofing Bill: 11 Cost Factors Contractors Won’t Tell You Upfront",
     description: "Most Southern NH homeowners pay $11,000–$21,000 for a new asphalt roof in 2026. Here are the 11 factors that move that number, including the hidden ones that add $2,000–$12,000.",

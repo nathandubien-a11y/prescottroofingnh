@@ -95,17 +95,19 @@ export default function RoofReplacementPage() {
 
         <div className="my-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Image
-            src="/gaf-storm-guard-underlayment-installation.jpg"
+            src="/img/gaf-storm-guard-underlayment-installation.webp"
             alt="GAF Storm Guard ice and water shield underlayment being installed during a roof replacement in Southern NH"
             width={800}
             height={1000}
+            sizes="(max-width: 640px) 100vw, 50vw"
             className="rounded-lg object-cover w-full aspect-[4/5]"
           />
           <Image
-            src="/completed-shingle-roof-southern-nh.jpg"
+            src="/img/completed-shingle-roof-southern-nh.webp"
             alt="Completed architectural shingle roof viewed from the ridge on a residential home in Southern NH"
             width={800}
             height={600}
+            sizes="(max-width: 640px) 100vw, 50vw"
             className="rounded-lg object-cover w-full aspect-[4/5]"
           />
         </div>
