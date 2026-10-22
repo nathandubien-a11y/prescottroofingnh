@@ -60,7 +60,13 @@ declare global {
   }
 }
 
-export function LpQuoteForm({ source }: { source: string }) {
+export function LpQuoteForm({
+  source,
+  projectOptions = ["Full replacement", "Repair", "Not sure"],
+}: {
+  source: string;
+  projectOptions?: string[];
+}) {
   const router = useRouter();
   const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -146,7 +152,7 @@ export function LpQuoteForm({ source }: { source: string }) {
         <fieldset>
           <legend className="block text-sm font-semibold text-brand-charcoal mb-1.5">What do you need?</legend>
           <div className="grid grid-cols-3 gap-2">
-            {["Full replacement", "Repair", "Not sure"].map((opt, i) => (
+            {projectOptions.map((opt, i) => (
               <label key={opt} className="relative cursor-pointer">
                 <input type="radio" name="project" value={opt} defaultChecked={i === 0} className="peer sr-only" />
                 <span className="flex h-full items-center justify-center text-center rounded-md border border-gray-300 px-2 py-2.5 text-sm font-medium text-brand-charcoal peer-checked:border-brand-copper peer-checked:bg-brand-copper/10 peer-checked:text-brand-navy peer-focus-visible:ring-2 peer-focus-visible:ring-brand-copper/50">
