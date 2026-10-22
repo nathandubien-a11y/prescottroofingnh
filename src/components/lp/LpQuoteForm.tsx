@@ -7,8 +7,48 @@ import { siteConfig } from "@/lib/siteConfig";
 
 const TRACKING_PARAMS = ["gclid", "gbraid", "wbraid", "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
 
-// Leads post to the site's FormSubmit inbox and are copied to the people who work them.
+// Leads go to the site's own handler first (emails Nathan and Tyler and keeps a backup copy on the
+// server). FormSubmit is the fallback if that handler is unreachable or couldn't send the email.
+const LEAD_ENDPOINT = "/lead-submit.php";
 const LEAD_CC = ["nathan@prescottroofingnh.com", "Tyler@prescottroofingnh.com"];
+const REQUEST_TIMEOUT_MS = 12000;
+
+type LeadReply = { success?: string | boolean; emailed?: string | boolean } | null;
+
+async function postJson(url: string, payload: Record<string, unknown>): Promise<LeadReply> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(payload),
+      signal: controller.signal,
+    });
+    const reply = (await res.json().catch(() => null)) as LeadReply;
+    return res.ok ? reply : null;
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+const isTrue = (v: unknown) => String(v) === "true";
+
+/** Returns true once the lead is safely recorded somewhere. */
+async function deliverLead(payload: Record<string, unknown>): Promise<boolean> {
+  const own = await postJson(LEAD_ENDPOINT, payload);
+  const saved = isTrue(own?.success);
+  if (saved && isTrue(own?.emailed)) return true;
+
+  // Own handler is down, or saved the lead but couldn't email it: send through FormSubmit too.
+  const backup = await postJson(`https://formsubmit.co/ajax/${siteConfig.email}`, {
+    ...payload,
+    _cc: LEAD_CC.join(","),
+  });
+  return saved || isTrue(backup?.success);
+}
 
 const inputClass =
   "w-full px-4 py-3 border border-gray-300 rounded-md text-base text-brand-charcoal bg-white focus:outline-none focus:ring-2 focus:ring-brand-copper/50 focus:border-brand-copper";
@@ -39,36 +79,30 @@ export function LpQuoteForm({ source }: { source: string }) {
       if (value) tracking[key] = value;
     }
 
-    try {
-      const res = await fetch(`https://formsubmit.co/ajax/${siteConfig.email}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          ...data,
-          ...tracking,
-          lead_source: source,
-          _cc: LEAD_CC.join(","),
-          landing_page: window.location.href,
-          sms_consent: smsConsent,
-          sms_consent_at: smsConsent ? new Date().toISOString() : "",
-          sms_consent_page: smsConsent ? window.location.href : "",
-          _subject: `New Ad Lead: ${data.name} — ${data.project || "Roof Quote"} (${data.town})`,
-        }),
-      });
-      const result = (await res.json().catch(() => null)) as { success?: string | boolean } | null;
-      if (!res.ok || !result || String(result.success) !== "true") throw new Error("Submission failed");
-      window.dataLayer?.push({ event: "lead_form_success", lead_source: source });
-      router.push("/lp/thank-you");
-    } catch {
+    const delivered = await deliverLead({
+      ...data,
+      ...tracking,
+      lead_source: source,
+      landing_page: window.location.href,
+      sms_consent: smsConsent,
+      sms_consent_at: smsConsent ? new Date().toISOString() : "",
+      sms_consent_page: smsConsent ? window.location.href : "",
+      _subject: `New Ad Lead: ${data.name} — ${data.project || "Roof Quote"} (${data.town})`,
+    });
+
+    if (!delivered) {
       setStatus("error");
+      return;
     }
+    window.dataLayer?.push({ event: "lead_form_success", lead_source: source });
+    router.push("/lp/thank-you");
   }
 
   return (
     <form
       id="quote"
       onSubmit={handleSubmit}
-      className="scroll-mt-24 bg-white rounded-xl p-6 md:p-7 shadow-2xl border-t-4 border-brand-copper"
+      className="relative scroll-mt-24 bg-white rounded-xl p-6 md:p-7 shadow-2xl border-t-4 border-brand-copper"
     >
       <h2 className="text-2xl font-extrabold text-brand-navy leading-tight">Get Your Free Roof Quote</h2>
       <p className="text-sm text-brand-charcoal/70 mt-1 mb-5">
@@ -113,6 +147,11 @@ export function LpQuoteForm({ source }: { source: string }) {
             ))}
           </div>
         </fieldset>
+        {/* Spam trap: hidden from people, filled in by bots. */}
+        <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+          <label htmlFor="lp-website">Leave this field empty</label>
+          <input id="lp-website" name="company_website" type="text" tabIndex={-1} autoComplete="off" />
+        </div>
       </div>
 
       <label htmlFor="lp-sms" className="mt-4 flex items-start gap-2.5 cursor-pointer">
