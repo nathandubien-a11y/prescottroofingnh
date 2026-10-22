@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const services = [
   {
     title: "Roof Replacement",
-    description: "Full asphalt shingle roof replacement with manufacturer-backed warranties. The #1 service for NH homeowners.",
+    description: "Full roof replacement by a CertainTeed ShingleMaster certified roofer, with a 50-year CertainTeed warranty available.",
     href: "/services/roof-replacement",
     icon: <RoofIcon />,
   },
@@ -146,6 +146,7 @@ export default function HomePage() {
               <ul className="space-y-3 mb-8">
                 {[
                   "Insurance claim expertise — Xactimate estimates & adjuster coordination",
+                  "CertainTeed ShingleMaster certified — 50-year warranty available through CertainTeed",
                   "Competitive pricing for retail customers",
                   "Flexible financing available — affordable monthly payments",
                   "Same quality craftsmanship on every project, every time",
@@ -315,4 +316,3 @@ function GutterIcon() {
     </svg>
   );
 }
-
