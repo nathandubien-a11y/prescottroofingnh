@@ -20,15 +20,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return {};
 
+  const seoTitle = post.metaTitle || post.title;
+
   return {
-    title: post.title,
+    // Ryze meta titles sometimes already include the brand; avoid "… | Prescott Roofing | Prescott Roofing".
+    title: /prescott roofing/i.test(seoTitle) ? { absolute: seoTitle } : seoTitle,
     description: post.description,
     alternates: { canonical: `/blog/${slug}` },
     openGraph: {
       type: "article",
-      title: post.title,
+      title: seoTitle,
       description: post.description,
       publishedTime: post.date,
+      modifiedTime: post.updated || post.date,
+      ...(post.image ? { images: [{ url: post.image.url, alt: post.image.alt }] } : {}),
     },
   };
 }
@@ -63,6 +68,18 @@ export default async function BlogPostPage({ params }: Props) {
 
       <article className="py-16 md:py-20 bg-brand-offwhite">
         <div className="mx-auto max-w-3xl px-4">
+          {post.image && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={post.image.url}
+              alt={post.image.alt}
+              className="w-full rounded-lg mb-10 aspect-[16/9] object-cover"
+              loading="eager"
+            />
+          )}
+          {post.html ? (
+            <div className="ryze-article" dangerouslySetInnerHTML={{ __html: post.html }} />
+          ) : (
           <div className="prose prose-lg max-w-none">
             {paragraphs.map((p, i) => {
               if (p.startsWith("## ")) {
@@ -90,6 +107,7 @@ export default async function BlogPostPage({ params }: Props) {
               return <p key={i} className="text-brand-charcoal/80 leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: rendered }} />;
             })}
           </div>
+          )}
 
           <div className="mt-12 pt-8 border-t border-brand-coppertint/30">
             <Link href="/blog" className="text-brand-copper font-semibold hover:underline">
@@ -110,7 +128,7 @@ export default async function BlogPostPage({ params }: Props) {
             headline: post.title,
             description: post.description,
             datePublished: post.date,
-            dateModified: post.date,
+            dateModified: post.updated || post.date,
             author: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
             publisher: {
               "@type": "Organization",
@@ -118,7 +136,7 @@ export default async function BlogPostPage({ params }: Props) {
               url: siteConfig.url,
               logo: { "@type": "ImageObject", url: `${siteConfig.url}${siteConfig.logo}` },
             },
-            image: `${siteConfig.url}/og-image.jpg`,
+            image: post.image?.url || `${siteConfig.url}/og-image.jpg`,
             mainEntityOfPage: { "@type": "WebPage", "@id": `${siteConfig.url}/blog/${slug}` },
           }),
         }}
