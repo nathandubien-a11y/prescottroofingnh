@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 import { LocalBusinessSchema } from "@/components/LocalBusinessSchema";
+import { SiteChrome } from "@/components/SiteChrome";
 import { siteConfig } from "@/lib/siteConfig";
 import "./globals.css";
 
@@ -105,14 +106,18 @@ if(e.target.tagName==='FORM')window.dataLayer.push({event:'form_submit',form_act
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
-        <Header />
+        <SiteChrome>
+          <Header />
+        </SiteChrome>
         <main id="main-content" className="flex-1">
           {children}
         </main>
-        <Footer />
-        <StickyMobileCTA />
-        {/* Bottom padding on mobile so sticky CTA doesn't cover content */}
-        <div className="h-16 md:hidden" aria-hidden="true" />
+        <SiteChrome>
+          <Footer />
+          <StickyMobileCTA />
+          {/* Bottom padding on mobile so sticky CTA doesn't cover content */}
+          <div className="h-16 md:hidden" aria-hidden="true" />
+        </SiteChrome>
         <LocalBusinessSchema />
       </body>
     </html>
