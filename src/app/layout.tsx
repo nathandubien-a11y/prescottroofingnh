@@ -7,6 +7,7 @@ import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 import { LocalBusinessSchema } from "@/components/LocalBusinessSchema";
 import { SiteChrome } from "@/components/SiteChrome";
 import { siteConfig } from "@/lib/siteConfig";
+import { GOOGLE_ADS_ID } from "@/lib/googleAds";
 import "./globals.css";
 
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
@@ -67,6 +68,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${headingFont.variable} ${bodyFont.variable}`}>
       <body className="min-h-dvh flex flex-col">
+        {/* Google Ads tag: conversion tracking and domain verification for ads */}
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`} strategy="afterInteractive" />
+        <Script
+          id="google-ads-tag"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','${GOOGLE_ADS_ID}');`,
+          }}
+        />
         {gtmId && (
           <>
             <Script
