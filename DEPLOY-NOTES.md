@@ -30,3 +30,11 @@ Use the `.NET ZipFile` method (not PowerShell `Compress-Archive`) to create depl
 - [ ] Verify all routes return 200 (not 403)
 - [ ] Resubmit sitemap in Google Search Console
 - [ ] Test old `/roofing-manchester-nh` URLs redirect to `/roofing/manchester-nh`
+
+## Automatic deploys (GitHub Actions)
+
+`.github/workflows/deploy-hostinger.yml` builds the site and uploads `out/` to Hostinger over FTPS on every push to `main`, so commits from Ryze (and anyone else) go live in a few minutes. It needs three repo secrets: `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD` (hPanel → Files → FTP Accounts). Until they're set, it only builds. Run it by hand from the repo's Actions tab → Deploy to Hostinger → Run workflow.
+
+## Ryze blog articles
+
+Ryze's GitHub integration commits one JSON file per article to `src/data/blog/<slug>.json`. `src/lib/blogPosts.ts` reads them at build time and merges them with the hand-written posts; only `status: "published"` files are shown, and a hand-written post wins if the slugs collide.
