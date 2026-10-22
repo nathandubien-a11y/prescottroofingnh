@@ -9,23 +9,23 @@ import { siteConfig } from "@/lib/siteConfig";
 export const metadata: Metadata = {
   title: { absolute: "Free Roof Replacement Quote | 50-Year CertainTeed Warranty | Prescott Roofing" },
   description:
-    "CertainTeed ShingleMaster certified roof replacement in Southern NH and Northern MA. 50-year warranty available through CertainTeed. Free, no-pressure inspection and written quote.",
+    "CertainTeed ShingleMaster certified roof replacement in Southern NH and Northern MA. 50-year warranty available through CertainTeed plus a 20-year workmanship warranty. Free inspection and written quote.",
   robots: { index: false, follow: false },
   alternates: { canonical: "/lp/roof-replacement" },
 };
 
 const heroPoints = [
   "50-year warranty available through CertainTeed",
-  "Full tear-off, deck inspection, and ice-and-water shield",
+  "20-year workmanship warranty on every roof we install",
   "Flexible financing with affordable monthly payments",
-  "Fully licensed & insured in NH & MA",
+  "Written, line-item quote, and we respond within 24 hours",
 ];
 
 const trustItems = [
   { title: "CertainTeed ShingleMaster", sub: "Certified installer" },
   { title: "50-Year Warranty", sub: "Through CertainTeed" },
-  { title: "Licensed & Insured", sub: "NH & MA" },
-  { title: "Family-Owned", sub: "Local Southern NH crew" },
+  { title: "20-Year Workmanship", sub: "Backed by Prescott" },
+  { title: "Licensed & Insured", sub: "Family-owned, NH & MA" },
 ];
 
 const included = [
@@ -56,7 +56,7 @@ const faqs = [
   },
   {
     q: "What does the 50-year CertainTeed warranty cover?",
-    a: "As a CertainTeed ShingleMaster certified contractor, we can offer a 50-year warranty through CertainTeed on qualifying installations that use a complete CertainTeed system. We'll walk you through exactly what's covered at your inspection, along with our own workmanship warranty.",
+    a: "As a CertainTeed ShingleMaster certified contractor, we can offer a 50-year warranty through CertainTeed on qualifying installations that use a complete CertainTeed system. On top of that, every roof we install carries our own 20-year workmanship warranty. We'll walk you through exactly what's covered at your inspection.",
   },
   {
     q: "Do you offer financing?",
@@ -168,22 +168,21 @@ export default function RoofReplacementLandingPage() {
             />
             <div className="absolute bottom-4 left-4 rounded-lg bg-white/95 px-4 py-3 shadow">
               <p className="text-3xl font-extrabold text-brand-copper leading-none">50 Years</p>
-              <p className="text-xs font-semibold text-brand-navy mt-1">Warranty available through CertainTeed</p>
+              <p className="text-xs font-semibold text-brand-navy mt-1">Through CertainTeed, plus 20 years on our workmanship</p>
             </div>
           </div>
           <div>
             <p className="text-brand-copper font-bold text-sm uppercase tracking-widest">Why it matters</p>
             <h2 className="mt-2 text-3xl md:text-4xl font-extrabold text-brand-navy leading-tight">
-              Not every roofer can offer this warranty. We can.
+              Two warranties protecting your roof, not one.
             </h2>
             <p className="mt-4 text-brand-charcoal/80 leading-relaxed">
-              CertainTeed reserves its extended coverage for credentialed contractors. As a CertainTeed ShingleMaster, we can
-              register qualifying full-system installations for a 50-year warranty through CertainTeed, so your roof is backed by
-              the manufacturer, not just the crew that installed it.
+              As a CertainTeed ShingleMaster, we can register qualifying full-system installations for a 50-year warranty through
+              CertainTeed, so your roof is backed by the manufacturer, not just the crew that installed it.
             </p>
             <p className="mt-3 text-brand-charcoal/80 leading-relaxed">
-              On top of that, every job carries our own workmanship warranty. We&apos;ll show you exactly what&apos;s covered at your
-              free inspection.
+              On top of that, every roof we install carries our own 20-year workmanship warranty. We&apos;ll show you exactly
+              what&apos;s covered at your free inspection.
             </p>
             <a
               href="#quote"
