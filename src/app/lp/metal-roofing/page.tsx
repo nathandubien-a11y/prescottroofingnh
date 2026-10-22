@@ -8,23 +8,23 @@ import { siteConfig } from "@/lib/siteConfig";
 export const metadata: Metadata = {
   title: { absolute: "Metal Roof Installation in Southern NH | Free Quote | Prescott Roofing" },
   description:
-    "Standing seam metal roof installation across Southern NH and Northern MA. Sheds snow, lasts decades, and is installed by a local, licensed crew. Free inspection and written quote.",
+    "Standing seam metal roof installation across Southern NH and Northern MA with a lifetime warranty. Sheds snow, lasts decades, installed by a local, licensed crew. Free inspection and written quote.",
   robots: { index: false, follow: false },
   alternates: { canonical: "/lp/metal-roofing" },
 };
 
 const heroPoints = [
+  "Lifetime warranty on every metal roof we install",
   "Standing seam metal roofs built for heavy New England snow",
-  "Lifespan of 40–70 years, well beyond typical asphalt shingles",
   "Flexible financing with affordable monthly payments",
-  "Fully licensed & insured in NH & MA",
+  "Written, line-item quote, and we respond within 24 hours",
 ];
 
 const trustItems = [
+  { title: "Lifetime Warranty", sub: "On every metal roof" },
   { title: "Standing Seam", sub: "Concealed-fastener panels" },
   { title: "Built for Snow", sub: "Sheds snow and ice" },
-  { title: "Licensed & Insured", sub: "NH & MA" },
-  { title: "Family-Owned", sub: "Local Southern NH crew" },
+  { title: "Licensed & Insured", sub: "Family-owned, NH & MA" },
 ];
 
 const benefits = [
@@ -54,6 +54,10 @@ const faqs = [
   {
     q: "How much does a metal roof cost?",
     a: "Metal costs more upfront than asphalt shingles, but it typically lasts two to three times as long. Your price depends on roof size, pitch, panel type, and color. After a free inspection you get a written, line-item quote.",
+  },
+  {
+    q: "What warranty comes with a metal roof?",
+    a: "Every metal roof we install comes with a lifetime warranty. We'll walk you through exactly what's covered, in writing, at your free inspection.",
   },
   {
     q: "Is a metal roof loud when it rains?",
@@ -117,8 +121,8 @@ export default function MetalRoofingLandingPage() {
               <span className="text-brand-copper">built for NH winters.</span>
             </h1>
             <p className="mt-4 hidden sm:block text-lg text-white/80 max-w-xl">
-              Prescott Roofing installs standing seam metal roofs that shed snow, shrug off storms, and last for decades. Start with
-              a free, no-pressure inspection and a written quote.
+              Prescott Roofing installs standing seam metal roofs that shed snow, shrug off storms, and come with a lifetime
+              warranty. Start with a free, no-pressure inspection and a written quote.
             </p>
             <ul className="mt-5 sm:mt-6 space-y-2 sm:space-y-2.5">
               {heroPoints.map((p) => (
