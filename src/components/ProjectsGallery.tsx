@@ -51,7 +51,7 @@ const projects = [
     title: "Multi-Layer Tear-Off",
     location: "Salem, NH",
     town: "salem-nh",
-    description: "Removed two existing shingle layers, replaced rotted decking, and installed GAF Timberline HDZ.",
+    description: "Removed two existing shingle layers, replaced rotted decking, and installed new architectural shingles.",
     tag: "Replacement",
     image: "/img/roof-replacement-tear-off-crew.webp",
     alt: "Roofing crew performing a multi-layer shingle tear-off on a split-level home in Salem NH",
