@@ -1,3 +1,6 @@
+import fs from "node:fs";
+import path from "node:path";
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -5,11 +8,20 @@ export type BlogPost = {
   date: string;
   author: string;
   readTime: string;
+  /** Markdown-ish body used by hand-written posts. Empty for Ryze articles (they use `html`). */
   content: string;
   customPage?: boolean;
+  /** Ryze articles: pre-rendered HTML body. */
+  html?: string;
+  /** Ryze articles: SEO <title> override. */
+  metaTitle?: string;
+  /** Ryze articles: last-updated date (YYYY-MM-DD). */
+  updated?: string;
+  /** Ryze articles: featured image. */
+  image?: { url: string; alt: string } | null;
 };
 
-export const blogPosts: BlogPost[] = [
+const manualPosts: BlogPost[] = [
   {
     slug: "roof-financing-southern-nh",
     title: "Roof Financing in Southern NH: How to Find a Roofing Company Near You With Financing",
@@ -163,3 +175,88 @@ We come from the insurance-restoration industry. Our team has hands-on experienc
 If you think your roof has storm damage, call us before you call your insurance company. We'll do a [free inspection](/free-inspection), document everything, and help you determine if filing a claim makes sense. If it does, we'll guide you through every step. You can also learn [how to spot storm damage](/blog/how-to-spot-storm-damage-on-your-nh-roof) before calling.`,
   },
 ];
+
+/* ------------------------------------------------------------------ */
+/* Ryze-published articles                                             */
+/* Ryze commits one JSON file per article to src/data/blog/<slug>.json */
+/* (Ryze GitHub integration, folder path "src/data/blog"). They are    */
+/* read here at build time and merged with the hand-written posts.     */
+/* ------------------------------------------------------------------ */
+
+const RYZE_DIR = path.join(process.cwd(), "src", "data", "blog");
+
+type RyzeArticle = {
+  slug?: string;
+  title?: string;
+  body_html?: string;
+  body_markdown?: string;
+  meta_title?: string;
+  meta_description?: string;
+  excerpt?: string;
+  image?: { url?: string; alt?: string } | null;
+  published_at?: string;
+  updated_at?: string;
+  status?: string;
+};
+
+function toDay(value: string | undefined, fallback: string): string {
+  if (!value) return fallback;
+  const d = new Date(value);
+  return Number.isNaN(d.getTime()) ? fallback : d.toISOString().split("T")[0];
+}
+
+function readTimeFor(text: string): string {
+  const words = text.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+  return `${Math.max(1, Math.round(words / 230))} min read`;
+}
+
+function loadRyzePosts(): BlogPost[] {
+  if (!fs.existsSync(RYZE_DIR)) return [];
+  const today = new Date().toISOString().split("T")[0];
+  const posts: BlogPost[] = [];
+
+  for (const file of fs.readdirSync(RYZE_DIR)) {
+    if (!file.endsWith(".json")) continue;
+    let a: RyzeArticle;
+    try {
+      a = JSON.parse(fs.readFileSync(path.join(RYZE_DIR, file), "utf8"));
+    } catch (err) {
+      console.warn(`[blog] Skipping ${file}: invalid JSON (${(err as Error).message})`);
+      continue;
+    }
+    if (a.status && a.status !== "published") continue;
+    const slug = (a.slug || file.replace(/\.json$/, "")).trim();
+    if (!slug || !a.title || !(a.body_html || a.body_markdown)) {
+      console.warn(`[blog] Skipping ${file}: missing slug, title or body`);
+      continue;
+    }
+    const date = toDay(a.published_at, today);
+    posts.push({
+      slug,
+      title: a.title,
+      metaTitle: a.meta_title || undefined,
+      description: a.meta_description || a.excerpt || "",
+      date,
+      updated: toDay(a.updated_at, date),
+      author: "Prescott Roofing",
+      readTime: readTimeFor(a.body_html || a.body_markdown || ""),
+      content: a.body_html ? "" : a.body_markdown || "",
+      html: a.body_html || undefined,
+      image: a.image?.url ? { url: a.image.url, alt: a.image.alt || a.title } : null,
+    });
+  }
+  return posts;
+}
+
+/** All blog posts, newest first. Hand-written posts win if a Ryze article reuses their slug. */
+export const blogPosts: BlogPost[] = (() => {
+  const manualSlugs = new Set(manualPosts.map((p) => p.slug));
+  const ryze = loadRyzePosts().filter((p) => {
+    if (manualSlugs.has(p.slug)) {
+      console.warn(`[blog] Ryze article "${p.slug}" ignored: a hand-written post already uses that slug`);
+      return false;
+    }
+    return true;
+  });
+  return [...manualPosts, ...ryze].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+})();
