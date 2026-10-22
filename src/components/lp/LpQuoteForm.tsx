@@ -7,24 +7,20 @@ import { siteConfig } from "@/lib/siteConfig";
 
 const TRACKING_PARAMS = ["gclid", "gbraid", "wbraid", "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
 
-// Leads go to the site's own handler first (emails Nathan and Tyler and keeps a backup copy on the
-// server). FormSubmit is the fallback if that handler is unreachable or couldn't send the email.
-const LEAD_ENDPOINT = "/lead-submit.php";
-const LEAD_CC = ["nathan@prescottroofingnh.com", "Tyler@prescottroofingnh.com"];
+// Leads are emailed to Nathan through Web3Forms (free plan, browser-side only). FormSubmit is a
+// last-resort backup; it has been unreliable, so it is only tried if Web3Forms fails.
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
+const WEB3FORMS_KEY = "4afedbf5-747d-48b0-839f-a1d7575329bd"; // public by design; tied to nathan@prescottroofingnh.com
+const BACKUP_CC = "nathan@prescottroofingnh.com";
 const REQUEST_TIMEOUT_MS = 12000;
 
-type LeadReply = { success?: string | boolean; emailed?: string | boolean } | null;
+type LeadReply = { success?: string | boolean } | null;
 
-async function postJson(url: string, payload: Record<string, unknown>): Promise<LeadReply> {
+async function post(url: string, body: BodyInit, headers: Record<string, string> = {}): Promise<LeadReply> {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
   try {
-    const res = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify(payload),
-      signal: controller.signal,
-    });
+    const res = await fetch(url, { method: "POST", headers: { Accept: "application/json", ...headers }, body, signal: controller.signal });
     const reply = (await res.json().catch(() => null)) as LeadReply;
     return res.ok ? reply : null;
   } catch {
@@ -36,18 +32,23 @@ async function postJson(url: string, payload: Record<string, unknown>): Promise<
 
 const isTrue = (v: unknown) => String(v) === "true";
 
-/** Returns true once the lead is safely recorded somewhere. */
-async function deliverLead(payload: Record<string, unknown>): Promise<boolean> {
-  const own = await postJson(LEAD_ENDPOINT, payload);
-  const saved = isTrue(own?.success);
-  if (saved && isTrue(own?.emailed)) return true;
+/** Returns true once a lead has been accepted for delivery. */
+async function deliverLead(fields: Record<string, string>, subject: string): Promise<boolean> {
+  // Form data (not JSON) avoids a CORS preflight, which some networks and browsers block.
+  const body = new FormData();
+  body.append("access_key", WEB3FORMS_KEY);
+  body.append("subject", subject);
+  body.append("from_name", "Prescott Roofing Website");
+  if (fields.email) body.append("replyto", fields.email);
+  for (const [key, value] of Object.entries(fields)) body.append(key, value);
+  if (isTrue((await post(WEB3FORMS_ENDPOINT, body))?.success)) return true;
 
-  // Own handler is down, or saved the lead but couldn't email it: send through FormSubmit too.
-  const backup = await postJson(`https://formsubmit.co/ajax/${siteConfig.email}`, {
-    ...payload,
-    _cc: LEAD_CC.join(","),
-  });
-  return saved || isTrue(backup?.success);
+  const backup = await post(
+    `https://formsubmit.co/ajax/${siteConfig.email}`,
+    JSON.stringify({ ...fields, _subject: subject, _cc: BACKUP_CC }),
+    { "Content-Type": "application/json" },
+  );
+  return isTrue(backup?.success);
 }
 
 const inputClass =
@@ -79,16 +80,24 @@ export function LpQuoteForm({ source }: { source: string }) {
       if (value) tracking[key] = value;
     }
 
-    const delivered = await deliverLead({
-      ...data,
-      ...tracking,
-      lead_source: source,
-      landing_page: window.location.href,
-      sms_consent: smsConsent,
-      sms_consent_at: smsConsent ? new Date().toISOString() : "",
-      sms_consent_page: smsConsent ? window.location.href : "",
-      _subject: `New Ad Lead: ${data.name} — ${data.project || "Roof Quote"} (${data.town})`,
-    });
+    // Spam trap: bots fill the hidden field. Pretend it worked and send nothing.
+    if (data.company_website) {
+      router.push("/lp/thank-you");
+      return;
+    }
+    delete data.company_website;
+
+    const delivered = await deliverLead(
+      {
+        ...data,
+        ...tracking,
+        sms_consent: smsConsent ? "yes" : "no",
+        ...(smsConsent ? { sms_consent_at: new Date().toISOString(), sms_consent_page: window.location.href } : {}),
+        lead_source: source,
+        landing_page: window.location.href,
+      },
+      `New Ad Lead: ${data.name} — ${data.project || "Roof Quote"} (${data.town})`,
+    );
 
     if (!delivered) {
       setStatus("error");
