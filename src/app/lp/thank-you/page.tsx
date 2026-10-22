@@ -36,7 +36,7 @@ export default function LandingThankYouPage() {
             <ol className="mt-3 space-y-2 text-sm text-brand-charcoal/75 list-decimal pl-5">
               <li>We reach out to book a time that works for you.</li>
               <li>We inspect your whole roof system and take photos.</li>
-              <li>You get a clear, written quote, including your CertainTeed warranty options.</li>
+              <li>You get a clear, written quote, including your warranty options.</li>
             </ol>
           </div>
         </div>
