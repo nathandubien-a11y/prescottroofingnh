@@ -6,7 +6,7 @@ import { ServicePageLayout } from "@/components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "Roof Replacement in Southern NH",
   description:
-    "Full asphalt shingle roof replacement across Southern NH. Manufacturer-backed warranties, insurance claim help, and precision installation.",
+    "Full asphalt shingle roof replacement across Southern NH by a CertainTeed ShingleMaster certified roofer. 50-year CertainTeed warranty available, insurance claim help, and precision installation.",
   alternates: { canonical: "/services/roof-replacement" },
 };
 
@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: "What type of shingles do you use?",
-    answer: "We primarily install architectural (dimensional) asphalt shingles from GAF, CertainTeed, and Owens Corning. These include the GAF Timberline HDZ, CertainTeed Landmark, and their premium counterparts. Each offers 130+ mph wind warranties, algae resistance, and a lifespan of 25-50 years depending on the line.",
+    answer: "As a CertainTeed ShingleMaster certified contractor, we install CertainTeed architectural (dimensional) shingles, including Landmark and Landmark Pro, plus CertainTeed designer lines like Presidential Shake for a cedar-shake look. Every line offers algae resistance and Class A fire ratings, and our certification lets us offer a 50-year warranty through CertainTeed on qualifying installations.",
   },
   {
     question: "Will my insurance cover a roof replacement?",
@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     question: "What warranties do I get?",
-    answer: "You receive two warranties: the shingle manufacturer's material warranty (typically 25-50 years depending on the product line) and our workmanship warranty covering installation quality. With enhanced manufacturer programs, system warranties can cover both materials and labor for the full warranty period.",
+    answer: "Because we're CertainTeed ShingleMaster certified, we can offer a 50-year warranty through CertainTeed on qualifying installations that use a complete CertainTeed system: shingles plus matching starter strips, ridge caps, and underlayment. That's in addition to our own workmanship warranty covering installation quality. We'll walk you through exactly what's covered during your free inspection.",
   },
   {
     question: "Do you offer financing for roof replacements?",
@@ -49,7 +49,7 @@ export default function RoofReplacementPage() {
   return (
     <ServicePageLayout
       serviceName="Roof Replacement"
-      heroDescription="Full asphalt shingle roof replacement with manufacturer-backed warranties and precision installation. The #1 roofing service for Southern NH homeowners."
+      heroDescription="Full asphalt shingle roof replacement from a CertainTeed ShingleMaster certified roofer, with a 50-year warranty available through CertainTeed. The #1 roofing service for Southern NH homeowners."
       faqs={faqs}
       schemaService="Residential Roof Replacement"
       canonicalPath="/services/roof-replacement"
@@ -62,7 +62,7 @@ export default function RoofReplacementPage() {
           Between heavy snow loads, ice dams, nor&apos;easters, and summer storms, your roof takes more punishment in Southern NH than in most parts of the country. When it&apos;s time for a replacement, you need a contractor who understands these conditions and installs with the precision to withstand them.
         </p>
         <p className="text-brand-charcoal/80 leading-relaxed mb-8">
-          Prescott Roofing specializes in complete asphalt shingle roof replacements for homes across Hillsborough, Rockingham, and Merrimack counties. We use top-tier materials from manufacturers like GAF, Owens Corning, and CertainTeed, and every installation is backed by both manufacturer and workmanship warranties.
+          Prescott Roofing specializes in complete asphalt shingle roof replacements for homes across Hillsborough, Rockingham, and Merrimack counties. As a CertainTeed ShingleMaster certified contractor, we install CertainTeed roofing systems and can offer a 50-year warranty through CertainTeed, backed by our own workmanship warranty on every installation.
         </p>
 
         <h3 className="text-xl font-bold text-brand-navy mb-4">What&apos;s Included in Every Roof Replacement</h3>
@@ -96,7 +96,7 @@ export default function RoofReplacementPage() {
         <div className="my-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Image
             src="/img/gaf-storm-guard-underlayment-installation.webp"
-            alt="GAF Storm Guard ice and water shield underlayment being installed during a roof replacement in Southern NH"
+            alt="Ice and water shield underlayment being installed during a roof replacement in Southern NH"
             width={800}
             height={1000}
             sizes="(max-width: 640px) 100vw, 50vw"
@@ -114,7 +114,7 @@ export default function RoofReplacementPage() {
 
         <h3 className="text-xl font-bold text-brand-navy mb-4">Shingle Options: Good, Better, Best</h3>
         <p className="text-brand-charcoal/80 leading-relaxed mb-4">
-          We install architectural shingles from the industry&apos;s top manufacturers. Each tier offers increasing wind resistance, warranty coverage, and aesthetic appeal. Here&apos;s how the most popular lines compare:
+          As a CertainTeed ShingleMaster certified contractor, we install CertainTeed&apos;s architectural and designer shingle lines. Each tier offers increasing durability and curb appeal. Here&apos;s how the most popular lines compare:
         </p>
         <div className="overflow-x-auto mb-8">
           <table className="w-full text-sm border border-brand-coppertint/30 rounded-lg overflow-hidden">
@@ -135,27 +135,21 @@ export default function RoofReplacementPage() {
               </tr>
               <tr className="border-t border-brand-coppertint/20 bg-brand-offwhite/50">
                 <td className="px-4 py-3 font-semibold text-brand-navy">Better</td>
-                <td className="px-4 py-3 text-brand-charcoal/80">GAF Timberline HDZ</td>
-                <td className="px-4 py-3 text-brand-charcoal/80">130 mph</td>
-                <td className="px-4 py-3 text-brand-charcoal/80">Limited Lifetime + LayerLock</td>
-              </tr>
-              <tr className="border-t border-brand-coppertint/20">
-                <td className="px-4 py-3 font-semibold text-brand-navy">Better</td>
                 <td className="px-4 py-3 text-brand-charcoal/80">CertainTeed Landmark Pro</td>
                 <td className="px-4 py-3 text-brand-charcoal/80">130 mph</td>
                 <td className="px-4 py-3 text-brand-charcoal/80">Limited Lifetime + Max Def colors</td>
               </tr>
-              <tr className="border-t border-brand-coppertint/20 bg-brand-offwhite/50">
+              <tr className="border-t border-brand-coppertint/20">
                 <td className="px-4 py-3 font-semibold text-brand-copper">Best</td>
-                <td className="px-4 py-3 text-brand-charcoal/80">GAF Timberline UHDZ</td>
-                <td className="px-4 py-3 text-brand-charcoal/80">130 mph</td>
-                <td className="px-4 py-3 text-brand-charcoal/80">Limited Lifetime + Ultra-HD styling</td>
+                <td className="px-4 py-3 text-brand-charcoal/80">CertainTeed Presidential Shake</td>
+                <td className="px-4 py-3 text-brand-charcoal/80">110 mph</td>
+                <td className="px-4 py-3 text-brand-charcoal/80">Limited Lifetime + designer shake look</td>
               </tr>
             </tbody>
           </table>
         </div>
         <p className="text-brand-charcoal/80 leading-relaxed mb-8">
-          All shingles in our lineup carry algae-resistance technology and Class A fire ratings. The &quot;Better&quot; and &quot;Best&quot; tiers unlock enhanced system warranties from the manufacturer when paired with matching starter strips, ridge caps, and underlayment — covering both materials and labor for the full warranty period. During your inspection, we&apos;ll recommend the tier that fits your priorities and budget.
+          All shingles in our lineup carry algae-resistance technology and Class A fire ratings. Because we&apos;re CertainTeed ShingleMaster certified, qualifying installations that pair your shingles with matching CertainTeed starter strips, ridge caps, and underlayment are eligible for a 50-year warranty through CertainTeed. During your inspection, we&apos;ll recommend the tier that fits your priorities and budget.
         </p>
 
         <h3 className="text-xl font-bold text-brand-navy mb-4">Typical NH Project Timeline</h3>
