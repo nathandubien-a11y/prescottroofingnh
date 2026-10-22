@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LpHeader, LpFooter } from "@/components/lp/LpChrome";
+import { ConversionPing } from "@/components/lp/ConversionPing";
 import { PhoneIcon } from "@/components/icons/PhoneIcon";
 import { siteConfig } from "@/lib/siteConfig";
 
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 export default function LandingThankYouPage() {
   return (
     <>
+      <ConversionPing />
       <LpHeader />
       <section className="bg-brand-offwhite flex-1 py-16 md:py-24">
         <div className="mx-auto max-w-2xl px-4 text-center">
