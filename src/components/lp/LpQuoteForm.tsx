@@ -7,6 +7,9 @@ import { siteConfig } from "@/lib/siteConfig";
 
 const TRACKING_PARAMS = ["gclid", "gbraid", "wbraid", "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
 
+// Leads post to the site's FormSubmit inbox and are copied to the people who work them.
+const LEAD_CC = ["nathan@prescottroofingnh.com", "Tyler@prescottroofingnh.com"];
+
 const inputClass =
   "w-full px-4 py-3 border border-gray-300 rounded-md text-base text-brand-charcoal bg-white focus:outline-none focus:ring-2 focus:ring-brand-copper/50 focus:border-brand-copper";
 
@@ -44,6 +47,7 @@ export function LpQuoteForm({ source }: { source: string }) {
           ...data,
           ...tracking,
           lead_source: source,
+          _cc: LEAD_CC.join(","),
           landing_page: window.location.href,
           sms_consent: smsConsent,
           sms_consent_at: smsConsent ? new Date().toISOString() : "",
@@ -51,7 +55,8 @@ export function LpQuoteForm({ source }: { source: string }) {
           _subject: `New Ad Lead: ${data.name} — ${data.project || "Roof Quote"} (${data.town})`,
         }),
       });
-      if (!res.ok) throw new Error("Submission failed");
+      const result = (await res.json().catch(() => null)) as { success?: string | boolean } | null;
+      if (!res.ok || !result || String(result.success) !== "true") throw new Error("Submission failed");
       window.dataLayer?.push({ event: "lead_form_success", lead_source: source });
       router.push("/lp/thank-you");
     } catch {
@@ -82,6 +87,12 @@ export function LpQuoteForm({ source }: { source: string }) {
             Phone
           </label>
           <input id="lp-phone" name="phone" type="tel" autoComplete="tel" inputMode="tel" required className={inputClass} />
+        </div>
+        <div>
+          <label htmlFor="lp-email" className="block text-sm font-semibold text-brand-charcoal mb-1">
+            Email <span className="font-normal text-brand-charcoal/50">(optional)</span>
+          </label>
+          <input id="lp-email" name="email" type="email" autoComplete="email" inputMode="email" className={inputClass} />
         </div>
         <div>
           <label htmlFor="lp-town" className="block text-sm font-semibold text-brand-charcoal mb-1">
