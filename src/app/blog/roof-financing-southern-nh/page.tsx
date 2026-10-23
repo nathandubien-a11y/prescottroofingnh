@@ -9,7 +9,7 @@ import { siteConfig } from "@/lib/siteConfig";
 const SLUG = "roof-financing-southern-nh";
 const PUBLISH_DATE = "2026-10-02";
 const TITLE = "Roof Financing in Southern NH: How to Find a Roofing Company Near You With Financing";
-const META_TITLE = "Roofing Companies Near Me With Financing | Southern NH Guide";
+const META_TITLE = "Roof Financing in Southern NH: Options & 2026 Rates";
 const META_DESCRIPTION = "Looking for a roofing company near you with financing? Compare 2026 roof loan options, monthly payments and red flags for Manchester, Nashua & Southern NH.";
 
 export const metadata: Metadata = {
