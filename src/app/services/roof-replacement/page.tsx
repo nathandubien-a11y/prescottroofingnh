@@ -6,7 +6,7 @@ import { ServicePageLayout } from "@/components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "Roof Replacement in Southern NH",
   description:
-    "Full asphalt shingle roof replacement across Southern NH by a CertainTeed ShingleMaster certified roofer. 50-year CertainTeed warranty available, insurance claim help, and precision installation.",
+    "Full asphalt shingle roof replacement in Southern NH from a CertainTeed ShingleMaster certified roofer. 50-year warranty available. Free inspection.",
   alternates: { canonical: "/services/roof-replacement" },
 };
 
