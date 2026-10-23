@@ -5,6 +5,10 @@
 - Homepage JSON-LD (`LocalBusinessSchema`) restructured as a single `@graph`:
   - Added explicit `WebSite` node (`/#website`) with `publisher` → `/#organization` — previously referenced by service-page schema but never defined
   - Business node now typed `RoofingContractor` + `Organization` (id `/#organization` preserved so all existing references keep resolving)
+- `sameAs` expanded with verified profiles:
+  - Facebook page `facebook.com/61591321023029` (verified via page content: Prescott Roofing, NH & MA, owner Nathan)
+  - Google Business Profile share link (owner-supplied)
+  - Empty-string placeholders filtered out automatically by the `.filter(Boolean)` in `LocalBusinessSchema.tsx`
 
 ## Round 3 — Full SEO Overhaul (Sept 2026)
 
