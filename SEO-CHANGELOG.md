@@ -1,5 +1,11 @@
 # SEO Changelog — prescottroofingnh.com
 
+## Round 4 — Schema & Structured Data (Oct 2026)
+
+- Homepage JSON-LD (`LocalBusinessSchema`) restructured as a single `@graph`:
+  - Added explicit `WebSite` node (`/#website`) with `publisher` → `/#organization` — previously referenced by service-page schema but never defined
+  - Business node now typed `RoofingContractor` + `Organization` (id `/#organization` preserved so all existing references keep resolving)
+
 ## Round 3 — Full SEO Overhaul (Sept 2026)
 
 ### Phase 1: Bug Fixes
