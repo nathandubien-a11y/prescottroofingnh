@@ -1,9 +1,8 @@
 import { siteConfig, serviceAreaTowns } from "@/lib/siteConfig";
 
 export function LocalBusinessSchema() {
-  const schema: Record<string, unknown> = {
-    "@context": "https://schema.org",
-    "@type": "RoofingContractor",
+  const organization: Record<string, unknown> = {
+    "@type": ["RoofingContractor", "Organization"],
     "@id": `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     description: `${siteConfig.name} provides expert roof replacement, repair, storm damage restoration, and insurance claim assistance across Southern New Hampshire and Northern Massachusetts. ${siteConfig.tagline}.`,
@@ -54,13 +53,13 @@ export function LocalBusinessSchema() {
   };
 
   if (siteConfig.foundingDate) {
-    schema.foundingDate = siteConfig.foundingDate;
+    organization.foundingDate = siteConfig.foundingDate;
   }
   if (siteConfig.founder) {
-    schema.founder = { "@type": "Person", name: siteConfig.founder };
+    organization.founder = { "@type": "Person", name: siteConfig.founder };
   }
   if (siteConfig.stats.googleReviewCount > 0) {
-    schema.aggregateRating = {
+    organization.aggregateRating = {
       "@type": "AggregateRating",
       ratingValue: siteConfig.stats.googleRating,
       reviewCount: siteConfig.stats.googleReviewCount,
@@ -68,10 +67,25 @@ export function LocalBusinessSchema() {
     };
   }
 
+  const website: Record<string, unknown> = {
+    "@type": "WebSite",
+    "@id": `${siteConfig.url}/#website`,
+    url: siteConfig.url,
+    name: siteConfig.name,
+    description: siteConfig.tagline,
+    inLanguage: "en-US",
+    publisher: { "@id": `${siteConfig.url}/#organization` },
+  };
+
+  const graph = {
+    "@context": "https://schema.org",
+    "@graph": [website, organization],
+  };
+
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
     />
   );
 }
