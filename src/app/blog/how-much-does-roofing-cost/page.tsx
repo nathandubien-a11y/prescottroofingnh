@@ -9,7 +9,7 @@ import { siteConfig } from "@/lib/siteConfig";
 const SLUG = "how-much-does-roofing-cost";
 const PUBLISH_DATE = "2026-09-30";
 const TITLE = "What Actually Drives Your Roofing Bill: 11 Cost Factors Contractors Won’t Tell You Upfront";
-const META_TITLE = "How Much Does a New Roof Cost in NH? 2026 Prices";
+const META_TITLE = "How Much Does a Roof Cost in NH? 2026";
 const META_DESCRIPTION = "How much does roofing cost in NH & MA? See 2026 price ranges plus 11 hidden factors, from deck repairs to permits, that add $2,000–$12,000 to a quote.";
 
 export const metadata: Metadata = {
