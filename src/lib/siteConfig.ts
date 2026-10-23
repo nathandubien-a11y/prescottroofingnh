@@ -18,7 +18,7 @@ export const siteConfig = {
   googleBusinessUrl: "", // [todo] Google Business Profile link
   sameAs: [
     "", // [NATHAN: SUPPLY] GBP_URL — Google Business Profile URL
-    "", // [NATHAN: SUPPLY] FACEBOOK_URL
+    "https://www.facebook.com/61591321023029", // FACEBOOK_URL
     "", // [NATHAN: SUPPLY] INSTAGRAM_URL
     "https://www.thumbtack.com/nh/manchester/roofing/prescott-roofing/service/583207038455791633", // THUMBTACK_URL
   ],
