@@ -15,9 +15,9 @@ export const siteConfig = {
   foundingDate: "", // [NATHAN: SUPPLY] e.g. "2024"
   founder: "", // [NATHAN: SUPPLY] e.g. "Nathan Prescott"
   googleMapsEmbed: "", // [todo] Google Maps embed URL for contact page
-  googleBusinessUrl: "", // [todo] Google Business Profile link
+  googleBusinessUrl: "https://www.google.com/search?q=Prescott+Roofing&stick=H4sIAAAAAAAA_-NgU1I1qEg0tjC0NEw0TLM0N7A0tkyzMqhItTQyTza0SDIwtzQzTE40WsQqEFCUWpycX1KiEJSfn5aZlw4A7x-d3TwAAAA&hl=en&mat=CZ8rFs8s9sBxElYBzAmVZgN8j5Y5AlN5ECuoCWJOe4NPtdE0HWoD5BWeMYvY0ohzvfjpH1Cw6p-neZke5Uu6FIGPZin4erBFmNVAbvjT_l5kHB4cp0d2B7AfcznbtxokIQ&authuser=0&ved=1t:350944", // Google Business Profile link
   sameAs: [
-    "", // [NATHAN: SUPPLY] GBP_URL — Google Business Profile URL
+    "https://www.google.com/search?q=Prescott+Roofing&stick=H4sIAAAAAAAA_-NgU1I1qEg0tjC0NEw0TLM0N7A0tkyzMqhItTQyTza0SDIwtzQzTE40WsQqEFCUWpycX1KiEJSfn5aZlw4A7x-d3TwAAAA&hl=en&mat=CZ8rFs8s9sBxElYBzAmVZgN8j5Y5AlN5ECuoCWJOe4NPtdE0HWoD5BWeMYvY0ohzvfjpH1Cw6p-neZke5Uu6FIGPZin4erBFmNVAbvjT_l5kHB4cp0d2B7AfcznbtxokIQ&authuser=0&ved=1t:350944", // [NATHAN: SUPPLY] GBP_URL — Google Business Profile URL
     "https://www.facebook.com/61591321023029", // FACEBOOK_URL
     "", // [NATHAN: SUPPLY] INSTAGRAM_URL
     "https://www.thumbtack.com/nh/manchester/roofing/prescott-roofing/service/583207038455791633", // THUMBTACK_URL
