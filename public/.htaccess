@@ -10,6 +10,7 @@ RewriteRule ^(.*)$ https://prescottroofingnh.com/$1 [R=301,L]
 RewriteRule ^roofing-manchester-nh/?$ /roofing/manchester-nh [R=301,L]
 RewriteRule ^roofing-nashua-nh/?$ /roofing/nashua-nh [R=301,L]
 RewriteRule ^roofing-bedford-nh/?$ /roofing/bedford-nh [R=301,L]
+RewriteRule ^insurance-claims/?$ /services/storm-damage [R=301,L]
 
 # Strip trailing slashes (except root)
 RewriteCond %{REQUEST_FILENAME} !-d [OR]
