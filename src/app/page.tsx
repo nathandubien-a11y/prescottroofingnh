@@ -11,9 +11,9 @@ import { RoofWatermark } from "@/components/RoofWatermark";
 import { ProjectsGallery } from "@/components/ProjectsGallery";
 
 export const metadata: Metadata = {
-  title: "Roofing Contractor in Southern NH | Prescott Roofing",
+  title: "Southern NH Roofing Contractor | 5★ Roof Replacement & Repair",
   description:
-    "Southern NH's trusted roofer for roof replacement, repair, storm damage, and insurance claims. Serving Manchester, Nashua, Bedford and beyond.",
+    "5.0★ rated Southern NH roofing contractor — 500+ roofs, free inspections, financing. Serving Manchester, Nashua, Bedford & beyond. Call (603) 451-2224.",
   alternates: { canonical: "/" },
 };
 
