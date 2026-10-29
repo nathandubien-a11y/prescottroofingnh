@@ -74,7 +74,7 @@ export default function RootLayout({
           id="google-ads-tag"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','${GOOGLE_ADS_ID}');gtag('config','G-K2VQ5LLG3N');`,
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','${GOOGLE_ADS_ID}',{allow_enhanced_conversions:true});gtag('config','G-K2VQ5LLG3N');`,
           }}
         />
         {gtmId && (
