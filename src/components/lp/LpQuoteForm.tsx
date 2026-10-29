@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { siteConfig } from "@/lib/siteConfig";
+import { saveLeadUserData } from "@/lib/googleAds";
 
 const TRACKING_PARAMS = ["gclid", "gbraid", "wbraid", "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
 
@@ -110,6 +111,7 @@ export function LpQuoteForm({
       return;
     }
     window.dataLayer?.push({ event: "lead_form_success", lead_source: source });
+    await saveLeadUserData(data.email, data.phone);
     router.push("/lp/thank-you");
   }
 
