@@ -11,7 +11,7 @@ import { RoofWatermark } from "@/components/RoofWatermark";
 import { ProjectsGallery } from "@/components/ProjectsGallery";
 
 export const metadata: Metadata = {
-  title: "Southern NH Roofing Contractor | 5★ Roof Replacement & Repair",
+  title: "NH Roofing Contractor | 5★ Roof Replacement & Repair",
   description:
     "5.0★ rated Southern NH roofing contractor — 500+ roofs, free inspections, financing. Serving Manchester, Nashua, Bedford & beyond. Call (603) 451-2224.",
   alternates: { canonical: "/" },
