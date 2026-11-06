@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { LpHeader, LpStickyBar, LpFooter } from "@/components/lp/LpChrome";
 import { LpQuoteForm } from "@/components/lp/LpQuoteForm";
+import { LpCostFactors } from "@/components/lp/LpCostFactors";
 import { PhoneIcon } from "@/components/icons/PhoneIcon";
 import { siteConfig } from "@/lib/siteConfig";
 
@@ -102,9 +103,8 @@ export default function RoofReplacementLandingPage() {
           src="/img/completed-shingle-roof-southern-nh.webp"
           alt=""
           fill
-          priority
           sizes="100vw"
-          className="object-cover opacity-25"
+          className="hidden md:block object-cover opacity-25"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-navy/90 to-brand-navy/70" />
         <div className="relative mx-auto max-w-6xl px-4 py-7 md:py-16 grid gap-7 md:gap-8 lg:grid-cols-[1.15fr_1fr] lg:items-center">
@@ -113,7 +113,7 @@ export default function RoofReplacementLandingPage() {
               CertainTeed ShingleMaster Certified Roofer
             </p>
             <h1 className="mt-4 text-[2rem] leading-[1.1] sm:text-5xl font-extrabold text-white">
-              A new roof built for New Hampshire winters,{" "}
+              Roof replacement built for New Hampshire winters,{" "}
               <span className="text-brand-copper">backed for 50 years.</span>
             </h1>
             <p className="mt-4 hidden sm:block text-lg text-white/80 max-w-xl">
@@ -231,6 +231,19 @@ export default function RoofReplacementLandingPage() {
           </div>
         </div>
       </section>
+
+      {/* Cost */}
+      <LpCostFactors
+        eyebrow="Roof replacement cost"
+        title="What does a new roof cost?"
+        intro="Every roof replacement is priced to the home. These are the four things that move your price the most. Your free inspection ends with a written, line-item quote, so you see the exact number before anything starts."
+        factors={[
+          { title: "Roof size", desc: "Roofs are priced by the square (100 sq ft). More roof area means more shingles, underlayment, and labor." },
+          { title: "Pitch & complexity", desc: "Steep slopes, dormers, valleys, chimneys, and skylights take more flashing, cutting, and time." },
+          { title: "Layers & decking", desc: "Extra layers to tear off are included, and the per-sheet price for any rotted decking is listed in your quote, so there are no surprises." },
+          { title: "Shingle line & warranty", desc: "Your CertainTeed shingle choice and the warranty level you pick, up to 50 years, set the material cost." },
+        ]}
+      />
 
       {/* How it works */}
       <section className="bg-brand-navy py-14 md:py-20">
