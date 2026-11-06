@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { LpHeader, LpStickyBar, LpFooter } from "@/components/lp/LpChrome";
 import { LpQuoteForm } from "@/components/lp/LpQuoteForm";
+import { LpCostFactors } from "@/components/lp/LpCostFactors";
 import { PhoneIcon } from "@/components/icons/PhoneIcon";
 import { siteConfig } from "@/lib/siteConfig";
 
 // Paid-traffic landing page for metal roofing searches; kept out of search results.
 export const metadata: Metadata = {
-  title: { absolute: "Metal Roof Installation in Southern NH | Free Quote | Prescott Roofing" },
+  title: { absolute: "Standing Seam Metal Roofing in Southern NH | Metal Roof Cost & Free Quote | Prescott Roofing" },
   description:
     "Standing seam metal roof installation across Southern NH and Northern MA with a lifetime warranty. Sheds snow, lasts decades, installed by a local, licensed crew. Free inspection and written quote.",
   robots: { index: false, follow: false },
@@ -114,12 +115,15 @@ export default function MetalRoofingLandingPage() {
         <div className="relative mx-auto max-w-6xl px-4 py-7 md:py-16 grid gap-7 md:gap-8 lg:grid-cols-[1.15fr_1fr] lg:items-center">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs sm:text-sm font-semibold text-brand-coppertint">
-              Standing Seam Metal Roofing · Southern NH &amp; Northern MA
+              Metal Roof Installation · Southern NH &amp; Northern MA
             </p>
             <h1 className="mt-4 text-[2rem] leading-[1.1] sm:text-5xl font-extrabold text-white">
-              The last roof you&apos;ll ever buy,{" "}
+              Standing seam metal roofing,{" "}
               <span className="text-brand-copper">built for NH winters.</span>
             </h1>
+            <p className="mt-3 hidden sm:block text-lg font-semibold text-brand-coppertint">
+              The last roof you&apos;ll ever buy, with a lifetime warranty.
+            </p>
             <p className="mt-4 hidden sm:block text-lg text-white/80 max-w-xl">
               Prescott Roofing installs standing seam metal roofs that shed snow, shrug off storms, and come with a lifetime
               warranty. Start with a free, no-pressure inspection and a written quote.
@@ -220,6 +224,19 @@ export default function MetalRoofingLandingPage() {
           </div>
         </div>
       </section>
+
+      {/* Cost */}
+      <LpCostFactors
+        eyebrow="Metal roof cost"
+        title="What does a metal roof cost?"
+        intro="Every metal roof is priced to the home. These are the four things that move your price the most. Your free inspection ends with a written, line-item quote, so you see the exact number before anything starts."
+        factors={[
+          { title: "Roof size", desc: "Metal is priced by the square (100 sq ft). More roof area means more panels, trim, and labor." },
+          { title: "Pitch & complexity", desc: "Steep slopes, dormers, valleys, and skylights take more cutting, flashing, and time." },
+          { title: "Panel & finish", desc: "Standing seam panel profile, metal gauge, and paint finish all change the material cost." },
+          { title: "Tear-off & decking", desc: "Removing old layers is included, and the per-sheet price for any rotted decking is listed in your quote, so there are no surprises." },
+        ]}
+      />
 
       {/* How it works */}
       <section className="bg-brand-navy py-14 md:py-20">
