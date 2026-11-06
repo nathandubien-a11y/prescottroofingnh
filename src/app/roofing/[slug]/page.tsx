@@ -16,6 +16,7 @@ import { londonderryNH } from "@/data/locations/londonderry-nh";
 import { salemNH } from "@/data/locations/salem-nh";
 import { merrimackNH } from "@/data/locations/merrimack-nh";
 import { hudsonNH } from "@/data/locations/hudson-nh";
+import { concordNH } from "@/data/locations/concord-nh";
 import type { LocationData } from "@/data/locations/types";
 
 const seoLocations: Record<string, LocationData> = {
@@ -27,6 +28,7 @@ const seoLocations: Record<string, LocationData> = {
   "salem-nh": salemNH,
   "merrimack-nh": merrimackNH,
   "hudson-nh": hudsonNH,
+  "concord-nh": concordNH,
 };
 
 export function generateStaticParams() {
