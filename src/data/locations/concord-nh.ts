@@ -9,7 +9,7 @@ export const concordNH: LocationData = {
   meta: {
     title: "Roofing Contractor Concord NH | Prescott Roofing",
     description:
-      "Concord NH roofing contractor for roof replacement, repair, ice dams & storm damage claims. Serving Penacook, the Heights, East & West Concord. Free inspections.",
+      "Concord NH roofing contractor for roof replacement, repair, ice dams & storm damage. Serving Penacook, the Heights, East & West Concord. Free inspections.",
     heroImageAlt:
       "New architectural shingle roof with ridge vent on a home in Concord NH by Prescott Roofing",
   },
