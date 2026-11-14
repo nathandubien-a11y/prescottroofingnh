@@ -24,7 +24,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     // Ryze meta titles sometimes already include the brand; avoid "… | Prescott Roofing | Prescott Roofing".
-    title: /prescott roofing/i.test(seoTitle) ? { absolute: seoTitle } : seoTitle,
+    // Skip the " | Prescott Roofing" suffix when the title already has the brand or would run past ~60 chars.
+    title: /prescott roofing/i.test(seoTitle) || seoTitle.length > 41 ? { absolute: seoTitle } : seoTitle,
     description: post.description,
     alternates: { canonical: `/blog/${slug}` },
     openGraph: {
@@ -33,7 +34,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.description,
       publishedTime: post.date,
       modifiedTime: post.updated || post.date,
-      ...(post.image ? { images: [{ url: post.image.url, alt: post.image.alt }] } : {}),
+      images: post.image
+        ? [{ url: post.image.url, alt: post.image.alt }]
+        : [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Prescott Roofing — Precision From Every Angle" }],
     },
   };
 }

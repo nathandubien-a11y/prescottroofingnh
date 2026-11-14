@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `Roofing Contractor ${seoData.city} ${seoData.state}`,
       description: seoData.meta.description,
       alternates: { canonical: `/roofing/${slug}` },
-      openGraph: { title: seoData.meta.title },
+      openGraph: { title: seoData.meta.title, images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Prescott Roofing — Precision From Every Angle" }] },
       twitter: { title: seoData.meta.title },
     };
   }

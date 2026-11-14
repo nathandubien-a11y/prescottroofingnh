@@ -70,6 +70,7 @@ export default function ServicesPage() {
               Every service includes a free initial inspection, honest assessment, and detailed written estimate. If your project involves storm damage, we bring real insurance-restoration experience — Xactimate estimates, adjuster coordination, and documentation that gets claims approved. For retail customers, we offer competitive pricing and flexible financing.
             </p>
           </div>
+          <h2 className="text-2xl md:text-3xl font-extrabold text-brand-navy mb-8">Our Roofing Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((svc) => (
               <ServiceCard key={svc.href} {...svc} />
