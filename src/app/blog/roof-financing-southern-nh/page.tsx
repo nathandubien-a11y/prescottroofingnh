@@ -10,11 +10,11 @@ const SLUG = "roof-financing-southern-nh";
 const PUBLISH_DATE = "2026-10-02";
 const TITLE = "Roof Financing in Southern NH: How to Find a Roofing Company Near You With Financing";
 const META_TITLE = "Roof Financing Southern NH: 2026 Guide";
-const META_DESCRIPTION = "Looking for a roofing company near you with financing? Compare 2026 roof loan options, monthly payments and red flags for Manchester, Nashua & Southern NH.";
+const META_DESCRIPTION = "Compare roof financing in Southern NH — contractor plans, home equity loans, payment examples and red flags to avoid. Free inspection: (603) 451-2224.";
 
 export const metadata: Metadata = {
   title: "Roof Financing Southern NH: 2026 Guide",
-  description: "Compare contractor financing, home equity loans and NH assistance programs — with monthly payment examples and the red flags to avoid. Free inspection: (603) 451-2224.",
+  description: META_DESCRIPTION,
   alternates: { canonical: `/blog/${SLUG}` },
   openGraph: {
     type: "article",
