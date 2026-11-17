@@ -13,7 +13,7 @@ const META_TITLE = "Roof Financing Southern NH: 2026 Guide";
 const META_DESCRIPTION = "Looking for a roofing company near you with financing? Compare 2026 roof loan options, monthly payments and red flags for Manchester, Nashua & Southern NH.";
 
 export const metadata: Metadata = {
-  title: "Roof Financing in NH: Options, Payments & Red Flags",
+  title: "Roof Financing Southern NH: 2026 Guide",
   description: "Compare contractor financing, home equity loans and NH assistance programs — with monthly payment examples and the red flags to avoid. Free inspection: (603) 451-2224.",
   alternates: { canonical: `/blog/${SLUG}` },
   openGraph: {
