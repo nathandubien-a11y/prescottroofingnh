@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ? { absolute: "Ice Dam Removal in NH | Safe Steam Removal & Prevention" }
       : /prescott roofing/i.test(seoTitle) || seoTitle.length > 41 ? { absolute: seoTitle } : seoTitle,
     description: slug === "ice-dams-in-new-hampshire-prevention-and-removal"
-      ? "Steam ice-dam removal for Southern NH homes — safe, no salt, no chipping — plus the prevention fixes that stop dams from coming back. Free inspection: (603) 451-2224."
+      ? "Steam ice-dam removal for Southern NH homes — safe, no salt, no chipping — plus prevention fixes that stop them coming back."
       : post.description,
     alternates: { canonical: `/blog/${slug}` },
     openGraph: {
