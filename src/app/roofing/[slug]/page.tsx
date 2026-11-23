@@ -43,8 +43,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const seoData = seoLocations[slug];
   if (seoData) {
     return {
-      title: `Roofing Contractor ${seoData.city} ${seoData.state}`,
-      description: seoData.meta.description,
+      title: slug === "nashua-nh" ? "Nashua NH Roofing Contractor | 5★ Rated" : `Roofing Contractor ${seoData.city} ${seoData.state}`,
+      description: slug === "nashua-nh" ? "5.0★ rated Nashua NH roofer — 500+ roofs, free inspections, financing. Roof replacement, leak repair & storm claims. Call (603) 451-2224." : seoData.meta.description,
       alternates: { canonical: `/roofing/${slug}` },
       openGraph: { title: seoData.meta.title, images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Prescott Roofing — Precision From Every Angle" }] },
       twitter: { title: seoData.meta.title },
