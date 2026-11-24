@@ -39,8 +39,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # next/font downloads Google Fonts at build time and that request fails now and then,
+      # so the build is retried before the deploy is given up on.
       - name: Build static site
-        run: npm run build
+        run: |
+          for attempt in 1 2 3; do
+            if npm run build; then exit 0; fi
+            echo "Build attempt $attempt failed; retrying in 15s"
+            sleep 15
+          done
+          exit 1
         env:
           NEXT_TELEMETRY_DISABLED: "1"
           NEXT_PUBLIC_GTM_ID: ${{ vars.NEXT_PUBLIC_GTM_ID }}
