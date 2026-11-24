@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
-import { siteConfig } from "@/lib/siteConfig";
+import { deliverLead } from "@/lib/deliverLead";
 
 const serviceOptions = [
   "Roof Replacement",
@@ -24,34 +24,27 @@ export function LeadForm({ className = "" }: { className?: string }) {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
+    const data = Object.fromEntries(formData) as Record<string, string>;
 
     const smsConsent = formData.get("sms_consent") === "yes";
 
-    try {
-      const res = await fetch(
-        `https://formsubmit.co/ajax/${siteConfig.email}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            ...data,
-            sms_consent: smsConsent,
-            sms_consent_at: smsConsent ? new Date().toISOString() : "",
-            sms_consent_page: smsConsent ? window.location.href : "",
-            _subject: `New Lead from ${data.name} — ${data.service || "General Inquiry"}`,
-          }),
-        }
-      );
-      if (!res.ok) throw new Error("Submission failed");
-      setStatus("success");
-      form.reset();
-    } catch {
+    const delivered = await deliverLead(
+      {
+        ...data,
+        sms_consent: smsConsent ? "yes" : "no",
+        ...(smsConsent ? { sms_consent_at: new Date().toISOString(), sms_consent_page: window.location.href } : {}),
+        lead_source: "website-form",
+        page: window.location.href,
+      },
+      `New Lead from ${data.name} — ${data.service || "General Inquiry"}`,
+    );
+
+    if (!delivered) {
       setStatus("error");
+      return;
     }
+    setStatus("success");
+    form.reset();
   }
 
   if (status === "success") {
