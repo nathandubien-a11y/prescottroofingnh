@@ -5,6 +5,7 @@ import { RoofWatermark } from "@/components/RoofWatermark";
 import { CTASection } from "@/components/CTASection";
 import { FAQAccordion, FAQSchema, type FAQItem } from "@/components/FAQAccordion";
 import { siteConfig } from "@/lib/siteConfig";
+import { BlogServiceLinks } from "@/components/BlogServiceLinks";
 
 const SLUG = "how-much-does-roofing-cost";
 const PUBLISH_DATE = "2026-09-30";
@@ -403,6 +404,8 @@ export default function HowMuchDoesRoofingCostPage() {
               ))}
             </ul>
           </div>
+
+          <BlogServiceLinks title="How Much Does a New Roof Cost" />
 
           <div className="mt-12 pt-8 border-t border-brand-coppertint/30">
             <Link href="/blog" className="text-brand-copper font-semibold hover:underline">

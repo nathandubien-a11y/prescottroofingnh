@@ -5,6 +5,7 @@ import { RoofWatermark } from "@/components/RoofWatermark";
 import { CTASection } from "@/components/CTASection";
 import { FAQAccordion, FAQSchema, type FAQItem } from "@/components/FAQAccordion";
 import { siteConfig } from "@/lib/siteConfig";
+import { BlogServiceLinks } from "@/components/BlogServiceLinks";
 
 const SLUG = "roof-financing-southern-nh";
 const PUBLISH_DATE = "2026-10-02";
@@ -348,6 +349,8 @@ export default function RoofFinancingSouthernNHPage() {
               ))}
             </ul>
           </div>
+
+          <BlogServiceLinks title="Roof Financing" />
 
           <div className="mt-12 pt-8 border-t border-brand-coppertint/30">
             <Link href="/blog" className="text-brand-copper font-semibold hover:underline">
