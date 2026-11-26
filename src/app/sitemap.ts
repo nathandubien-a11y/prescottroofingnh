@@ -4,36 +4,39 @@ import { blogPosts } from "@/lib/blogPosts";
 
 export const dynamic = "force-static";
 
-const BUILD_DATE = new Date().toISOString().split("T")[0];
+// Date the site's core pages (home, services, town pages, etc.) last had a real content change.
+// Bump this when those pages are edited. Do not use the build date: the site rebuilds every time an
+// article is published, and a lastmod that changes on every build teaches Google to ignore it.
+const PAGES_UPDATED = "2026-11-26";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
 
   const staticPages: MetadataRoute.Sitemap = [
-    { url: base, lastModified: BUILD_DATE, changeFrequency: "weekly", priority: 1 },
-    { url: `${base}/services`, lastModified: BUILD_DATE, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/services/roof-replacement`, lastModified: BUILD_DATE, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/services/roof-repair`, lastModified: BUILD_DATE, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/services/storm-damage`, lastModified: BUILD_DATE, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/services/ice-dam-removal`, lastModified: BUILD_DATE, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/services/gutters`, lastModified: BUILD_DATE, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/roofing`, lastModified: BUILD_DATE, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/about`, lastModified: BUILD_DATE, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/reviews`, lastModified: BUILD_DATE, changeFrequency: "weekly", priority: 0.7 },
-    { url: `${base}/free-inspection`, lastModified: BUILD_DATE, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/contact`, lastModified: BUILD_DATE, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/financing`, lastModified: BUILD_DATE, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/blog`, lastModified: BUILD_DATE, changeFrequency: "weekly", priority: 0.6 },
-    { url: `${base}/privacy-policy`, lastModified: BUILD_DATE, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${base}/terms-of-service`, lastModified: BUILD_DATE, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${base}/sms-terms`, lastModified: BUILD_DATE, changeFrequency: "yearly", priority: 0.3 },
+    { url: base, lastModified: PAGES_UPDATED, changeFrequency: "weekly", priority: 1 },
+    { url: `${base}/services`, lastModified: PAGES_UPDATED, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/services/roof-replacement`, lastModified: PAGES_UPDATED, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/services/roof-repair`, lastModified: PAGES_UPDATED, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/services/storm-damage`, lastModified: PAGES_UPDATED, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/services/ice-dam-removal`, lastModified: PAGES_UPDATED, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/services/gutters`, lastModified: PAGES_UPDATED, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/roofing`, lastModified: PAGES_UPDATED, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/about`, lastModified: PAGES_UPDATED, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/reviews`, lastModified: PAGES_UPDATED, changeFrequency: "weekly", priority: 0.7 },
+    { url: `${base}/free-inspection`, lastModified: PAGES_UPDATED, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/contact`, lastModified: PAGES_UPDATED, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/financing`, lastModified: PAGES_UPDATED, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog`, lastModified: blogPosts[0]?.updated || blogPosts[0]?.date || PAGES_UPDATED, changeFrequency: "weekly", priority: 0.6 },
+    { url: `${base}/privacy-policy`, lastModified: PAGES_UPDATED, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${base}/terms-of-service`, lastModified: PAGES_UPDATED, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${base}/sms-terms`, lastModified: PAGES_UPDATED, changeFrequency: "yearly", priority: 0.3 },
   ];
 
   const serviceAreaPages: MetadataRoute.Sitemap = serviceAreaTowns
     .filter((town) => town.tier === "full")
     .map((town) => ({
       url: `${base}/roofing/${town.slug}`,
-      lastModified: BUILD_DATE,
+      lastModified: PAGES_UPDATED,
       changeFrequency: "monthly" as const,
       priority: 0.9,
     }));

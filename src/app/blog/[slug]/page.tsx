@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RoofWatermark } from "@/components/RoofWatermark";
 import { CTASection } from "@/components/CTASection";
+import { BlogServiceLinks } from "@/components/BlogServiceLinks";
 import { blogPosts } from "@/lib/blogPosts";
 import { siteConfig } from "@/lib/siteConfig";
 
@@ -115,6 +116,8 @@ export default async function BlogPostPage({ params }: Props) {
             })}
           </div>
           )}
+
+          <BlogServiceLinks title={post.title} />
 
           <div className="mt-12 pt-8 border-t border-brand-coppertint/30">
             <Link href="/blog" className="text-brand-copper font-semibold hover:underline">
